@@ -30,8 +30,8 @@
 
         <div class="col-twelve">
             <div class="copyright">
-                <span>© Copyright Glint 2017</span> 
-                <span>Site Template by <a href="https://www.colorlib.com/">Colorlib</a></span>	
+                <span>© Copyright Java Eins 2022</span>
+                <span>Developed by <a href="#"><img src="{{asset('assets_front/images/logo-dark.png')}}" alt="asyncrode" style="height: 11px;"> Asyncrode</a></span>
             </div>
 
             <div class="go-top">

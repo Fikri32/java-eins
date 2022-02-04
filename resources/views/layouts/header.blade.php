@@ -12,14 +12,13 @@
 
         <div class="header-nav__content">
             <h3>Navigation</h3>
-            
+
             <ul class="header-nav__list">
-                <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
-                <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-                <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
-                <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
-                <li><a class="smoothscroll"  href="#clients" title="clients">Clients</a></li>
-                <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                <li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
+                <li><a class="smoothscroll" href="#about" title="about">About</a></li>
+                <li><a class="smoothscroll" href="#products" title="products">Our Products</a></li>
+                <li><a class="smoothscroll" href="#faq" title="faq">FAQ</a></li>
+                <li><a class="smoothscroll" href="#contact" title="contact">Contact Us</a></li>
             </ul>
 
             <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
@@ -34,17 +33,17 @@
                 <li>
                     <a href="#"><i class="fa fa-instagram"></i></a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#"><i class="fa fa-behance"></i></a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-dribbble"></i></a>
-                </li>
+                </li> -->
             </ul>
 
         </div> <!-- end header-nav__content -->
 
-    </nav>  <!-- end header-nav -->
+    </nav> <!-- end header-nav -->
 
     <a class="header-menu-toggle" href="#0">
         <span class="header-menu-text">Menu</span>
