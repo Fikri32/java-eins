@@ -49,17 +49,17 @@
 
             <div style="text-align: left;color:white">
                 <h5 style="color: white">
-                    Our Product
+                    Our Profile
                 </h5>
                 <ul style="list-style-type: none;margin-left:0px">
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket A</a>
+                        <a href="">FAQ</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket B</a>
+                        <a href="">About Us</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket C</a>
+                        <a href="">Contact Us</a>
                     </li>
                 </ul>
             </div>

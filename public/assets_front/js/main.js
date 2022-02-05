@@ -49,7 +49,7 @@
     * ------------------------------------------------------ */
     var clMenuOnScrolldown = function() {
         
-        var menuTrigger = $('.header-menu-toggle');
+        var menuTrigger = $('.s-header');
 
         $WIN.on('scroll', function() {
 
@@ -92,6 +92,7 @@
             if( !$(e.target).is('.header-nav, .header-nav__content, .header-menu-toggle, .header-menu-toggle span') ) {
                 // menuTrigger.removeClass('is-clicked');
                 siteBody.removeClass('menu-is-open');
+                $('.header-menu-toggle').show();
             }
         });
 
@@ -446,6 +447,12 @@
         });
     };
 
+    
+    /* Back to Top
+    * ------------------------------------------------------ */
+    $('.header-menu-toggle').on('click',function() {
+        $('.header-menu-toggle').hide();
+    });
 
    /* Initialize
     * ------------------------------------------------------ */
