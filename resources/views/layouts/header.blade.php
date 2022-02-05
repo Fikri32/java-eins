@@ -23,24 +23,6 @@
 
             <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
 
-            <ul class="header-nav__social">
-                <li>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-                <!-- <li>
-                    <a href="#"><i class="fa fa-behance"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                </li> -->
-            </ul>
-
         </div> <!-- end header-nav__content -->
 
     </nav> <!-- end header-nav -->

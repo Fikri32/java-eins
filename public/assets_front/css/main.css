@@ -1509,7 +1509,7 @@ input::-moz-focus-inner {
     width: 100%;
     height: 96px;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 500;
 }
@@ -1545,7 +1545,7 @@ input::-moz-focus-inner {
  * ## main navigation 
  * ------------------------------------------------------------------- */
 .header-nav {
-    background: #0c0c0c;
+    background: #00000095;
     color: rgba(255, 255, 255, 0.25);
     font-family: "montserrat-light", sans-serif;
     font-size: 1.3rem;
@@ -1732,6 +1732,10 @@ input::-moz-focus-inner {
 }
 
 .header-menu-toggle.opaque {
+    background-color: #000000;
+}
+
+.s-header.opaque {
     background-color: #000000;
 }
 
@@ -3424,8 +3428,8 @@ footer a {
 footer a:hover,
 footer a:focus,
 footer a:active {
-    /* color: #e50914; */
-    color: #38b6ff;
+    color: #e50914;
+    /* color: #38b6ff; */
 }
 
 footer .row {
