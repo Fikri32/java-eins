@@ -47,18 +47,18 @@
 
     <ul class="home-social">
         <li>
-            <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+            <a href="#0"><i class="fa fa-facebook" aria-hidden="true" style="color: #e50914;"></i><span>Facebook</span></a>
         </li>
         <li>
-            <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+            <a href="#0"><i class="fa fa-twitter" aria-hidden="true" style="color: #e50914;"></i><span>Twiiter</span></a>
         </li>
         <li>
-            <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-        </li>
-        <!-- <li>
-            <a href="#0"><i class="fa fa-behance" aria-hidden="true"></i><span>Behance</span></a>
+            <a href="#0"><i class="fa fa-instagram" aria-hidden="true" style="color: #e50914;"></i><span>Instagram</span></a>
         </li>
         <li>
+            <a href="#0"><i class="fa fa-envelope" aria-hidden="true" style="color: #e50914;"></i><span>Email</span></a>
+        </li>
+        <!--<li>
             <a href="#0"><i class="fa fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a>
         </li> -->
     </ul>
