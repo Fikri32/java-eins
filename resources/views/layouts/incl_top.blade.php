@@ -1,7 +1,7 @@
 <!--- basic page needs
 ================================================== -->
 <meta charset="utf-8">
-<title>Glint</title>
+<title>Java Eins</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -22,5 +22,5 @@
 
 <!-- favicons
 ================================================== -->
-<link rel="shortcut icon" href="{{asset('assets_front/favicon.ico')}}" type="image/x-icon">
-<link rel="icon" href="{{asset('assets_front/favicon.ico')}}" type="image/x-icon">
+<link rel="shortcut icon" href="{{asset('favicon.png')}}" type="image/x-icon">
+<link rel="icon" href="{{asset('favicon.png')}}" type="image/x-icon">

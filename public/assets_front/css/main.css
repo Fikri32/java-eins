@@ -2029,7 +2029,8 @@ input::-moz-focus-inner {
 }
 
 .home-social span {
-    color: #39b54a;
+    /* color: #39b54a; */
+    color: #a9a9a9;
     right: 4.5rem;
     font-size: 1.3rem;
     opacity: 0;
@@ -3423,7 +3424,8 @@ footer a {
 footer a:hover,
 footer a:focus,
 footer a:active {
-    color: #39b54a;
+    /* color: #39b54a; */
+    color: #38b6ff;
 }
 
 footer .row {
