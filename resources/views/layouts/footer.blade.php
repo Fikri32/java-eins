@@ -3,19 +3,21 @@
     <div class="row footer-main">
         <div class="col-four tab-full right footer-desc">
 
-            <img class="" src="{{asset('assets_front/images/javaeins.png')}}" alt="" style="display: block; margin: -0.6rem 0 3.6rem 0;">
-
+            <div style="text-align: center;">
+                <img class="" src="{{asset('assets_front/images/javaeins.png')}}" alt="" style="display: block; margin: auto; height:150px;">
+                <h3 style="text-align:center; margin-bottom: 1.5rem; margin-top:1rem; color:#ffffff;">JAVA EINS</h3>
+            </div>
             <!-- <h3>Welcome to Glint</h3> -->
             <div style="text-align: left;color:white">
-                <h5 style="color: white">
+                <!-- <h5 style="color: white">
                     JAVA EINS
-                </h5>
+                </h5> -->
                 <ul style="list-style-type: none;margin-left:0px">
                     <li style="margin-bottom: 8px">
-                        <i class="fa fa-map-marker" style="margin-right: 8px"> </i> 
+                        <i class="fa fa-map-marker" style="margin-right: 8px"> </i>
                         Jalan Komud Abdurrahman Saleh, Kel. <br> &nbsp;&nbsp;&nbsp;&nbsp;Asrikaton,Kec. Pakis, Kab. Malang, Prop. &nbsp;&nbsp;&nbsp;&nbsp;Jawa Timur
                     </li>
-                    <li style="margin-bottom: 8px"> 
+                    <li style="margin-bottom: 8px">
                         <i class="fa fa-envelope" style="margin-right: 8px"> </i>info@javaeins.com
                     </li>
                     <li style="margin-bottom: 8px">
@@ -31,13 +33,13 @@
                 </h5>
                 <ul style="list-style-type: none;margin-left:0px">
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket A</a> 
+                        <a href="">Bricket A</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket B</a> 
+                        <a href="">Bricket B</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket C</a> 
+                        <a href="">Bricket C</a>
                     </li>
                 </ul>
             </div>
@@ -51,13 +53,13 @@
                 </h5>
                 <ul style="list-style-type: none;margin-left:0px">
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket A</a> 
+                        <a href="">Bricket A</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket B</a> 
+                        <a href="">Bricket B</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket C</a> 
+                        <a href="">Bricket C</a>
                     </li>
                 </ul>
             </div>
