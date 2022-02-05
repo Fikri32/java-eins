@@ -1,25 +1,65 @@
 <footer>
 
     <div class="row footer-main">
+        <div class="col-four tab-full right footer-desc">
 
-        <div class="col-six tab-full left footer-desc">
+            <img class="" src="{{asset('assets_front/images/javaeins.png')}}" alt="" style="display: block; margin: -0.6rem 0 3.6rem 0;">
 
-            <div class="footer-logo"></div>
-            Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Quaerat voluptas autem necessitatibus vitae aut.
-
+            <!-- <h3>Welcome to Glint</h3> -->
+            <div style="text-align: left;color:white">
+                <h5 style="color: white">
+                    JAVA EINS
+                </h5>
+                <ul style="list-style-type: none;margin-left:0px">
+                    <li style="margin-bottom: 8px">
+                        <i class="fa fa-map-marker" style="margin-right: 8px"> </i> 
+                        Jalan Komud Abdurrahman Saleh, Kel. <br> &nbsp;&nbsp;&nbsp;&nbsp;Asrikaton,Kec. Pakis, Kab. Malang, Prop. &nbsp;&nbsp;&nbsp;&nbsp;Jawa Timur
+                    </li>
+                    <li style="margin-bottom: 8px"> 
+                        <i class="fa fa-envelope" style="margin-right: 8px"> </i>info@javaeins.com
+                    </li>
+                    <li style="margin-bottom: 8px">
+                        <i class="fa fa-clock-o" style="margin-right: 8px"> </i> Working Time : 08.00 - 10.00
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-four tab-full center footer-desc">
+            <div style="text-align: left;color:white">
+                <h5 style="color: white">
+                    Our Product
+                </h5>
+                <ul style="list-style-type: none;margin-left:0px">
+                    <li style="margin-bottom: 8px">
+                        <a href="">Bricket A</a> 
+                    </li>
+                    <li style="margin-bottom: 8px">
+                        <a href="">Bricket B</a> 
+                    </li>
+                    <li style="margin-bottom: 8px">
+                        <a href="">Bricket C</a> 
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="col-six tab-full right footer-subscribe">
+        <div class="col-four tab-full right footer-subscribe">
 
-            <h4>Get Notified</h4>
-            <p>Quia quo qui sed odit. Quaerat voluptas autem necessitatibus vitae aut non alias sed quia. Ut itaque enim optio ut excepturi deserunt iusto porro.</p>
-
-            <div class="subscribe-form">
-                <form id="mc-form" class="group" novalidate="true">
-                    <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
-                    <input type="submit" name="subscribe" value="Subscribe">
-                    <label for="mc-email" class="subscribe-message"></label>
-                </form>
+            <div style="text-align: left;color:white">
+                <h5 style="color: white">
+                    Our Product
+                </h5>
+                <ul style="list-style-type: none;margin-left:0px">
+                    <li style="margin-bottom: 8px">
+                        <a href="">Bricket A</a> 
+                    </li>
+                    <li style="margin-bottom: 8px">
+                        <a href="">Bricket B</a> 
+                    </li>
+                    <li style="margin-bottom: 8px">
+                        <a href="">Bricket C</a> 
+                    </li>
+                </ul>
             </div>
 
         </div>
