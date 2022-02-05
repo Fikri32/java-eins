@@ -40,7 +40,7 @@
             </a>
         </div>
 
-        <!-- <div class="home-content__line"></div> -->
+        <div class="home-content__line"></div>
 
     </div> <!-- end home-content -->
 
