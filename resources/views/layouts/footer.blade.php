@@ -21,14 +21,14 @@
                         <i class="fa fa-envelope" style="margin-right: 8px"> </i>info@javaeins.com
                     </li>
                     <li style="margin-bottom: 8px">
-                        <i class="fa fa-clock-o" style="margin-right: 8px"> </i> Working Time : 08.00 - 10.00
+                        <i class="fa fa-clock-o" style="margin-right: 8px"> </i>Working Time : 08.00 - 10.00
                     </li>
                 </ul>
             </div>
         </div>
         <div class="col-four tab-full center footer-desc">
             <div style="text-align: left;color:white">
-                <h5 style="color: white">
+                <h5 style="color: #e50914;">
                     Our Product
                 </h5>
                 <ul style="list-style-type: none;margin-left:0px">
@@ -48,7 +48,7 @@
         <div class="col-four tab-full right footer-subscribe">
 
             <div style="text-align: left;color:white">
-                <h5 style="color: white">
+                <h5 style="color: #e50914;">
                     Our Profile
                 </h5>
                 <ul style="list-style-type: none;margin-left:0px">
