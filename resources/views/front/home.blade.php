@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-<section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width=3000 data-natural-height=2000 data-image-src="{{asset('assets_front/images/backgrounds.png')}}" data-position-y=center>
+<section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width=3000 data-natural-height=2000 data-image-src="{{asset('assets_front/images/bg1.jpg')}}" data-position-y=center>
     <!--  -->
 
     <div class="overlay"></div>
@@ -23,14 +23,14 @@
                 Worldwide Bricket Seller Company
             </h3>
 
-            <div class="home-content__buttons">
-                <!-- <a href="#contact" class="smoothscroll btn btn--stroke">
+            <!-- <div class="home-content__buttons">
+                <a href="#contact" class="smoothscroll btn btn--stroke">
                     Start a Project
                 </a>
                 <a href="#about" class="smoothscroll btn btn--stroke">
                     More About Us
-                </a> -->
-            </div>
+                </a>
+            </div> -->
 
         </div>
 
@@ -40,7 +40,7 @@
             </a>
         </div>
 
-        <div class="home-content__line"></div>
+        <!-- <div class="home-content__line"></div> -->
 
     </div> <!-- end home-content -->
 
