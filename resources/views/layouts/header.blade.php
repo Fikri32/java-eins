@@ -14,11 +14,11 @@
             <h3>Navigation</h3>
 
             <ul class="header-nav__list">
-                <li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
-                <li><a class="smoothscroll" href="#about" title="about">About</a></li>
-                <li><a class="smoothscroll" href="#products" title="products">Our Products</a></li>
-                <li><a class="smoothscroll" href="#faq" title="faq">FAQ</a></li>
-                <li><a class="smoothscroll" href="#contact" title="contact">Contact Us</a></li>
+                <li class="current"><a class="" href="{{route('home.index')}}" title="home">Home</a></li>
+                <li><a class="" href="#about" title="about">About</a></li>
+                <li><a class="" href="#products" title="products">Our Products</a></li>
+                <li><a class="" href="{{route('faq.index')}}" title="faq">FAQ</a></li>
+                <li><a class="" href="#contact" title="contact">Contact Us</a></li>
             </ul>
 
             <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>

@@ -9,7 +9,7 @@
 
     <div class="home-content">
 
-        <div class="row home-content__main">
+        <div class="row-template home-content__main">
 
             <img src="{{asset('assets_front/images/javaeins.png')}}" alt="" style="display: block; margin-left: auto; margin-right: auto;">
 

@@ -1,6 +1,6 @@
 <footer>
 
-    <div class="row footer-main">
+    <div class="row-template footer-main">
         <div class="col-four tab-full right footer-desc">
 
             <div style="text-align: center;">
@@ -68,7 +68,7 @@
 
     </div> <!-- end footer-main -->
 
-    <div class="row footer-bottom">
+    <div class="row-template footer-bottom">
 
         <div class="col-twelve">
             <div class="copyright">

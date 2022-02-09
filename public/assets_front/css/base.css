@@ -433,19 +433,19 @@ textarea {
  * # grid
  *
  * ------------------------------------------------------------------- */
-.row {
+.row-template {
     width: 94%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.row:after {
+.row-template:after {
     content: "";
     display: table;
     clear: both;
 }
 
-.row .row {
+.row-template .row-template {
     width: auto;
     max-width: none;
     margin-left: -20px;
@@ -528,7 +528,7 @@ textarea {
  * ## medium size devices
  * ------------------------------------------------------------------- */
 @media only screen and (max-width: 1200px) {
-    .row .row {
+    .row-template .row-template {
         margin-left: -15px;
         margin-right: -15px;
     }
@@ -586,7 +586,7 @@ textarea {
  * ## tablets
  * ------------------------------------------------------------------- */
 @media only screen and (max-width: 800px) {
-    .row {
+    .row-template {
         width: 90%;
     }
     .tab-1-4 {
@@ -614,12 +614,12 @@ textarea {
  * ## mobile devices
  * ------------------------------------------------------------------- */
 @media only screen and (max-width: 600px) {
-    .row {
+    .row-template {
         width: auto;
         padding-left: 25px;
         padding-right: 25px;
     }
-    .row .row {
+    .row-template .row-template {
         margin-left: -10px;
         margin-right: -10px;
     }
@@ -655,7 +655,7 @@ textarea {
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 400px) {
-    .row .row {
+    .row-template .row-template {
         padding-left: 0;
         padding-right: 0;
         margin-left: 0;
@@ -679,7 +679,7 @@ textarea {
  * # block grids
  * ------------------------------------------------------------------- */
 
-/*   Equally-sized columns define at row level
+/*   Equally-sized columns define at row-template level
  * ------------------------------------------------------------------- */
 [class*="block-"]:after {
     content: "";
