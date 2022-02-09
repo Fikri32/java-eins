@@ -11,9 +11,11 @@
 
 <!-- CSS
 ================================================== -->
+<link rel="stylesheet" href="{{asset('assets_front/bootstrap/css/bootstrap.css')}}">
 <link rel="stylesheet" href="{{asset('assets_front/css/base.css')}}">
 <link rel="stylesheet" href="{{asset('assets_front/css/vendor.css')}}">
 <link rel="stylesheet" href="{{asset('assets_front/css/main.css')}}">
+
 
 <!-- script
 ================================================== -->
