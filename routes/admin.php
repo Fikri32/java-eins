@@ -12,13 +12,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('', function () {
-    return view('layouts_admin.master');
+
+Route::group(['prefix' => 'java-admin'],function(){
+    
+    Route::get('', function () {
+        return view('auth.login');
+    })->middleware('guest');
+    
+    Auth::routes();
+    
+    Route::group(['prefix' => 'catalogue','middleware' => 'auth'],function(){
+        Route::get('','Admin\CatalogueController@index')->name('catalogue.index');
+    });
 });
 
-Route::group(['prefix' => 'catalogue'],function(){
-    Route::get('','Admin\CatalogueController@index')->name('catalogue.index');
-});
 
 
 
