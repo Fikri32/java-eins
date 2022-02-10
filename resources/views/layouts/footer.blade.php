@@ -73,7 +73,7 @@
         <div class="col-twelve">
             <div class="copyright">
                 <span>© Copyright Java Eins 2022</span>
-                <span>Developed by <a href="#"><img src="{{asset('assets_front/images/logo-dark.png')}}" alt="asyncrode" style="height: 11px;"> Asyncrode</a></span>
+                <span>Developed by <a href="#"><img class="align-baseline" src="{{asset('assets_front/images/logo-dark.png')}}" alt="asyncrode" style="height: 11px;"> Asyncrode</a></span>
             </div>
 
             <div class="go-top">
