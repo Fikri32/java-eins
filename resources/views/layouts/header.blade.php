@@ -2,7 +2,7 @@
 
     <div class="header-logo">
         <a class="site-logo" href="index.html">
-            <img src="{{asset('assets_front/images/javaeins.png')}}" alt="Homepage" style="height: 40px;">
+            <img class="align-baseline" src="{{asset('assets_front/images/javaeins.png')}}" alt="Homepage" style="height: 40px;">
         </a>
     </div>
 
