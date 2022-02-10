@@ -14,15 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'java-admin'],function(){
-    
-    Route::get('', function () {
+    Route::get('/', function () {
         return view('auth.login');
     })->middleware('guest');
     
     Auth::routes();
     
     Route::group(['prefix' => 'catalogue','middleware' => 'auth'],function(){
-        Route::get('','Admin\CatalogueController@index')->name('catalogue.index');
+        Route::get('/','Admin\CatalogueController@index')->name('catalogue.index');
+        Route::get('/{id}', 'Admin\CatalogueController@getDetail')->name('catalogue.detail');
+        Route::post('/create', 'Admin\CatalogueController@create')->name('catalogue.create');
+        Route::post('/update', 'Admin\CatalogueController@update')->name('catalogue.update');
+        Route::post('/delete', 'Admin\CatalogueController@delete')->name('catalogue.delete');
     });
 });
 

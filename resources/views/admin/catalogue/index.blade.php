@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-xl"><i class="fa fa-plus"></i> Add Catalogue</button>
+                    <button type="button" class="btn btn-outline-primary" data-type="create" onclick="ShowCRUDmodal(this)"><i class="fa fa-plus"></i>Add Catalogue</button>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -33,28 +33,25 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Spesifikasi</th>
-                                <th>Keunggulan</th>
-                                <th>Kapasitas</th>
+                                <th>Name</th>
+                                <th>Capacity</th>
                                 <th>MOQ</th>
-                                <th>Gambar</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($catalogues as $catalogue)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{$loop->index + 1}}</td>
+                                <td>{{$catalogue->name}}</td>
+                                <td>{{$catalogue->capacity}}</td>
+                                <td>{{$catalogue->moq}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-toggle="modal" data-target="#modal-xl"><i class="fa fa-edit"></i> Edit</button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</button>
+                                    <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="{{$catalogue->id}}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-type="delete" data-id="{{$catalogue->id}}" onclick="ShowDeleteModal(this)"><i class="fa fa-trash" ></i> Delete</button>
                                 </td>
                             </tr>
-
+                            @endforeach
                     </table>
                 </div>
                 <!-- /.card-body -->
@@ -65,49 +62,58 @@
     <!-- /.content -->
 </div>
 
+<!-- Form Modal -->
 <div class="modal fade" id="modal-xl">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Add Catalogue</h4>
+                <h4 class="modal-title" id="crud-header"></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form id="quickForm" autocomplete="off">
+                    @csrf
+                    <input type="hidden" name="type" id="type">
+                    <input type="hidden" name="id" id="cid">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="spesifikasi">Spesifikasi</label>
-                            <input type="text" name="spesifikasi" class="form-control" id="spesifikasi"
-                                placeholder="Spesification Product " autocomplete="off">
+                            <label for="name">Nama Produk</label>
+                            <input type="text" name="name" class="form-control" id="name"
+                                placeholder="Product name" autocomplete="off" required>
                         </div>
+
                         <div class="form-group">
-                            <label for="keunggulan">Keunggulan Produk</label>
-                            <input type="text" name="keunggulan" class="form-control" id="keunggulan"
-                                placeholder="Keunggulan Produk">
+                            <label for="description">Deskripsi Produk</label>
+                            <textarea name="description" id="description" class="form-control" cols="30" rows="10"
+                            placeholder="Describe your product like product overview, advantages, specification etc" required></textarea>
                         </div>
+
                         <div class="form-group">
-                            <label for="Kapasitas">Kapasitas Produk</label>
-                            <input type="text" name="kapasitas" class="form-control" id="kapasitas"
-                                placeholder="Kapasitas Produk">
+                            <label for="moq">Minimum Order Quantity Produk</label>
+                            <input type="number" name="moq" class="form-control" id="moq" min="1"
+                                placeholder="Minimum Order Quantity" required>
                         </div>
+
                         <div class="form-group">
-                            <label for="minimum">Minimum Order Quantity Produk</label>
-                            <input type="text" name="minimum" class="form-control" id="minimum"
-                                placeholder="Minimum Order Quantity Produk">
+                            <label for="capacity">Kapasitas Produk</label>
+                            <input type="number" name="capacity" class="form-control" id="capacity" min="1"
+                                placeholder="Product stock capacity" required>
                         </div>
-                        <label for="minimum">Gambar Produk</label>
+
+                        <label for="image">Gambar Produk</label>
                         <div id="actions" class="row">
                             <div class="col-lg-12">
                                 <div class="btn-group w-100">
                                     <span class="btn btn-success col fileinput-button">
                                         <i class="fas fa-plus"></i>
-                                        <span>Add files</span>
+                                        <span>Tambah Gambar</span>
                                     </span>
                                 </div>
                             </div>
                         </div>
+
                         <div class="table table-striped files" id="previews">
                             <div id="template" class="row mt-2">
                                 <div class="col-auto">
@@ -133,16 +139,64 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </form>
             </div>
-
         </div>
         <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
 </div>
+<!-- End of form modal -->
+
+<!-- Delete modal -->
+<div class="modal" tabindex="-1" role="dialog" id="delete-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Catalogue</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="delete-catalogue">
+          @csrf
+          <input type="hidden" name="id" id="delete-target">
+          <div class="modal-body">
+              <center>
+                  <h1>
+                    Are you sure?
+                  </h1>
+                  <h4>
+                      Any deleted data cannot be undone!
+                  </h4>
+              </center>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" data-delete-id="">Yes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- END of delete modal -->
+
+<!-- Loading Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="loading-modal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <center>
+            <h1 id="heading"></h1>
+            <h5 id="body"></h5>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END of loading modal -->
 @endsection
 @push('scripts')
 @include('admin.catalogue.javascript')

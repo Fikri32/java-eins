@@ -11,7 +11,7 @@
 <script src="{{asset('assets_admin/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
 <script src="{{asset('assets_admin/plugins/jquery-validation/additional-methods.min.js')}}"></script>
 
-{{-- Data Table --}}
+<!-- Datatables -->
 <script src="{{asset('assets_admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('assets_admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assets_admin/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
@@ -25,5 +25,17 @@
 <script src="{{asset('assets_admin/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('assets_admin/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 
+<!-- Sweetalert 2 -->
+<script src="{{asset('assets_admin/plugins/sweetalert2/sweetalert2.js')}}"></script> 
+
 <!-- dropzonejs -->
 <script src="{{asset('assets_admin/plugins/dropzone/min/dropzone.min.js')}}"></script>
+
+<!-- Set CSRF token ke request header ajax -->
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    })
+</script>
