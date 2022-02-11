@@ -47,6 +47,7 @@
                                 <td>{{$catalogue->capacity}}</td>
                                 <td>{{$catalogue->moq}}</td>
                                 <td>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary mr-2" data-id="{{$catalogue->id}}" onclick="ShowImageUploadModal(this)"><i class="fa fa-image"></i> Add Images</button>
                                     <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="{{$catalogue->id}}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
                                     <button type="button" class="btn btn-sm btn-outline-danger" data-type="delete" data-id="{{$catalogue->id}}" onclick="ShowDeleteModal(this)"><i class="fa fa-trash" ></i> Delete</button>
                                 </td>
@@ -100,41 +101,6 @@
                             <label for="capacity">Kapasitas Produk</label>
                             <input type="number" name="capacity" class="form-control" id="capacity" min="1"
                                 placeholder="Product stock capacity" required>
-                        </div>
-
-                        <label for="image">Gambar Produk</label>
-                        <div id="actions" class="row">
-                            <div class="col-lg-12">
-                                <div class="btn-group w-100">
-                                    <span class="btn btn-success col fileinput-button">
-                                        <i class="fas fa-plus"></i>
-                                        <span>Tambah Gambar</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="table table-striped files" id="previews">
-                            <div id="template" class="row mt-2">
-                                <div class="col-auto">
-                                    <span class="preview"><img src="data:," alt="" data-dz-thumbnail /></span>
-                                </div>
-                                <div class="col d-flex align-items-center">
-                                    <p class="mb-0">
-                                        <span class="lead" data-dz-name></span>
-                                        (<span data-dz-size></span>)
-                                    </p>
-                                    <strong class="error text-danger" data-dz-errormessage></strong>
-                                </div>
-                                <div class="col-auto d-flex align-items-center">
-                                    <div class="btn-group">
-                                        <button data-dz-remove class="btn btn-danger delete">
-                                            <i class="fas fa-trash"></i>
-                                            <span>Delete</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -197,6 +163,67 @@
   </div>
 </div>
 <!-- END of loading modal -->
+
+<!-- Image Modal -->
+<div class="modal fade" id="image-modal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Upload Product Pictures</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="imageForm" autocomplete="off">
+                    @csrf
+                    <input type="hidden" id="catalogue-id" name="id">
+                    <div class="card-body">
+                        <label for="image">Product Picture</label>
+                        <div id="actions" class="row">
+                            <div class="col-lg-12">
+                                <div class="btn-group w-100">
+                                    <span class="btn btn-success col fileinput-button">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Add Pictures</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table table-striped files" id="previews">
+                            <div id="template" class="row mt-2">
+                                <div class="col-auto">
+                                    <span class="preview"><img src="data:," alt="" data-dz-thumbnail /></span>
+                                </div>
+                                <div class="col d-flex align-items-center">
+                                    <p class="mb-0">
+                                        <span class="lead" data-dz-name></span>
+                                        (<span data-dz-size></span>)
+                                    </p>
+                                    <strong class="error text-danger" data-dz-errormessage></strong>
+                                </div>
+                                <div class="col-auto d-flex align-items-center">
+                                    <div class="btn-group">
+                                        <button data-dz-remove class="btn btn-danger delete">
+                                            <i class="fas fa-trash"></i>
+                                            <span>Delete</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of form Image -->
 @endsection
 @push('scripts')
 @include('admin.catalogue.javascript')
