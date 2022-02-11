@@ -7,7 +7,7 @@
     </div>
 
     <nav class="header-nav">
-
+        
         <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
 
         <div class="header-nav__content">
@@ -28,7 +28,9 @@
     </nav> <!-- end header-nav -->
 
     <a class="header-menu-toggle" href="#0">
+        <div id="google_translate_element"></div>
         <span class="header-menu-text">Menu</span>
+        
         <span class="header-menu-icon"></span>
     </a>
 
