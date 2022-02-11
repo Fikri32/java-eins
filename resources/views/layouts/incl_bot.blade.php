@@ -4,7 +4,7 @@
 <script src="{{asset('assets_front/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script type="text/javascript">
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en' , includedLanguages : 'zh-CN,ar,id'}, 'google_translate_element');
+        new google.translate.TranslateElement({pageLanguage: 'en' , includedLanguages : 'zh-CN,ar,id,en'}, 'google_translate_element');
     }
     </script>
     
