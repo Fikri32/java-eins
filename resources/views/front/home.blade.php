@@ -20,7 +20,7 @@
             </h1>
 
             <h3 style="text-align: center;">
-                Worldwide Bricket Seller Company
+                Worldwide Briquette Seller Company
             </h3>
 
             <!-- <div class="home-content__buttons">
