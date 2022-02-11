@@ -16,7 +16,7 @@
             <ul class="header-nav__list">
                 <li class="current"><a class="" href="{{route('home.index')}}" title="home">Home</a></li>
                 <li><a class="" href="#about" title="about">About</a></li>
-                <li><a class="" href="#products" title="products">Our Products</a></li>
+                <li><a class="" href="#products" title="products">Our Briquette</a></li>
                 <li><a class="" href="{{route('faq.index')}}" title="faq">FAQ</a></li>
                 <li><a class="" href="#contact" title="contact">Contact Us</a></li>
             </ul>
