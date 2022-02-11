@@ -26,6 +26,11 @@ Route::group(['prefix' => 'java-admin'],function(){
         Route::post('/create', 'Admin\CatalogueController@create')->name('catalogue.create');
         Route::post('/update', 'Admin\CatalogueController@update')->name('catalogue.update');
         Route::post('/delete', 'Admin\CatalogueController@delete')->name('catalogue.delete');
+        
+        Route::group(['prefix' => 'image'], function(){
+            Route::post('/upload', 'Admin\CatalogueImage@Upload')->name('catalogue.image.upload');
+            Route::post('/delete', 'Admin\CatalogueImage@Delete')->name('catalogue.image.delete');
+        });
     });
 });
 

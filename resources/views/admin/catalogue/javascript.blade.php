@@ -4,6 +4,7 @@
       "responsive": true, "lengthChange": false, "autoWidth": false,
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
+    // create & edit
     $("#quickForm").submit(function(e){
       e.preventDefault()
       const data = new FormData($('#quickForm')[0])
@@ -18,10 +19,17 @@
       // untuk delete tidak masuk scope ini
     })
 
+    // hapus catalogue
     $("#delete-catalogue").submit(function(e){
       e.preventDefault()
       const data = new FormData($('#delete-catalogue')[0])
       ajaxDelete(data)
+    })
+
+    // upload gambar
+    $("#imageForm").submit(function(e){
+      e.preventDefault()
+      serializationImages()
     })
   })
 
@@ -55,6 +63,13 @@
     const id = $(e).attr('data-id')
     $("#delete-modal").modal("show")
     $("#delete-target").val(id)
+  }
+
+  // untuk menampilkan modal upload gambar
+  function ShowImageUploadModal(e) {
+    const id = $(e).attr('data-id')
+    $("#catalogue-id").val(id)
+    $("#image-modal").modal('show')
   }
 
   // ajax untuk type aksi CREATE
@@ -168,6 +183,43 @@
       }
     })
   }
+
+  // serialisasi dari src gambar
+  function serializationImages() {
+    var t = document.querySelectorAll("span.preview > img")
+    var serialized = []
+
+    // proses serialisasi data gambar
+    for (let i = 0; i < t.length; i++) {
+      var img =  t[i].getAttribute("src")
+      var encoded = img.split(';base64,')[1]
+      var format = img.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/)[0].replaceAll("image/", "")
+      serialized.push({encoded, format})
+    }
+
+    // serialisasi akhir
+    const data = {
+      images : serialized,
+      id : $("#catalogue-id").val(),
+    }
+
+    // upload gambar
+    uploadImages(data)
+  }
+
+  // upload gambar
+  function uploadImages(data) {
+    var t = document.querySelectorAll("input[name='_token']")
+    $.ajax({
+      headers: { 'X-CSRF-TOKEN': t[3].value },
+      url: "{{ route('catalogue.image.upload') }}",
+      type: 'post',
+      data : JSON.stringify(data),
+      dataType: "json",
+      contentType: "application/json",
+      success: function() {},
+    })
+  }
      
   Dropzone.autoDiscover = false
   var previewNode = document.querySelector("#template")
@@ -201,4 +253,5 @@
   document.querySelector("#actions .cancel").onclick = function() {
     myDropzone.removeAllFiles(true)
   }
+
 </script>
