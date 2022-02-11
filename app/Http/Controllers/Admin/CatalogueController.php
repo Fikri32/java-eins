@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Catalogue;
-use Illuminate\Http\Response;
 
 class CatalogueController extends Controller
 {
