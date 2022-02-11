@@ -28,7 +28,7 @@
     </nav> <!-- end header-nav -->
 
     <a class="header-menu-toggle" href="#0">
-        <div id="google_translate_element"></div>
+        {{-- <div id="google_translate_element"></div> --}}
         <span class="header-menu-text">Menu</span>
         
         <span class="header-menu-icon"></span>

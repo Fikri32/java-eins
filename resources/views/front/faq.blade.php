@@ -3,7 +3,7 @@
 <section id='faq' class="s-faq">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="text-center text-white">FAQ</h1>
+            <h1 class="jumbo-text text-center text-white">FAQ</h1>
 
         </div>
     </div>

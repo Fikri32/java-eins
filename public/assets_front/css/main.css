@@ -3799,6 +3799,10 @@ footer .row {
 
 @media only screen and (max-width: 600px) {
     .s-faq {
+        padding-top: 0rem;
+    }
+
+    .jumbo-text{
         padding-top: 12rem;
     }
     .faq-desc {
