@@ -53,8 +53,6 @@
         ajaxGetDetail(id)
         $("#crud-header").text("Edit Catalogue")
       }
-    }else {
-
     }
   }
 
@@ -70,6 +68,40 @@
     const id = $(e).attr('data-id')
     $("#catalogue-id").val(id)
     $("#image-modal").modal('show')
+    $("#previews").html('')
+    $("#uploaded-image").html('')
+
+    // ambil daftar gambar yang sudah diupload
+    getImages(id)
+  }
+
+  // serialisasi dari src gambar
+  function serializationImages() {
+    var t = document.querySelectorAll("span.preview > img")
+    var serialized = []
+
+    // proses serialisasi data gambar
+    for (let i = 0; i < t.length; i++) {
+      var img =  t[i].getAttribute("src")
+      var encoded = img.split(';base64,')[1]
+      var format = img.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/)[0].replaceAll("image/", "")
+      serialized.push({encoded, format})
+    }
+
+    // serialisasi akhir
+    const data = {
+      images : serialized,
+      id : $("#catalogue-id").val(),
+    }
+
+    // upload gambar
+    ajaxUploadImages(data)
+  }
+
+  // hapus gambar (yang sudah di upload)
+  function deleteImage(id) {
+    var c = confirm("Do you want to remove this product picture?")
+    if (c) ajaxDeleteImages(id)
   }
 
   // ajax untuk type aksi CREATE
@@ -90,10 +122,11 @@
       success: function(res){
         $('#modal-xl').modal('hide')
         $("#heading").text("Action Success")
-        $("#body").text(res.message)
-        setTimeout(() => {
-          location.reload()
-        }, 2500)
+        $("#body").text("New product successfully created")
+        $("#catalogue-list").append(drawCatalogueElement(res))
+        setInterval(() => {
+          $('#loading-modal').modal('hide')
+        }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         $('#modal-xl').modal('hide')
@@ -121,10 +154,12 @@
       success: function(res){
         $('#modal-xl').modal('hide')
         $("#heading").text("Action Success")
-        $("#body").text(res.message)
-        setTimeout(() => {
-          location.reload()
-        }, 2500)
+        $("#body").text("Product data successfully updated")
+        $(`#row-${res.id}`).remove()
+        $("#catalogue-list").append(drawCatalogueElement(res))
+        setInterval(() => {
+          $('#loading-modal').modal('hide')
+        }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         $('#modal-xl').modal('hide')
@@ -152,10 +187,11 @@
       success: function(res){
         $('#delete-modal').modal('hide')
         $("#heading").text("Action Success")
-        $("#body").text(res.message)
-        setTimeout(() => {
-          location.reload()
-        }, 2500)
+        $("#body").text("Product data successfully removed")
+        $(`#row-${res.id}`).remove()
+        setInterval(() => {
+          $('#loading-modal').modal('hide')
+        }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         $('#delete-modal').modal('hide')
@@ -180,35 +216,18 @@
         $('#moq').val(moq)
         $('#capacity').val(capacity)
         $('#cid').val(id)
+      },
+      error : function(xhr, ajaxOptions, thrownError) { 
+        $('#modal-xl').modal('hide')
+        $('#loading-modal').modal('show')
+        $("#heading").text("Whooops...something went wrong b*tch")
+        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
       }
     })
   }
 
-  // serialisasi dari src gambar
-  function serializationImages() {
-    var t = document.querySelectorAll("span.preview > img")
-    var serialized = []
-
-    // proses serialisasi data gambar
-    for (let i = 0; i < t.length; i++) {
-      var img =  t[i].getAttribute("src")
-      var encoded = img.split(';base64,')[1]
-      var format = img.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/)[0].replaceAll("image/", "")
-      serialized.push({encoded, format})
-    }
-
-    // serialisasi akhir
-    const data = {
-      images : serialized,
-      id : $("#catalogue-id").val(),
-    }
-
-    // upload gambar
-    uploadImages(data)
-  }
-
-  // upload gambar
-  function uploadImages(data) {
+  // ajax untuk upload gambar
+  function ajaxUploadImages(data) {
     var t = document.querySelectorAll("input[name='_token']")
     $.ajax({
       headers: { 'X-CSRF-TOKEN': t[3].value },
@@ -217,10 +236,105 @@
       data : JSON.stringify(data),
       dataType: "json",
       contentType: "application/json",
-      success: function() {},
+      success: function(res) {
+        // kosongkan preview image
+        $("#previews").html('')
+        // render yang berhasil diupload
+        res.forEach(el => {
+          $("#uploaded-image").append(drawImageElement(el))          
+        })
+      },
+      error : function(xhr, ajaxOptions, thrownError) { 
+        $("#image-modal").modal('hide')
+        $('#loading-modal').modal('show')
+        $("#heading").text("Whooops...something went wrong b*tch")
+        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
+      }
     })
   }
-     
+
+  // ajax untuk hapus gambar
+  function ajaxDeleteImages(id) {
+    var t = document.querySelectorAll("input[name='_token']")
+    var url = "{{ route('catalogue.image.delete', ":id") }}"
+    url = url.replace(':id', id)
+    $.ajax({
+      headers: { 'X-CSRF-TOKEN': t[3].value },
+      url,
+      type: 'post',
+      dataType: "json",
+      contentType: "application/json",
+      success: function(res) {
+        $(`#image-${res.id}`).remove()
+      },
+      error : function(xhr, ajaxOptions, thrownError) { 
+        $("#image-modal").modal('hide')
+        $('#loading-modal').modal('show')
+        $("#heading").text("Whooops...something went wrong b*tch")
+        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
+      }
+    })
+  }
+
+  // ambil daftar gambar
+  function getImages(id) {
+    var url = "{{ route('catalogue.image.get', ":id") }}"
+    url = url.replace(':id', id)
+    $.ajax({
+      type:"GET",
+      url,
+      success: function(res){
+        res.forEach(el => {
+          $("#uploaded-image").append(drawImageElement(el))          
+        })
+      },
+      error : function(xhr, ajaxOptions, thrownError) { 
+        $("#image-modal").modal('hide')
+        $('#loading-modal').modal('show')
+        $("#heading").text("Whooops...something went wrong b*tch")
+        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
+      }
+    })
+  }
+
+  // utuk render gambar ke DOM
+  function drawImageElement(data) {
+    return `
+      <div class="col-sm-2 mb-4 mt-3" id="image-${data.id}">
+        <img src="/catalogue_images/${data.image}" height="100%" width="100%"/></br><br>
+        <a href="#" class="btn btn-danger btn-block btn-sm" onclick="deleteImage(${data.id})">
+            <i class="fas fa-trash"></i>
+            <span>Remove</span>
+        </a>
+      </div>
+    `
+  }
+
+  // untuk render row catalogue
+  function drawCatalogueElement(data) {
+    // numbering
+    var list = document.querySelectorAll("#catalogue-list > tr")
+
+    return `
+      <tr id="row-${data.id}">
+        <td>${list.length + 1}</td>
+        <td>
+
+        </td>
+        <td>${data.name}</td>
+        <td>${data.capacity}</td>
+        <td>${data.moq}</td>
+        <td>
+            <button type="button" class="btn btn-sm btn-outline-secondary mr-2" data-id="${data.id}" onclick="ShowImageUploadModal(this)"><i class="fa fa-image"></i>Images</button>
+            <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="${data.id}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
+            <button type="button" class="btn btn-sm btn-outline-danger" data-type="delete" data-id="${data.id}" onclick="ShowDeleteModal(this)"><i class="fa fa-trash" ></i> Delete</button>
+        </td>
+      </tr>
+    `
+  }
+</script>
+
+<script>
   Dropzone.autoDiscover = false
   var previewNode = document.querySelector("#template")
   previewNode.id = ""
@@ -229,8 +343,8 @@
 
   var myDropzone = new Dropzone(document.body, { 
     url: "/target-url", 
-    thumbnailWidth: 80,
-    thumbnailHeight: 80,
+    thumbnailWidth: 250,
+    thumbnailHeight: 250,
     parallelUploads: 20,
     previewTemplate: previewTemplate,
     autoQueue: false, 
@@ -253,5 +367,4 @@
   document.querySelector("#actions .cancel").onclick = function() {
     myDropzone.removeAllFiles(true)
   }
-
 </script>

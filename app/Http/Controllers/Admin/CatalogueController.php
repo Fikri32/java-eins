@@ -19,11 +19,8 @@ class CatalogueController extends Controller
     }
 
     public function create(Request $req) {
-        Catalogue::create($req->all());
-        return response()->json([
-            'message' => 'Data Successfully Added!',
-            'success' => true
-        ], 200);
+        $catalogue = Catalogue::create($req->all());
+        return response()->json($catalogue, 200);
     }
 
     public function update(Request $req) {
@@ -34,18 +31,12 @@ class CatalogueController extends Controller
             "moq" => $req->moq, 
             "capacity" => $req->capacity, 
         ]);
-        return response()->json([
-            'message' => 'Data Successfully Updated!',
-            'success' => true
-        ], 200);
+        return response()->json($catalogue, 200);
     }
 
     public function delete(Request $req) {
         $catalogue = Catalogue::find($req->id);
         $catalogue->delete();
-        return response()->json([
-            'message' => 'Data Successfully Removed!',
-            'success' => true
-        ], 200);
+        return response()->json($catalogue, 200);
     }
 }

@@ -33,21 +33,27 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Picture</th>
                                 <th>Name</th>
                                 <th>Capacity</th>
                                 <th>MOQ</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="catalogue-list">
                             @foreach($catalogues as $catalogue)
-                            <tr>
+                            <tr id="row-{{ $catalogue->id }}">
                                 <td>{{$loop->index + 1}}</td>
+                                <td>
+                                    @if(count($catalogue->catalogue_images) > 0)
+                                        <img src="{{ asset('catalogue_images/'.$catalogue->catalogue_images[0]['image']) }}" alt="" height="60px" width="60px">
+                                    @endif
+                                </td>
                                 <td>{{$catalogue->name}}</td>
                                 <td>{{$catalogue->capacity}}</td>
                                 <td>{{$catalogue->moq}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary mr-2" data-id="{{$catalogue->id}}" onclick="ShowImageUploadModal(this)"><i class="fa fa-image"></i> Add Images</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary mr-2" data-id="{{$catalogue->id}}" onclick="ShowImageUploadModal(this)"><i class="fa fa-image"></i>Images</button>
                                     <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="{{$catalogue->id}}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
                                     <button type="button" class="btn btn-sm btn-outline-danger" data-type="delete" data-id="{{$catalogue->id}}" onclick="ShowDeleteModal(this)"><i class="fa fa-trash" ></i> Delete</button>
                                 </td>
@@ -179,36 +185,42 @@
                     @csrf
                     <input type="hidden" id="catalogue-id" name="id">
                     <div class="card-body">
-                        <label for="image">Product Picture</label>
-                        <div id="actions" class="row">
-                            <div class="col-lg-12">
-                                <div class="btn-group w-100">
-                                    <span class="btn btn-success col fileinput-button">
-                                        <i class="fas fa-plus"></i>
-                                        <span>Add Pictures</span>
-                                    </span>
-                                </div>
-                            </div>
+                        <div class="row mb-4" id="uploaded-image">
+
                         </div>
 
-                        <div class="table table-striped files" id="previews">
-                            <div id="template" class="row mt-2">
-                                <div class="col-auto">
-                                    <span class="preview"><img src="data:," alt="" data-dz-thumbnail /></span>
+                        <div class="mt-5">
+                            <label for="image">Upload New Product Picture</label>
+                            <div id="actions" class="row">
+                                <div class="col-lg-12">
+                                    <div class="btn-group w-100">
+                                        <span class="btn btn-success col fileinput-button">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Add Pictures</span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="col d-flex align-items-center">
-                                    <p class="mb-0">
-                                        <span class="lead" data-dz-name></span>
-                                        (<span data-dz-size></span>)
-                                    </p>
-                                    <strong class="error text-danger" data-dz-errormessage></strong>
-                                </div>
-                                <div class="col-auto d-flex align-items-center">
-                                    <div class="btn-group">
-                                        <button data-dz-remove class="btn btn-danger delete">
-                                            <i class="fas fa-trash"></i>
-                                            <span>Delete</span>
-                                        </button>
+                            </div>
+    
+                            <div class="table table-striped files" id="previews">
+                                <div id="template" class="row mt-2">
+                                    <div class="col-auto">
+                                        <span class="preview"><img src="data:," alt="" data-dz-thumbnail /></span>
+                                    </div>
+                                    <div class="col d-flex align-items-center">
+                                        <p class="mb-0">
+                                            <span class="lead" data-dz-name></span>
+                                            (<span data-dz-size></span>)
+                                        </p>
+                                        <strong class="error text-danger" data-dz-errormessage></strong>
+                                    </div>
+                                    <div class="col-auto d-flex align-items-center">
+                                        <div class="btn-group">
+                                            <button data-dz-remove class="btn btn-danger delete">
+                                                <i class="fas fa-trash"></i>
+                                                <span>Delete</span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
