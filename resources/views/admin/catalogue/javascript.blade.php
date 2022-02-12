@@ -155,8 +155,7 @@
         $('#modal-xl').modal('hide')
         $("#heading").text("Action Success")
         $("#body").text("Product data successfully updated")
-        $(`#row-${res.id}`).remove()
-        $("#catalogue-list").append(drawCatalogueElement(res))
+        updateCatalogueElement(res)
         setInterval(() => {
           $('#loading-modal').modal('hide')
         }, 2000)
@@ -331,6 +330,13 @@
         </td>
       </tr>
     `
+  }
+
+  function updateCatalogueElement(data) {
+    var row = document.querySelectorAll(`#row-${data.id} > td`)
+    row[2].innerHTML = data.name 
+    row[3].innerHTML = data.capacity 
+    row[4].innerHTML = data.moq
   }
 </script>
 
