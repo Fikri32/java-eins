@@ -413,7 +413,7 @@ fieldset {
     padding: 0;
 }
 
-input[type="email"],
+/* input[type="email"],
 input[type="number"],
 input[type="search"],
 input[type="text"],
@@ -426,7 +426,7 @@ textarea {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
-}
+} */
 
 
 /* ===================================================================

@@ -50,7 +50,7 @@
             <a href="#0"><i class="fa fa-facebook" aria-hidden="true" style="color: #e50914;"></i><span>Facebook</span></a>
         </li>
         <li>
-            <a href="#0"><i class="fa fa-twitter" aria-hidden="true" style="color: #e50914;"></i><span>Twiiter</span></a>
+            <a href="#0"><i class="fa fa-linkedin" aria-hidden="true" style="color: #e50914;"></i><span>Linkedin</span></a>
         </li>
         <li>
             <a href="#0"><i class="fa fa-instagram" aria-hidden="true" style="color: #e50914;"></i><span>Instagram</span></a>
