@@ -7,14 +7,28 @@
     // create & edit
     $("#quickForm").submit(function(e){
       e.preventDefault()
-      const data = new FormData($('#quickForm')[0])
       const type = $('#type').val()
       
       // jika type actionya = create
-      if (type == 'create') ajaxCreate(data)
+      if (type == 'create') {
+        $('#upload-dropzone').show()
+        var images = serializationImages()
+        const data = {
+          name : $('#name').val(),
+          description : $('#description').val(),
+          moq : $('#moq').val(),
+          capacity : $('#capacity').val(),
+          images,
+        }
+        ajaxCreate(data)
+      }
 
       // jika type actionya = edit
-      if (type == 'edit') ajaxUpdate(data)
+      if (type == 'edit'){
+        $('#upload-dropzone').hide()
+        const data = new FormData($('#quickForm')[0])
+        ajaxUpdate(data)
+      }
 
       // untuk delete tidak masuk scope ini
     })
@@ -26,10 +40,14 @@
       ajaxDelete(data)
     })
 
-    // upload gambar
-    $("#imageForm").submit(function(e){
-      e.preventDefault()
-      serializationImages()
+    // upload gambar pada model edit
+    $("#upload-image-btn").click(function(e){
+      var images = serializationImages()
+      const data = {
+        images,
+        id: $('#cid').val()
+      }
+      ajaxUploadImages(data)
     })
   })
 
@@ -38,19 +56,21 @@
     const type = $(e).attr('data-type')
     const id = $(e).attr('data-id')
     $('#type').val(type)
-
-    // check type
-    // jika attr button = edit/update maka ambil attr data-id dari button
+    $("#uploaded-image").html('')
 
     // jika attr button = delete maka panggil swal2 bukan modal
     if (type == "create" || type == "edit") {
       $('#modal-xl').modal('show')
       $('#quickForm').trigger('reset')
       $("#crud-header").text("Add Catalogue")
+      $('#upload-image-btn').hide()
 
       // jika type aksinya = edit
       if (type == "edit") {
+        $("#previews").html('')
+        $('#upload-image-btn').show()
         ajaxGetDetail(id)
+        getImages(id)
         $("#crud-header").text("Edit Catalogue")
       }
     }
@@ -61,18 +81,6 @@
     const id = $(e).attr('data-id')
     $("#delete-modal").modal("show")
     $("#delete-target").val(id)
-  }
-
-  // untuk menampilkan modal upload gambar
-  function ShowImageUploadModal(e) {
-    const id = $(e).attr('data-id')
-    $("#catalogue-id").val(id)
-    $("#image-modal").modal('show')
-    $("#previews").html('')
-    $("#uploaded-image").html('')
-
-    // ambil daftar gambar yang sudah diupload
-    getImages(id)
   }
 
   // serialisasi dari src gambar
@@ -88,14 +96,8 @@
       serialized.push({encoded, format})
     }
 
-    // serialisasi akhir
-    const data = {
-      images : serialized,
-      id : $("#catalogue-id").val(),
-    }
-
-    // upload gambar
-    ajaxUploadImages(data)
+    // return data gambar terserialisasi
+    return serialized    
   }
 
   // hapus gambar (yang sudah di upload)
@@ -106,13 +108,14 @@
 
   // ajax untuk type aksi CREATE
   function ajaxCreate(data){
+    var t = document.querySelectorAll("input[name='_token']")
     $.ajax({
+      headers: { 'X-CSRF-TOKEN': t[2].value },
       type: 'POST',
       url: "{{ route('catalogue.create') }}",
-      data: data,
-      cache: false,
-      contentType: false,
-      processData: false,
+      data: JSON.stringify(data),
+      dataType: "json",
+      contentType: "application/json",
       beforeSend: function(){
         $('#modal-xl').modal('hide')
         $('#loading-modal').modal('show')
@@ -123,15 +126,15 @@
         $('#modal-xl').modal('hide')
         $("#heading").text("Action Success")
         $("#body").text("New product successfully created")
-        $("#catalogue-list").append(drawCatalogueElement(res))
+        $("#catalogue-list").append(drawCatalogueElement(res.catalogue, res.images[0].image))
         setInterval(() => {
           $('#loading-modal').modal('hide')
         }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         $('#modal-xl').modal('hide')
-        $("#heading").text("Whooops...something went wrong b*tch")
-        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
+        $("#heading").text("Whooops...something went wrong")
+        $("#body").text("please try your action once again")
       }
     })
   }
@@ -162,8 +165,8 @@
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         $('#modal-xl').modal('hide')
-        $("#heading").text("Whooops...something went wrong b*tch")
-        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
+        $("#heading").text("Whooops...something went wrong")
+        $("#body").text("please try your action once again")
       }
     })
   }
@@ -194,8 +197,8 @@
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         $('#delete-modal').modal('hide')
-        $("#heading").text("Whooops...something went wrong b*tch")
-        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
+        $("#heading").text("Whooops...something went wrong")
+        $("#body").text("please try your action once again")
       }
     })
   }
@@ -219,8 +222,8 @@
       error : function(xhr, ajaxOptions, thrownError) { 
         $('#modal-xl').modal('hide')
         $('#loading-modal').modal('show')
-        $("#heading").text("Whooops...something went wrong b*tch")
-        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
+        $("#heading").text("Whooops...something went wrong")
+        $("#body").text("please try your action once again")
       }
     })
   }
@@ -229,7 +232,7 @@
   function ajaxUploadImages(data) {
     var t = document.querySelectorAll("input[name='_token']")
     $.ajax({
-      headers: { 'X-CSRF-TOKEN': t[3].value },
+      headers: { 'X-CSRF-TOKEN': t[2].value },
       url: "{{ route('catalogue.image.upload') }}",
       type: 'post',
       data : JSON.stringify(data),
@@ -246,8 +249,8 @@
       error : function(xhr, ajaxOptions, thrownError) { 
         $("#image-modal").modal('hide')
         $('#loading-modal').modal('show')
-        $("#heading").text("Whooops...something went wrong b*tch")
-        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
+        $("#heading").text("Whooops...something went wrong")
+        $("#body").text("please try your action once again")
       }
     })
   }
@@ -258,7 +261,7 @@
     var url = "{{ route('catalogue.image.delete', ":id") }}"
     url = url.replace(':id', id)
     $.ajax({
-      headers: { 'X-CSRF-TOKEN': t[3].value },
+      headers: { 'X-CSRF-TOKEN': t[2].value },
       url,
       type: 'post',
       dataType: "json",
@@ -269,8 +272,8 @@
       error : function(xhr, ajaxOptions, thrownError) { 
         $("#image-modal").modal('hide')
         $('#loading-modal').modal('show')
-        $("#heading").text("Whooops...something went wrong b*tch")
-        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
+        $("#heading").text("Whooops...something went wrong")
+        $("#body").text("please try your action once again")
       }
     })
   }
@@ -290,8 +293,8 @@
       error : function(xhr, ajaxOptions, thrownError) { 
         $("#image-modal").modal('hide')
         $('#loading-modal').modal('show')
-        $("#heading").text("Whooops...something went wrong b*tch")
-        $("#body").text("there is a life that full of shit! so rise up and wipe your ass")
+        $("#heading").text("Whooops...something went wrong")
+        $("#body").text("please try your action once again")
       }
     })
   }
@@ -299,7 +302,7 @@
   // utuk render gambar ke DOM
   function drawImageElement(data) {
     return `
-      <div class="col-sm-2 mb-4 mt-3" id="image-${data.id}">
+      <div class="col-sm-2 mb-4 mt-5" id="image-${data.id}">
         <img src="/catalogue_images/${data.image}" height="100%" width="100%"/></br><br>
         <a href="#" class="btn btn-danger btn-block btn-sm" onclick="deleteImage(${data.id})">
             <i class="fas fa-trash"></i>
@@ -310,7 +313,7 @@
   }
 
   // untuk render row catalogue
-  function drawCatalogueElement(data) {
+  function drawCatalogueElement(data, image) {
     // numbering
     var list = document.querySelectorAll("#catalogue-list > tr")
 
@@ -318,13 +321,12 @@
       <tr id="row-${data.id}">
         <td>${list.length + 1}</td>
         <td>
-
+          ${ image ? `<img src="/catalogue_images/${image}" alt="" height="60px" width="60px">` : "" } 
         </td>
         <td>${data.name}</td>
         <td>${data.capacity}</td>
         <td>${data.moq}</td>
         <td>
-            <button type="button" class="btn btn-sm btn-outline-secondary mr-2" data-id="${data.id}" onclick="ShowImageUploadModal(this)"><i class="fa fa-image"></i>Images</button>
             <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="${data.id}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
             <button type="button" class="btn btn-sm btn-outline-danger" data-type="delete" data-id="${data.id}" onclick="ShowDeleteModal(this)"><i class="fa fa-trash" ></i> Delete</button>
         </td>
@@ -332,6 +334,7 @@
     `
   }
 
+  // upload catalogue table row element
   function updateCatalogueElement(data) {
     var row = document.querySelectorAll(`#row-${data.id} > td`)
     row[2].innerHTML = data.name 
