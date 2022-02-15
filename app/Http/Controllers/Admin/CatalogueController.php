@@ -69,12 +69,10 @@ class CatalogueController extends Controller
     public function delete(Request $req) {
         // get data gambar
         $images = ImageModel::where('catalogue_id', $req->id)->get();
-        for ($i=0; $i < count($images); $i++) { 
-            $image = $images[0]->image;
-            $id = $images[0]->id;
-            $path = public_path() . '\catalogue_images/' . $image;
+        foreach ($images as $img) {
+            $path = public_path() . '\catalogue_images/' . $img->image;
             unlink($path);
-            ImageModel::find($id)->delete();
+            ImageModel::find($img->id)->delete();
         }
 
         // hapus data catalogue
