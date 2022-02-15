@@ -26,11 +26,3 @@
 ================================================== -->
 <link rel="shortcut icon" href="{{asset('favicon.png')}}" type="image/x-icon">
 <link rel="icon" href="{{asset('favicon.png')}}" type="image/x-icon">
-<style>
-    .goog-te-banner-frame.skiptranslate {
-    display: none !important;
-    } 
-body {
-    top: 0px !important; 
-    }
-</style>
