@@ -9,4 +9,8 @@ class Catalogue extends Model
     protected $fillable = [
         "name", "description", "moq", "capacity"
     ];
+
+    public function catalogue_images() {
+        return $this->hasMany(CatalogueImage::class);
+    }
 }

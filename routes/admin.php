@@ -29,7 +29,8 @@ Route::group(['prefix' => 'java-admin'],function(){
         
         Route::group(['prefix' => 'image'], function(){
             Route::post('/upload', 'Admin\CatalogueImage@Upload')->name('catalogue.image.upload');
-            Route::post('/delete', 'Admin\CatalogueImage@Delete')->name('catalogue.image.delete');
+            Route::post('/delete/{id}', 'Admin\CatalogueImage@Delete')->name('catalogue.image.delete');
+            Route::get('/{id}', 'Admin\CatalogueImage@GetImage')->name('catalogue.image.get');
         });
     });
 });
