@@ -57,7 +57,7 @@
     const id = $(e).attr('data-id')
     $('#type').val(type)
     $("#uploaded-image").html('')
-
+    $("#previews").html('')
     // jika attr button = delete maka panggil swal2 bukan modal
     if (type == "create" || type == "edit") {
       $('#modal-xl').modal('show')
