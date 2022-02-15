@@ -36,69 +36,86 @@
         </div>
     </div> <!-- end section-header -->
 
-    <div class="row-template faq-desc" data-aos="fade-up">
-        <div class="shadow-lg card">
-            {{-- <div class="card-header">
-              Featured
-            </div> --}}
-            <div class="card-body">
-                <form action="" autocomplete="off" autofill = "off">
-                    <div class="col-six">
-                        <div class="form-group">
-                            <label class="float-left" for="">Email address</label>
-                            <input type="email" class="form-control" name="email" id="" placeholder="name@example.com" style="font-size: 1.4rem;">
+    <div class="row-template faq-desc has-bottom-sep" data-aos="fade-up">
+        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('assets_front/images/background2.jpg')}}" class="img-fluid mx-auto d-block"
+                        alt="img1">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
-                    </div>
-                    <div class="col-six">
-                        <div class="form-group">
-                            <label class="float-left" for="">Full Name</label>
-                            <input type="text" class="form-control" name="name" id="" placeholder="Full Name" style="font-size: 1.4rem;">
-                        </div>
-                    </div>
-                    <div class="col-full">
-                        <div class="form-group">
-                            <label class="float-left" for="">Company Name</label>
-                            <input type="text" class="form-control" name="company" id="" placeholder="Company Name" style="font-size: 1.4rem;">
-                        </div>
-                    </div>
-                    <div class="col-six">
-                        <div class="form-group">
-                            <label for="" class="float-left">Product</label>
-                            <select class="form-control" id="" style="font-size: 1.4rem;">
-                                <option>Select Your Product</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-six">
-                        <div class="form-group">
-                            <label class="float-left" for="">Quantity</label>
-                            <input type="text" class="form-control" name="quantity" id="" placeholder="Product Quantity" style="font-size: 1.4rem;">
-                        </div>
-                    </div>
-                    <div class="col-full">
-                        <div class="form-group">
-                            <label for="" class="float-left">Message</label>
-                            <textarea class="form-control" id="" rows="3" style="font-size: 1.4rem;"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-full">
-                        <button type="button" class="btn-template btn-primary btn-sm btn-block">Send</button>
                     </div>
                     
-                </form>
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="{{asset('assets_front/images/bg1.jpg')}}" class="img-fluid mx-auto d-block" alt="img2">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="{{asset('assets_front/images/bg1.jpg')}}" class="img-fluid mx-auto d-block" alt="img3">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="{{asset('assets_front/images/background2.jpg')}}" class="img-fluid mx-auto d-block"
+                        alt="img4">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="{{asset('assets_front/images/bg1.jpg')}}" class="img-fluid mx-auto d-block" alt="img5">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="{{asset('assets_front/images/background2.jpg')}}" class="img-fluid mx-auto d-block"
+                        alt="img6">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="{{asset('assets_front/images/bg1.jpg')}}" class="img-fluid mx-auto d-block" alt="img7">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="{{asset('assets_front/images/background2.jpg')}}" class="img-fluid mx-auto d-block"
+                        alt="img8">
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-       
-        
     </div>
-    </div> <!-- end faq-desc -->
+
 
 
 
 </section> <!-- end s-faq -->
 @endsection
+@push('scripts')
+<script>
+    $('#carousel-example').on('slide.bs.carousel', function (e) {
+    /*
+        CC 2.0 License Iatek LLC 2018 - Attribution required
+    */
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 5;
+    var totalItems = $('.carousel-item').length;
+ 
+    if (idx >= totalItems-(itemsPerSlide-1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i=0; i<it; i++) {
+            // append slides to end
+            if (e.direction=="left") {
+                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+            }
+            else {
+                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+            }
+        }
+    }
+});
+</script>
+@endpush
