@@ -75,7 +75,8 @@ body {
 
 body {
     background: #111111;
-    font-family: "lora-regular", serif;
+    /* font-family: "montserrat-regular", serif; */
+    font-family: "montserrat-regular", sans-serif;
     font-size: 1.7rem;
     font-style: normal;
     font-weight: normal;
@@ -89,7 +90,7 @@ body {
  * ## links
  * ------------------------------------------------------------------- */
 a {
-    color: #0087cc;
+    color: #282828;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
@@ -98,11 +99,18 @@ a:hover,
 a:focus,
 a:active {
     color: #e50914;
+    text-decoration: none;
 }
 
 a:hover,
 a:active {
     outline: 0;
+}
+
+ul li a:hover,
+a:focus,
+a:active {
+    font-size: 110%;
 }
 
 /* ===================================================================
@@ -249,12 +257,12 @@ b {
 
 em,
 i {
-    font-family: "lora-italic", serif;
+    font-family: "montserrat-italic", saserif;
 }
 
 strong,
 b {
-    font-family: "lora-bold", serif;
+    font-family: "montserrat-bold", sans-serif;
 }
 
 small {
@@ -307,7 +315,7 @@ blockquote cite a:visited {
 }
 
 abbr {
-    font-family: "lora-bold", serif;
+    font-family: "montserrat-bold", sans-serif;
     font-variant: small-caps;
     text-transform: lowercase;
     letter-spacing: 0.05rem;
@@ -473,7 +481,7 @@ table {
     border-width: 0;
     width: 100%;
     max-width: 100%;
-    font-family: "lora-regular", serif;
+    font-family: "montserrat-regular", sans-serif;
 }
 
 th,
@@ -1411,6 +1419,15 @@ input::-moz-focus-inner {
 
 .section-header.has-bottom-sep.light-sep::before {
     background-color: rgba(255, 255, 255, 0.05);
+}
+
+.section-image {
+    background-image: url("/assets_front/images/cube.png");
+    background-size: 724px;
+    background-repeat: no-repeat;
+    /* background-position: 0 75%; */
+    background-position-x: left;
+    background-position-y: center;
 }
 
 /* ------------------------------------------------------------------- 
@@ -2864,7 +2881,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .clients-testimonials .testimonials p {
-    font-family: "lora-regular", serif;
+    font-family: "montserrat-regular", sans-serif;
     font-size: 3rem;
     line-height: 1.8;
     color: #555555;
@@ -3802,7 +3819,7 @@ footer .row {
         padding-top: 0rem;
     }
 
-    .jumbo-text{
+    .jumbo-text {
         padding-top: 12rem;
     }
     .faq-desc {
