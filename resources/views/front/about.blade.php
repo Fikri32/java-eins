@@ -10,13 +10,13 @@
     <div class="row-template has-bottom-sep" data-aos="fade-up">
         <div class="col-md-6">
             <a href="#0">
-                <button id="btn_about" type="button" class="btn-template btn-primary btn-sm btn-block" style="margin-top: 6rem; background-color:black; color: #c4c4c4;width:50%">About</button>
+                <button id="btn_about" type="button" class="btn-template btn-primary btn-sm btn-block" style="margin-top: 6rem; background-color:black; color: #c4c4c4;width:70%">About</button>
             </a>
             <a href="#0">
-                <button id="btn_vision" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;width:50%">Vision & Mission</button>
+                <button id="btn_vision" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;width:70%">Vision & Mission</button>
             </a>
             <a href="#0">
-                <button id="btn_order" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;width:50%">How To Order</button>
+                <button id="btn_order" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;width:70%">How To Order</button>
             </a>
             <div>
                 <img class="img-fluid" src="{{asset('assets_front/images/cube_2.png')}}" alt="">
