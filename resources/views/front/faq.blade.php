@@ -16,7 +16,7 @@
     <div class="row-template faq-desc" data-aos="fade-up">
         <div class="col-full">
             <div class="accordion" id="accordionExample">
-                <button class="btn-template btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <button class="btn-template btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="padding:0 0rem">
                     <b>Collapsible Group Item #1</b>
                      <i class="fa fa-angle-down float-right" style="margin-top:20px;"></i>
                 </button>
@@ -27,7 +27,7 @@
                         hidden by default.
                     </div>
                 </div>
-                <button class="btn-template btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <button class="btn-template btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="padding:0 0rem">
                     <b>Collapsible Group Item #2</b> 
                     <i class="fa fa-angle-down float-right" style="margin-top:20px;"></i>
                 </button>
@@ -38,7 +38,7 @@
                         hidden by default.
                     </div>
                 </div>
-                <button class="btn-template btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <button class="btn-template btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="padding:0 0rem">
                     <b>Collapsible Group Item #3</b> 
                     <i class="fa fa-angle-down float-right" style="margin-top:20px;"></i>
                 </button>
