@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-<section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="{{asset('assets_front/images/background2.jpg')}}" data-position-y=center>
+<section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="{{asset('assets_front/images/briquette3.jpg')}}" data-position-y=center>
     <!--  -->
 
     <div class="overlay"></div>

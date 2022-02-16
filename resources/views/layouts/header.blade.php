@@ -21,7 +21,7 @@
                 <li><a class="" href="{{route('contact.index')}}" title="contact">Contact Us</a></li>
             </ul>
 
-            <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
+
 
         </div> <!-- end header-nav__content -->
 

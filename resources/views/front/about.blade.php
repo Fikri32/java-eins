@@ -7,16 +7,16 @@
 
         </div>
     </div>
-    <div class="row-template  has-bottom-sep" data-aos="fade-up">
+    <div class="row-template has-bottom-sep" data-aos="fade-up">
         <div class="col-md-3">
             <a href="#0">
-                <button type="button" class="btn-template btn-primary btn-sm btn-block" style="margin-top: 6rem; background-color:black; color: #c4c4c4;">About</button>
+                <button type="button" class="btn-template btn-primary btn-sm btn-block border-0" style="margin-top: 6rem; background-color:black; color: #c4c4c4;">About</button>
             </a>
             <a href="#0">
-                <button type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;">Vision & Mission</button>
+                <button type="button" class="btn-template btn-primary btn-sm btn-block border-0" style="background-color:black; color: #c4c4c4;">Vision & Mission</button>
             </a>
             <a href="#0">
-                <button type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;">How To Order</button>
+                <button type="button" class="btn-template btn-primary btn-sm btn-block border-0" style="background-color:black; color: #c4c4c4;">How To Order</button>
             </a>
             <br>
         </div>

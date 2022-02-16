@@ -107,10 +107,14 @@ a:active {
     outline: 0;
 }
 
-ul li a:hover,
-a:focus,
-a:active {
-    font-size: 110%;
+.a-zoom {
+    color: #ffffff;
+}
+
+.a-zoom:hover,
+.a-zoom:focus,
+.a-zoom:active {
+    font-size: 108%;
 }
 
 /* ===================================================================
@@ -1636,6 +1640,12 @@ input::-moz-focus-inner {
 .header-nav__list a,
 .header-nav__list a:visited {
     color: #ffffff;
+}
+
+.header-nav__list a:hover,
+.header-nav__list a:focus {
+    /* color: #ffffff; */
+    color: #e50914;
 }
 
 .header-nav__social {

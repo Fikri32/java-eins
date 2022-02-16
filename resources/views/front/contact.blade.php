@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     <div class="col-full">
-                        <button type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color: black; color: #c4c4c4;">Send</button>
+                        <button type="button" class="btn-template btn-primary btn-sm btn-block border-0" style="background-color: black; color: #c4c4c4;">Send</button>
                     </div>
 
                 </form>
