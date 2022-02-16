@@ -10,39 +10,39 @@
     <div class="row-template section-header has-bottom-sep" data-aos="fade-up">
         <div class="col-four">
             <a href="#0">
-                <i class="fa fa-whatsapp fa-5x" aria-hidden="true" style="color: black;margin-top:6rem;"></i>
+                <i class="fa fa-whatsapp fa-4x" aria-hidden="true" style="color: #282828;margin-top:6rem;"></i>
             </a>
             <br>
-            <span><b>Whatsapp</b></span>
+            <span><b style="color:#282828;">Whatsapp</b></span>
             <br>
             <a href=""><span><b>+6212424222</b></span></a>
         </div>
         <div class="col-four">
-            <a href="#0"><i class="fa fa-envelope fa-5x" aria-hidden="true" style="color: black;margin-top:6rem;"></i>
+            <a href="#0"><i class="fa fa-envelope fa-4x" aria-hidden="true" style="color: #282828;margin-top:6rem;"></i>
             </a>
             <br>
-            <span><b>Mail</b></span>
+            <span><b style="color:#282828;">Mail</b></span>
             <br>
             <a href=""><span><b>javaeins@javaeins.com</b></span></a>
         </div>
         <div class="col-four">
             <a href="#0">
-                <i class="fa fa-building fa-5x" aria-hidden="true" style="color: black;margin-top:6rem;"></i>
+                <i class="fa fa-building fa-4x" aria-hidden="true" style="color: #282828;margin-top:6rem;"></i>
             </a>
             <br>
-            <span><b>Address</b></span>
+            <span><b style="color:#282828;"> Address</b></span>
             <br>
             <a href=""><span><b>Jl.Cimahi</b></span></a>
         </div>
     </div> <!-- end section-header -->
 
     <div class="row-template faq-desc" data-aos="fade-up">
-        <div class="shadow-lg card">
+        <div class="shadow-lg card" style="border-radius: 1.5rem;">
             {{-- <div class="card-header">
               Featured
             </div> --}}
             <div class="card-body">
-                <form action="" autocomplete="off" autofill = "off">
+                <form action="" autocomplete="off" autofill="off">
                     <div class="col-six">
                         <div class="form-group">
                             <label class="float-left" for="">Email address</label>
@@ -87,14 +87,14 @@
                         </div>
                     </div>
                     <div class="col-full">
-                        <button type="button" class="btn-template btn-primary btn-sm btn-block">Send</button>
+                        <button type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color: black; color: #c4c4c4;">Send</button>
                     </div>
-                    
+
                 </form>
             </div>
         </div>
-       
-        
+
+
     </div>
     </div> <!-- end faq-desc -->
 
