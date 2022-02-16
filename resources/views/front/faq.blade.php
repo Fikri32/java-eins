@@ -17,7 +17,8 @@
         <div class="col-full">
             <div class="accordion" id="accordionExample">
                 <button class="btn-template btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Collapsible Group Item #1 <i class="fa fa-angle-down float-right" style="margin-top:20px;"></i>
+                    <b>Collapsible Group Item #1</b>
+                     <i class="fa fa-angle-down float-right" style="margin-top:20px;"></i>
                 </button>
 
                 <div id="collapseOne" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -27,7 +28,8 @@
                     </div>
                 </div>
                 <button class="btn-template btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Collapsible Group Item #2 <i class="fa fa-angle-down float-right" style="margin-top:20px;"></i>
+                    <b>Collapsible Group Item #2</b> 
+                    <i class="fa fa-angle-down float-right" style="margin-top:20px;"></i>
                 </button>
 
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -37,7 +39,8 @@
                     </div>
                 </div>
                 <button class="btn-template btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Collapsible Group Item #3 <i class="fa fa-angle-down float-right" style="margin-top:20px;"></i>
+                    <b>Collapsible Group Item #3</b> 
+                    <i class="fa fa-angle-down float-right" style="margin-top:20px;"></i>
                 </button>
 
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">

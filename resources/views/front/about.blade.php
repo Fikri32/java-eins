@@ -1,40 +1,40 @@
 @extends('layouts.master')
 @section('content')
-<section id='faq' class="s-faq section-image">
+<section id='faq' class="s-faq">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="jumbo-text text-center text-white">About Java Eins</h1>
 
         </div>
     </div>
-    <div class="row-template  has-bottom-sep" data-aos="fade-up">
-        <div class="col-md-3">
+    <div class="row-template has-bottom-sep" data-aos="fade-up">
+        <div class="col-md-6">
             <a href="#0">
-                <button type="button" class="btn-template btn-primary btn-sm btn-block" style="margin-top: 6rem; background-color:black; color: #c4c4c4;">About</button>
+                <button id="btn_about" type="button" class="btn-template btn-primary btn-sm btn-block" style="margin-top: 6rem; background-color:black; color: #c4c4c4;width:50%">About</button>
             </a>
             <a href="#0">
-                <button type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;">Vision & Mission</button>
+                <button id="btn_vision" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;width:50%">Vision & Mission</button>
             </a>
             <a href="#0">
-                <button type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;">How To Order</button>
+                <button id="btn_order" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;width:50%">How To Order</button>
             </a>
-            <br>
+            <div>
+                <img class="img-fluid" src="{{asset('assets_front/images/cube_2.png')}}" alt="">
+            </div>
         </div>
-        <div class="col-md-3">
-            <br>
-        </div>
+    
 
         <!-- About -->
-        <!-- <div class="col-md-6">
+        <div id="about" class="col-md-6">
             <h1>Get To Know About Us</h1>
             <p class="text-justify">
                 PT.Java Eins is a supplier, manufacturer and distributor of coco shisha briquettes from Indonesia. We are committed to providing the best quality product and competitive prices to help you with your briquette needs. Java Eins is a legal company registered in Indonesia. The entire payment process uses the L/C Method through the bank.
                 We have 4 shisha briquette products : Cube, flat, hexagonal, Cylinder/Stick. Our production capacity is up to 10Mt per month
             </p>
-        </div> -->
+        </div>
 
         <!-- Vision Mission -->
-        <div class="col-md-6">
+        <div id="vision" class="col-md-6">
             <h1 class="text-center">Vission & Mission</h1>
 
             <h2 class="text-left">Our Vision</h2>
@@ -82,7 +82,7 @@
         </div>
 
         <!-- How to order -->
-        <!-- <div class="col-md-6">
+        <div id="order" class="col-md-6">
             <h1 class="text-left">How To Order</h1>
             <ul class="text-justify" style="list-style-type: none; margin-left:0px;">
                 <li>
@@ -106,7 +106,7 @@
                     </p>
                 </li>
             </ul>
-        </div> -->
+        </div>
     </div>
     <!-- end section-header -->
 
@@ -119,3 +119,29 @@
 
 </section> <!-- end s-faq -->
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function () {
+            $("#about").show();
+            $("#vision").hide();
+            $("#order").hide();
+        })
+        $("#btn_about").click(function () {
+                $("#about").show();
+                $("#vision").hide();
+                $("#order").hide();
+            });
+
+        $("#btn_vision").click(function () {
+            $("#about").hide();
+            $("#vision").show();
+            $("#order").hide();
+        });
+
+        $("#btn_order").click(function () {
+            $("#about").hide();
+            $("#vision").hide();
+            $("#order").show();
+        });
+    </script>
+@endpush
