@@ -3,90 +3,63 @@
 <section id='faq' class="s-faq">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="jumbo-text text-center text-white">Get Ahold Of Us</h1>
+            <h1 class="jumbo-text text-center text-white">Our Briquette</h1>
 
         </div>
     </div>
-    <div class="row-template section-header has-bottom-sep" data-aos="fade-up">
-        <div class="col-four">
-            <a href="#0">
-                <i class="fa fa-whatsapp fa-5x" aria-hidden="true" style="color: black;margin-top:6rem;"></i>
-            </a>
-            <br>
-            <span><b>Whatsapp</b></span>
-            <br>
-            <a href=""><span><b>+6212424222</b></span></a>
-        </div>
-        <div class="col-four">
-            <a href="#0"><i class="fa fa-envelope fa-5x" aria-hidden="true" style="color: black;margin-top:6rem;"></i>
-            </a>
-            <br>
-            <span><b>Mail</b></span>
-            <br>
-            <a href=""><span><b>javaeins@javaeins.com</b></span></a>
-        </div>
-        <div class="col-four">
-            <a href="#0">
-                <i class="fa fa-building fa-5x" aria-hidden="true" style="color: black;margin-top:6rem;"></i>
-            </a>
-            <br>
-            <span><b>Address</b></span>
-            <br>
-            <a href=""><span><b>Jl.Cimahi</b></span></a>
-        </div>
-    </div> <!-- end section-header -->
-
-    <div class="row-template faq-desc has-bottom-sep" data-aos="fade-up">
-        <div id="carousel-example" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('assets_front/images/background2.jpg')}}" class="img-fluid mx-auto d-block"
-                        alt="img1">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+    <div class="row-template faq-desc has-bottom-sep" data-aos="fade-up" style="margin-top:150px">
+        <div id="related-products-slider-container" class="owl-container col">
+            <div class="owl-carousel owl-theme card-group">
+                <div class="card bg-white border-suzohapp-light-grey h-100 related_products_card">
+                    <div class="card-header bg-white border-bottom-0">
+                        <img class="card-img box-image-cover" src="{{asset('assets_front/images/j-6.jpg')}}" />
+                        <span class="suzohapp-dark-grey font-weight-ligther">Nama Produk</span>
                     </div>
-                    
+                    <div class="card-body card-body align-items-center justify-content-center px-3">
+                        <h6 class="card-title text-uppercase suzohapp-light-blue mb-2 font-weight-light">MOQ
+                        </h6>
+                        <a href="#" class="btn btn-lg btn-outline-primary">
+                            Detail Product
+                        </a>
+                    </div>
                 </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{asset('assets_front/images/bg1.jpg')}}" class="img-fluid mx-auto d-block" alt="img2">
+                <div class="card bg-white border-suzohapp-light-grey h-100 related_products_card">
+                    <div class="card-header bg-white border-bottom-0">
+                        <img class="card-img box-image-cover" src="{{asset('assets_front/images/j-6.jpg')}}" />
+                        <span class="suzohapp-dark-grey font-weight-ligther">Nama Produk</span>
+                    </div>
+                    <div class="card-body card-body align-items-center justify-content-center px-3">
+                        <h6 class="card-title text-uppercase suzohapp-light-blue mb-2 font-weight-light">MOQ
+                        </h6>
+                        <a href="#" class="btn btn-lg btn-outline-primary">
+                            Detail Product
+                        </a>
+                    </div>
                 </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{asset('assets_front/images/bg1.jpg')}}" class="img-fluid mx-auto d-block" alt="img3">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{asset('assets_front/images/background2.jpg')}}" class="img-fluid mx-auto d-block"
-                        alt="img4">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{asset('assets_front/images/bg1.jpg')}}" class="img-fluid mx-auto d-block" alt="img5">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{asset('assets_front/images/background2.jpg')}}" class="img-fluid mx-auto d-block"
-                        alt="img6">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{asset('assets_front/images/bg1.jpg')}}" class="img-fluid mx-auto d-block" alt="img7">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{asset('assets_front/images/background2.jpg')}}" class="img-fluid mx-auto d-block"
-                        alt="img8">
+                <div class="card bg-white border-suzohapp-light-grey h-100 related_products_card">
+                    <div class="card-header bg-white border-bottom-0">
+                        <img class="card-img box-image-cover" src="{{asset('assets_front/images/j-6.jpg')}}" />
+                        <span class="suzohapp-dark-grey font-weight-ligther">Nama Produk</span>
+                    </div>
+                    <div class="card-body card-body align-items-center justify-content-center px-3">
+                        <h6 class="card-title text-uppercase suzohapp-light-blue mb-2 font-weight-light">MOQ
+                        </h6>
+                        <a href="#" class="btn btn-lg btn-outline-primary">
+                            Detail Product
+                        </a>
+                    </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            
+            <div class="owl-theme">
+                <div class="owl-controls d-block">
+                    <div class="custom-nav owl-nav"></div>
+                </div>
+            </div>
         </div>
     </div>
+    </div>
+
 
 
 
@@ -95,27 +68,71 @@
 @endsection
 @push('scripts')
 <script>
-    $('#carousel-example').on('slide.bs.carousel', function (e) {
-    /*
-        CC 2.0 License Iatek LLC 2018 - Attribution required
-    */
-    var $e = $(e.relatedTarget);
-    var idx = $e.index();
-    var itemsPerSlide = 5;
-    var totalItems = $('.carousel-item').length;
- 
-    if (idx >= totalItems-(itemsPerSlide-1)) {
-        var it = itemsPerSlide - (totalItems - idx);
-        for (var i=0; i<it; i++) {
-            // append slides to end
-            if (e.direction=="left") {
-                $('.carousel-item').eq(i).appendTo('.carousel-inner');
-            }
-            else {
-                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+    $(document).ready(function () {
+        // $('.owl-carousel').owlCarousel({
+        //     stagePadding: 80,
+        //     loop:true,
+        //     dots:false,
+        //     margin:20,
+        //     nav:true,
+        //     autoplay:true,
+        //     autoplayTimeout:1000,
+        //     navText: ["<i class='fas fa-arrow-left'></i>","<i class='fas fa-arrow-right'></i>"],
+        //     navContainer: '.owl-container .custom-nav',
+        //     navClass: ["owl-prev rounded-circle","owl-next rounded-circle"],
+        //     items:3,
+        //     autoWidth:false,
+        //     center:true,
+        //     URLhashListener:true,
+        //     autoplayHoverPause:true,
+        //     startPosition: 'URLHash',
+        //     responsive:{
+        //         0:{
+        //             items:1,
+        //             stagePadding:0
+        //         },
+        //         768:{
+        //             items:1,
+        //             stagePadding:0
+        //         },
+        //         992:{
+        //             items:2,
+        //             stagePadding:60
+        //         },
+        //         1200:{
+        //             items:3
+        //         }
+        //     }
+        // })
+    });
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:50,
+        nav:true,
+        navText: ["<i class='fa fa-arrow-left'></i>","<i class='fa fa-arrow-right'></i>"],
+        navContainer: '.owl-container .custom-nav',
+        navClass: ["owl-prev","owl-next"],
+        items:3,
+        autoWidth:false,
+        center:true,
+        responsive:{
+            0:{
+                items:1,
+                stagePadding:0
+            },
+            768:{
+                items:1,
+                stagePadding:0
+            },
+            992:{
+                items:2,
+                stagePadding:60
+            },
+            1200:{
+                items:3
             }
         }
-    }
-});
+    })
+   
 </script>
 @endpush
