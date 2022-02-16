@@ -93,6 +93,7 @@
     <!-- Java Script
     ================================================== -->
     @include('layouts.incl_bot')
+    @stack('scripts')
     {{-- End Java Script --}}
 
 </body>
