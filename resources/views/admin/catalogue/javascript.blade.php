@@ -118,18 +118,31 @@
       contentType: "application/json",
       beforeSend: function(){
         $('#modal-xl').modal('hide')
-        $('#loading-modal').modal('show')
-        $("#heading").text("Please Wait...")
-        $("#body").text("Your data is being processed!")
+        Swal.fire({
+            title: 'Please Wait...',
+            text  : 'Your data is being processed!',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+            },
+        })
       },
       success: function(res){
         $('#modal-xl').modal('hide')
-        $("#heading").text("Action Success")
-        $("#body").text("New product successfully created")
         $("#catalogue-list").append(drawCatalogueElement(res.catalogue, res.images[0].image))
-        setInterval(() => {
-          $('#loading-modal').modal('hide')
-        }, 2000)
+        Swal.fire({
+            title : 'Action Success!',
+            icon: 'success',
+            text  : 'New product successfully created',
+            showConfirmButton : true
+        })
+        // $("#heading").text("Action Success")
+        // $("#body").text("New product successfully created")
+        
+        // setInterval(() => {
+        //   $('#loading-modal').modal('hide')
+        // }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         $('#modal-xl').modal('hide')
@@ -150,18 +163,37 @@
       processData: false,
       beforeSend: function(){
         $('#modal-xl').modal('hide')
-        $('#loading-modal').modal('show')
-        $("#heading").text("Please Wait...")
-        $("#body").text("Your data is being processed!")
+        Swal.fire({
+            title: 'Please Wait...',
+            text  : 'Your data is being processed!',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+            },
+        })
+        // $('#loading-modal').modal('show')
+        // $("#heading").text("Please Wait...")
+        // $("#body").text("Your data is being processed!")
       },
       success: function(res){
         $('#modal-xl').modal('hide')
-        $("#heading").text("Action Success")
-        $("#body").text("Product data successfully updated")
+
         updateCatalogueElement(res)
-        setInterval(() => {
-          $('#loading-modal').modal('hide')
-        }, 2000)
+
+        Swal.fire({
+            title : 'Action Success!',
+            icon: 'success',
+            text  : 'Product data successfully updated',
+            showConfirmButton : true
+        })
+        
+        // $("#heading").text("Action Success")
+        // $("#body").text("Product data successfully updated")
+        
+        // setInterval(() => {
+        //   $('#loading-modal').modal('hide')
+        // }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         $('#modal-xl').modal('hide')
@@ -182,18 +214,34 @@
       processData: false,
       beforeSend: function(){
         $('#delete-modal').modal('hide')
-        $('#loading-modal').modal('show')
-        $("#heading").text("Please Wait...")
-        $("#body").text("Your data is being processed!")
+        Swal.fire({
+            title: 'Please Wait...',
+            text  : 'Your data is being processed!',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+            },
+        })
+        // $('#loading-modal').modal('show')
+        // $("#heading").text("Please Wait...")
+        // $("#body").text("Your data is being processed!")
       },
       success: function(res){
         $('#delete-modal').modal('hide')
-        $("#heading").text("Action Success")
-        $("#body").text("Product data successfully removed")
         $(`#row-${res.id}`).remove()
-        setInterval(() => {
-          $('#loading-modal').modal('hide')
-        }, 2000)
+        Swal.fire({
+            title : 'Action Success!',
+            icon: 'success',
+            text  : 'Product data successfully removed',
+            showConfirmButton : true
+        })
+
+        // $("#heading").text("Action Success")
+        // $("#body").text("Product data successfully removed")        
+        // setInterval(() => {
+        //   $('#loading-modal').modal('hide')
+        // }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         $('#delete-modal').modal('hide')

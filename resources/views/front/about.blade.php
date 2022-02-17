@@ -19,7 +19,7 @@
                 <button id="btn_order" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;width:70%">How To Order</button>
             </a>
             <div>
-                <img class="img-fluid" src="{{asset('assets_front/images/cube_2.png')}}" alt="">
+                <img id="about-image" class="img-fluid" src="" alt="">
             </div>
         </div>
     
@@ -125,23 +125,27 @@
             $("#about").show();
             $("#vision").hide();
             $("#order").hide();
+            $('#about-image').attr("src", '{{ URL::asset('assets_front/images/cube_2.png') }}');
         })
         $("#btn_about").click(function () {
                 $("#about").show();
                 $("#vision").hide();
                 $("#order").hide();
+                $('#about-image').attr("src", '{{ URL::asset('assets_front/images/cube_2.png') }}');
             });
 
         $("#btn_vision").click(function () {
             $("#about").hide();
             $("#vision").show();
             $("#order").hide();
+            $('#about-image').attr("src", '{{ URL::asset('assets_front/images/bg.jpg') }}');
         });
 
         $("#btn_order").click(function () {
             $("#about").hide();
             $("#vision").hide();
             $("#order").show();
+            $('#about-image').attr("src", '{{ URL::asset('assets_front/images/j-1.webp') }}');
         });
     </script>
 @endpush
