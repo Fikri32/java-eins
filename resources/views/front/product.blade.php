@@ -112,7 +112,7 @@
         loop: true,
         margin: 50,
         nav: true,
-        navText: ["<i class='fa fa-chevron-left' style='color:#c4c4c4;'></i>", "<i class='fa fa-chevron-right' style='color:#c4c4c4;'></i>"],
+        navText: ["<i class='fa fa-chevron-circle-left' style='color:#c4c4c4;'></i>", "<i class='fa fa-chevron-circle-right' style='color:#c4c4c4;'></i>"],
         navContainer: '.owl-container .custom-nav',
         navClass: ["owl-prev", "owl-next"],
         items: 3,
