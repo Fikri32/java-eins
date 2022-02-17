@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <section id='faq' class="s-faq">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron-contact jumbotron-fluid">
         <div class="container">
             <h1 class="jumbo-text text-center text-white">Get Ahold Of Us</h1>
 
