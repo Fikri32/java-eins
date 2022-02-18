@@ -21,3 +21,6 @@
 
 <!-- dropzonejs -->
 <link rel="stylesheet" href="{{asset('assets_admin/plugins/dropzone/min/dropzone.min.css')}}">
+
+{{-- Summernote --}}
+<link rel="stylesheet" href="{{asset('assets_admin/plugins/summernote/summernote-bs4.min.css')}}"></link>

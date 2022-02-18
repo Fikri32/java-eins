@@ -20,3 +20,4 @@ Route::get('/contact', 'Front\ContactController@index')->name('contact.index');
 Route::get('/product', 'Front\ProductController@index')->name('product.index');
 Route::get('/about', 'Front\AboutController@index')->name('about.index');
 Route::get('/detail', 'Front\DetailController@index')->name('detail.index');
+// Route::get('/detail/{id}', 'Front\ProductController@detail')->name('produk.detail');

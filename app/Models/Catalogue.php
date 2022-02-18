@@ -7,9 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Catalogue extends Model
 {
     protected $fillable = [
-        "name", "description", "moq","quality","standart",
-        "calorie","mousture","ash","carbon","burning","ashtype",
-        "size","certificate","packaging"
+        "name", "description_original", "description_premium", "moq",
     ];
 
     public function catalogue_images() {

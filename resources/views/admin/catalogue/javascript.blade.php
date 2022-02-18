@@ -15,20 +15,9 @@
         var images = serializationImages()
         const data = {
           name : $('#name').val(),
-          description : $('#description').val(),
+          description_premium : $('#description_premium').summernote('code'),
+          description_original : $('#description_original').summernote('code'),
           moq : $('#moq').val(),
-          standart : $('#standart').val(),
-          quality : $('#quality').val(),
-          calorie : $('#calorie').val(),
-          mousture : $('#mousture').val(),
-          ash : $('#ash').val(),
-          carbon : $('#carbon').val(),
-          burning : $('#burning').val(),
-          ashtype : $('#ashtype').val(),
-          size : $('#size').val(),
-          certificate : $('#certificate').val(),
-          packaging : $('#packaging').val(),
-
           images,
         }
         ajaxCreate(data)
@@ -66,6 +55,8 @@
   function ShowCRUDmodal(e) {
     const type = $(e).attr('data-type')
     const id = $(e).attr('data-id')
+    $('#description_premium').summernote('code',''),
+    $('#description_original').summernote('code',''),
     $('#type').val(type)
     $("#uploaded-image").html('')
     $("#previews").html('')
@@ -271,22 +262,11 @@
       type:"GET",
       url,
       success: function(res){
-        const { name, description, moq,standart,quality,calorie,
-            mousture,ash,carbon,burning,ashtype,size,certificate,packaging,id} = res
+        const { name,description_premium,description_original, moq, id} = res
         $('#name').val(name)
-        $('#description').val(description)
+        $('#description_premium').summernote('code',description_premium)
+        $('#description_original').summernote('code',description_original)
         $('#moq').val(moq)
-        $('#standart').val(standart),
-        $('#quality').val(quality),
-        $('#calorie').val(calorie),
-        $('#mousture').val(mousture),
-        $('#ash').val(ash),
-        $('#carbon').val(carbon),
-        $('#burning').val(burning),
-        $('#ashtype').val(ashtype),
-        $('#size').val(size),
-        $('#certificate').val(certificate),
-        $('#packaging').val(packaging),
         $('#cid').val(id)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
@@ -394,7 +374,6 @@
           ${ image ? `<img src="/catalogue_images/${image}" alt="" height="60px" width="60px">` : "" } 
         </td>
         <td>${data.name}</td>
-        <td>${data.quality}</td>
         <td>${data.moq}</td>
         <td>
             <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="${data.id}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
@@ -408,8 +387,7 @@
   function updateCatalogueElement(data) {
     var row = document.querySelectorAll(`#row-${data.id} > td`)
     row[2].innerHTML = data.name 
-    row[3].innerHTML = data.quality 
-    row[4].innerHTML = data.moq
+    row[3].innerHTML = data.moq
   }
 </script>
 
@@ -446,4 +424,15 @@
   document.querySelector("#actions .cancel").onclick = function() {
     myDropzone.removeAllFiles(true)
   }
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#description_premium').summernote({
+            height: 150,
+        });
+        $('#description_original').summernote({
+            height: 150,
+        });
+    });
 </script>
