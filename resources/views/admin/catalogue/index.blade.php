@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <button type="button" class="btn btn-outline-primary" data-type="create" onclick="ShowCRUDmodal(this)"><i class="fa fa-plus"></i>Add Catalogue</button>
+                    <button type="button" class="btn btn-outline-primary" data-type="create" onclick="ShowCRUDmodal(this)"><i class="fa fa-plus"></i> Add Catalogue</button>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -161,53 +161,6 @@
 </div>
 <!-- End of form modal -->
 
-<!-- Delete modal -->
-<div class="modal" tabindex="-1" role="dialog" id="delete-modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Delete Catalogue</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form id="delete-catalogue">
-          @csrf
-          <input type="hidden" name="id" id="delete-target">
-          <div class="modal-body">
-              <center>
-                  <h1>
-                    Are you sure?
-                  </h1>
-                  <h4>
-                      Any deleted data cannot be undone!
-                  </h4>
-              </center>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" data-delete-id="">Yes</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          </div>
-      </form>
-    </div>
-  </div>
-</div>
-<!-- END of delete modal -->
-
-<!-- Loading Modal -->
-<div class="modal fade" tabindex="-1" role="dialog" id="loading-modal">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <center>
-            <h1 id="heading"></h1>
-            <h5 id="body"></h5>
-        </center>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- END of loading modal -->
 @endsection
 @push('scripts')
 @include('admin.catalogue.javascript')
