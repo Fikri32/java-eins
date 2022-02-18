@@ -7,54 +7,68 @@
 
         </div>
     </div>
-    <div class="container-fluid mt-2 mb-3">
+    <div class="container-fluid mt-5 mb-3">
         <div class="row no-gutters">
             <div class="col-md-5 pr-2">
-                <div class="card-detail shadow-lg">
+                <div class="card-detail shadow-lg mb-4" style="border-radius: 1.5rem;">
                     <div class="demo-detail">
                         <ul class="ul-detail" id="lightSlider">
-                            <li class="li-detail" data-thumb="https://i.imgur.com/KZpuufK.jpg"> <img class="img-detail" src="https://i.imgur.com/KZpuufK.jpg" /> </li>
-                            <li class="li-detail" data-thumb="https://i.imgur.com/GwiUmQA.jpg"> <img class="img-detail" src="https://i.imgur.com/GwiUmQA.jpg" /> </li>
-                            <li class="li-detail" data-thumb="https://i.imgur.com/DhKkTrG.jpg"> <img class="img-detail" src="https://i.imgur.com/DhKkTrG.jpg" /> </li>
-                            <li class="li-detail" data-thumb="https://i.imgur.com/kYWqL7k.jpg"> <img class="img-detail" src="https://i.imgur.com/kYWqL7k.jpg" /> </li>
-                            <li class="li-detail" data-thumb="https://i.imgur.com/c9uUysL.jpg"> <img class="img-detail" src="https://i.imgur.com/c9uUysL.jpg" /> </li>
-                            <li class="li-detail" data-thumb="https://i.imgur.com/KZpuufK.jpg"> <img class="img-detail" src="https://i.imgur.com/KZpuufK.jpg" /> </li>
-                            <li class="li-detail" data-thumb="https://i.imgur.com/GwiUmQA.jpg"> <img class="img-detail" src="https://i.imgur.com/GwiUmQA.jpg" /> </li>
-                            <li class="li-detail" data-thumb="https://i.imgur.com/DhKkTrG.jpg"> <img class="img-detail" src="https://i.imgur.com/DhKkTrG.jpg" /> </li>
-                            <li class="li-detail" data-thumb="https://i.imgur.com/kYWqL7k.jpg"> <img class="img-detail" src="https://i.imgur.com/kYWqL7k.jpg" /> </li>
-                            <li class="li-detail" data-thumb="https://i.imgur.com/c9uUysL.jpg"> <img class="img-detail" src="https://i.imgur.com/c9uUysL.jpg" /> </li>
+                            <li class="li-detail" data-thumb="{{asset('assets_front/images/dummy2.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/dummy2.jpg')}}" /> </li>
+                            <li class="li-detail" data-thumb="{{asset('assets_front/images/dummy1.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/dummy1.jpg')}}" /> </li>
+                            <li class="li-detail" data-thumb="{{asset('assets_front/images/j-5.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/j-5.jpg')}}" /> </li>
+                            <li class="li-detail" data-thumb="{{asset('assets_front/images/j-2.webp')}}"> <img class="img-detail" src="{{asset('assets_front/images/j-2.webp')}}" /> </li>
+                            <!-- <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li>
+                            <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li>
+                            <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li>
+                            <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li>
+                            <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li>
+                            <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li> -->
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-7">
-                <div class="card-detail shadow-lg">
-                    <div class="d-flex flex-row align-items-center">
-                        <div class="p-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="ml-1">5.0</span>
+                <div class="card-detail " style="border-radius: 1.5rem;">
+                    <div class="about">
+                        <h2 class="font-weight-bold" style="margin-top: 0; margin-bottom:1rem;">PRODUCT'S NAME</h2>
+                        <h4 style="margin-top: 0rem;">Specification:</h4>
                     </div>
-                    <div class="about"> <span class="font-weight-bold">IKEA x HAY Ypperlig Collection </span>
-                        <h4 class="font-weight-bold">$3,444</h4>
+                    <div class="mt-5">
+                        <ul class="nav nav-tabs ml-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Premium</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Original</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="buttons-detail"> 
-                        <button class="btn-detail btn-lg btn-outline-danger btn-long-detail cart-detail">Add to Cart</button> 
-                    </div>
-                    <hr>
                     <div class="product-description">
-                        <div class="mt-2"> <span class="font-weight-bold">Description</span>
-                            <p>The minimalist collaboration features chairs, lightening, Shelves, Sofas, Desks and various home accessories, all offering form and function at the same point.We use high-strength clamps and joinery techniques specially designed for engineered wood beds. Ergo, no irksome creaks - and you can sleep like a baby, well into adulthood!</p>
-                            <div class="bullets">
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Best in Quality</span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Anti-creak joinery</span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Sturdy laminate surfaces</span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Relocation friendly design</span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">High gloss, high style</span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Easy-access hydraulic storage</span> </div>
+                        <div class="mt-4 mb-5"> <span class="font-weight-bold">Description</span>
+                            <p class="mt-3 mb-1" style="font-family: montserrat-light, sans-serif; color:#242424">
+                                Mixed coconut charcoal Java & Sulawesi briquette for shisha cube shape (shape according to request) <br>
+                                Middle east & Asia standart : Saudi Arabia, Dubai, Egypt, South Africa
+                            </p>
+                            <br>
+                            <div class="bullets" style="color:#242424">
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Calorie Value : 7000 Kcal</span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Total Mousture : 7%</span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Ash content : ± 2,3 - 2,5%</span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Fixed carbon : 80%</span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Burning Time : 2 Hour</span> </div>
+
+                                <div class="mt-3 mb-3   "></div>
+
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">White Ash</span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Size 25mm &#10799; 25mm &#10799; 25mm </span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">MSDS Certificate </span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text text-uppercase">10 kg packaging carton include inner box </span> </div>
                             </div>
-                        </div>
-                        <div class="mt-2"> <span class="font-weight-bold">Store</span> </div>
-                        <div class="d-flex flex-row align-items-center"> <img src="https://i.imgur.com/N2fYgvD.png" class="rounded-circle store-image">
-                            <div class="d-flex flex-column ml-1 comment-profile">
-                                <div class="comment-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="username">Rare Boutique</span> <small class="followers">25K Followers</small>
+                            <br>
+                            <div class="flex center" style="text-align: center;">
+                                <a href="{{route('contact.index')}}">
+                                    <button id="btn_vision" type="button" class="btn-template btn-primary btn-lg btn-block" style="background-color:black; color:blanchedalmond; border:none;">Contact Us</button>
+                                </a>
                             </div>
                         </div>
                     </div>
