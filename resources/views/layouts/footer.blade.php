@@ -33,13 +33,13 @@
                 </h5>
                 <ul style="list-style-type: none;margin-left:0px">
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket A</a>
+                        <a href="" class="a-zoom">Bricket A</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket B</a>
+                        <a href="" class="a-zoom">Bricket B</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="">Bricket C</a>
+                        <a href="" class="a-zoom">Bricket C</a>
                     </li>
                 </ul>
             </div>
@@ -53,13 +53,13 @@
                 </h5>
                 <ul style="list-style-type: none;margin-left:0px">
                     <li style="margin-bottom: 8px">
-                        <a href="">FAQ</a>
+                        <a href="" class="a-zoom">FAQ</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="">About Us</a>
+                        <a href="" class="a-zoom">About Us</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="">Contact Us</a>
+                        <a href="" class="a-zoom">Contact Us</a>
                     </li>
                 </ul>
             </div>

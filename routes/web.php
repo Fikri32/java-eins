@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','Front\HomeController@index')->name('home.index');
+Route::get('/', 'Front\HomeController@index')->name('home.index');
 
-Route::get('/faq','Front\FaqController@index')->name('faq.index');
-
-
+Route::get('/faq', 'Front\FaqController@index')->name('faq.index');
+Route::get('/contact', 'Front\ContactController@index')->name('contact.index');
+Route::get('/product', 'Front\ProductController@index')->name('product.index');
+Route::get('/about', 'Front\AboutController@index')->name('about.index');
+Route::get('/detail', 'Front\DetailController@index')->name('detail.index');

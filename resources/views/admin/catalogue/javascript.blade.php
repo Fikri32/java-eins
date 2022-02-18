@@ -143,25 +143,32 @@
       dataType: "json",
       contentType: "application/json",
       beforeSend: function(){
+        $('#modal-xl').modal('hide')
         Swal.fire({
             title: 'Please Wait...',
-            text: 'Storing product data',
-            imageUrl: '/img/loading.gif',
-            showConfirmButton: false,
-            allowOutsideClick: false,
+            text  : 'Your data is being processed!',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+            },
         })
       },
       success: function(res){
         $('#modal-xl').modal('hide')
-        Swal.fire({
-            title: 'Action Success',
-            icon: 'success',
-            text: 'new data successfully stored',
-            showConfirmButton: false,
-            allowOutsideClick: false,
-            timer:3000,
-        })
         $("#catalogue-list").append(drawCatalogueElement(res.catalogue, res.images[0].image))
+        Swal.fire({
+            title : 'Action Success!',
+            icon: 'success',
+            text  : 'New product successfully created',
+            showConfirmButton : true
+        })
+        // $("#heading").text("Action Success")
+        // $("#body").text("New product successfully created")
+        
+        // setInterval(() => {
+        //   $('#loading-modal').modal('hide')
+        // }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         Swal.fire({
@@ -185,24 +192,38 @@
       contentType: false,
       processData: false,
       beforeSend: function(){
+        $('#modal-xl').modal('hide')
         Swal.fire({
             title: 'Please Wait...',
-            text: 'Updating Product data',
-            imageUrl: '/img/loading.gif',
-            showConfirmButton: false,
-            allowOutsideClick: false,
+            text  : 'Your data is being processed!',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+            },
         })
+        // $('#loading-modal').modal('show')
+        // $("#heading").text("Please Wait...")
+        // $("#body").text("Your data is being processed!")
       },
       success: function(res){
-        Swal.fire({
-            title: 'Action Success',
-            icon: 'success',
-            text: 'data successfully updated',
-            showConfirmButton: false,
-            allowOutsideClick: false,
-            timer:3000,
-        })
+        $('#modal-xl').modal('hide')
+
         updateCatalogueElement(res)
+
+        Swal.fire({
+            title : 'Action Success!',
+            icon: 'success',
+            text  : 'Product data successfully updated',
+            showConfirmButton : true
+        })
+        
+        // $("#heading").text("Action Success")
+        // $("#body").text("Product data successfully updated")
+        
+        // setInterval(() => {
+        //   $('#loading-modal').modal('hide')
+        // }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         Swal.fire({
@@ -227,24 +248,35 @@
       contentType: false,
       processData: false,
       beforeSend: function(){
+        $('#delete-modal').modal('hide')
         Swal.fire({
             title: 'Please Wait...',
-            text: 'Removing Product data',
-            imageUrl: '/img/loading.gif',
-            showConfirmButton: false,
-            allowOutsideClick: false,
+            text  : 'Your data is being processed!',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+            },
         })
+        // $('#loading-modal').modal('show')
+        // $("#heading").text("Please Wait...")
+        // $("#body").text("Your data is being processed!")
       },
       success: function(res){
-        Swal.fire({
-          title: 'Action Success',
-          icon: 'success',
-          text: 'new data successfully removed',
-          showConfirmButton: false,
-          allowOutsideClick: true,
-          timer:3000,
-        })
+        $('#delete-modal').modal('hide')
         $(`#row-${res.id}`).remove()
+        Swal.fire({
+            title : 'Action Success!',
+            icon: 'success',
+            text  : 'Product data successfully removed',
+            showConfirmButton : true
+        })
+
+        // $("#heading").text("Action Success")
+        // $("#body").text("Product data successfully removed")        
+        // setInterval(() => {
+        //   $('#loading-modal').modal('hide')
+        // }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         Swal.fire({

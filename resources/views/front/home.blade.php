@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-<section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width=3000 data-natural-height=2000 data-image-src="{{asset('assets_front/images/briquette1.jpg')}}" data-position-y=center>
+<section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="{{asset('assets_front/images/briquette3.jpg')}}" data-position-y=center>
     <!--  -->
 
     <div class="overlay"></div>
@@ -20,7 +20,7 @@
             </h1>
 
             <h3 style="text-align: center;">
-                Worldwide Bricket Seller Company
+                Worldwide Briquette Seller Company
             </h3>
 
             <!-- <div class="home-content__buttons">
@@ -50,7 +50,7 @@
             <a href="#0"><i class="fa fa-facebook" aria-hidden="true" style="color: #e50914;"></i><span>Facebook</span></a>
         </li>
         <li>
-            <a href="#0"><i class="fa fa-twitter" aria-hidden="true" style="color: #e50914;"></i><span>Twiiter</span></a>
+            <a href="#0"><i class="fa fa-linkedin" aria-hidden="true" style="color: #e50914;"></i><span>Linkedin</span></a>
         </li>
         <li>
             <a href="#0"><i class="fa fa-instagram" aria-hidden="true" style="color: #e50914;"></i><span>Instagram</span></a>
