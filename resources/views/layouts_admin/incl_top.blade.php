@@ -19,8 +19,13 @@
 <link rel="stylesheet" href="{{asset('assets_admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
 <link rel="stylesheet" href="{{asset('assets_admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
+<!-- sweetalert 2 -->
+<link rel="stylesheet" href="{{asset('assets_admin/plugins/sweetalert2/sweetalert2.css')}}">
+
 <!-- dropzonejs -->
 <link rel="stylesheet" href="{{asset('assets_admin/plugins/dropzone/min/dropzone.min.css')}}">
 
+
 {{-- Summernote --}}
 <link rel="stylesheet" href="{{asset('assets_admin/plugins/summernote/summernote-bs4.min.css')}}"></link>
+
