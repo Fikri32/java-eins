@@ -17,7 +17,18 @@
           name : $('#name').val(),
           description : $('#description').val(),
           moq : $('#moq').val(),
-          capacity : $('#capacity').val(),
+          standart : $('#standart').val(),
+          quality : $('#quality').val(),
+          calorie : $('#calorie').val(),
+          mousture : $('#mousture').val(),
+          ash : $('#ash').val(),
+          carbon : $('#carbon').val(),
+          burning : $('#burning').val(),
+          ashtype : $('#ashtype').val(),
+          size : $('#size').val(),
+          certificate : $('#certificate').val(),
+          packaging : $('#packaging').val(),
+
           images,
         }
         ajaxCreate(data)
@@ -298,10 +309,21 @@
       type:"GET",
       url,
       success: function(res){
-        const { name, description, moq, capacity, id} = res
+        const { name, description, moq,standart,quality,calorie,
+            mousture,ash,carbon,burning,ashtype,size,certificate,packaging,id} = res
         $('#name').val(name)
         $('#moq').val(moq)
-        $('#capacity').val(capacity)
+        $('#standart').val(standart),
+        $('#quality').val(quality),
+        $('#calorie').val(calorie),
+        $('#mousture').val(mousture),
+        $('#ash').val(ash),
+        $('#carbon').val(carbon),
+        $('#burning').val(burning),
+        $('#ashtype').val(ashtype),
+        $('#size').val(size),
+        $('#certificate').val(certificate),
+        $('#packaging').val(packaging),
         $('#cid').val(id)
         $('#description').summernote('editor.pasteHTML', description);
       },
@@ -453,7 +475,7 @@
           ${ image ? `<img src="/catalogue_images/${image}" alt="" height="60px" width="60px">` : "" } 
         </td>
         <td>${data.name}</td>
-        <td>${data.capacity}</td>
+        <td>${data.quality}</td>
         <td>${data.moq}</td>
         <td>
             <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="${data.id}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
@@ -467,7 +489,7 @@
   function updateCatalogueElement(data) {
     var row = document.querySelectorAll(`#row-${data.id} > td`)
     row[2].innerHTML = data.name 
-    row[3].innerHTML = data.capacity 
+    row[3].innerHTML = data.quality 
     row[4].innerHTML = data.moq
   }
 </script>

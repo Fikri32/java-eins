@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="{{asset('assets_front/css/main.css')}}">
 <link rel="stylesheet" href="{{asset('assets_front/css/owl.carousel.css')}}">
 <link rel="stylesheet" href="{{asset('assets_front/css/owl.theme.default.css')}}">
+<link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
 
 
 <!-- script

@@ -4411,3 +4411,177 @@ ul {
     justify-content: flex-start;
     border-bottom-right-radius: 5px;
 }
+
+/* Detail Product Fikri */
+.card-detail {
+    background-color: #fff;
+    padding: 14px;
+    border: none
+}
+
+.demo-detail {
+    width: 100%
+}
+
+.ul-detail {
+    list-style: none outside none;
+    padding-left: 0;
+    margin-bottom: 0
+}
+
+.li-detail {
+    display: block;
+    float: left;
+    margin-right: 6px;
+    cursor: pointer
+}
+
+.img-detail {
+    display: block;
+    height: auto;
+    width: 100%
+}
+
+.stars i {
+    color: #f6d151
+}
+
+.stars span {
+    font-size: 13px
+}
+
+hr {
+    color: #d4d4d4
+}
+
+.badge-detail {
+    padding: 5px !important;
+    padding-bottom: 6px !important
+}
+
+.badge-detail i {
+    font-size: 10px
+}
+
+.profile-image {
+    width: 35px
+}
+
+.comment-ratings i {
+    font-size: 13px
+}
+
+.username {
+    font-size: 12px
+}
+
+.comment-profile {
+    line-height: 17px
+}
+
+.date span {
+    font-size: 12px
+}
+
+.p-ratings i {
+    color: #f6d151;
+    font-size: 12px
+}
+
+.btn-long-detail {
+    padding-left: 35px;
+    padding-right: 35px
+}
+
+.buttons-detail {
+    margin-top: 15px
+}
+
+.buttons-detail .btn-detail {
+    height: 46px
+}
+
+.buttons-detail .cart-detail {
+    border-color: #ff7676;
+    color: #ff7676
+}
+
+.buttons-detail .cart-detail:hover {
+    background-color: #e86464 !important;
+    color: #fff
+}
+
+.buttons-detail .buy-detail {
+    color: #fff;
+    background-color: #ff7676;
+    border-color: #ff7676
+}
+
+.buttons-detail .buy-detail:focus,
+.buy-detail:active {
+    color: #fff;
+    background-color: #ff7676;
+    border-color: #ff7676;
+    box-shadow: none
+}
+
+.buttons-detail .buy-detail:hover {
+    color: #fff;
+    background-color: #e86464;
+    border-color: #e86464
+}
+
+.buttons-detail .wishlist-detail {
+    background-color: #fff;
+    border-color: #ff7676
+}
+
+.buttons-detail .wishlist-detail:hover {
+    background-color: #e86464;
+    border-color: #e86464;
+    color: #fff
+}
+
+.buttons-detail .wishlist-detail:hover i {
+    color: #fff
+}
+
+.buttons-detail .wishlist-detail i {
+    color: #ff7676
+}
+
+.comment-ratings i {
+    color: #f6d151
+}
+
+.followers {
+    font-size: 9px;
+    color: #d6d4d4
+}
+
+.store-image-detail {
+    width: 42px
+}
+
+.dot-detail {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px
+}
+
+.bullet-text {
+    font-size: 12px
+}
+
+.my-color {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+
+.card-body-detail {
+    padding: 0.3rem 0.3rem 0.2rem
+}
