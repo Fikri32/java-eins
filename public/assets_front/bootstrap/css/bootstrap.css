@@ -5672,8 +5672,7 @@ a.badge-dark.focus {
 }
 
 .jumbotron {
-    background: url("/assets_front/images/briquette3.jpg") no-repeat center
-        center;
+    background: url("/assets_front/images/jumbotron3.jpg") no-repeat center center;
     /* padding: 5em inherit; */
     /* margin-bottom: 2rem; */
     /* background-color: #e9ecef; */
@@ -5688,8 +5687,7 @@ a.badge-dark.focus {
 
 /* About */
 .jumbotron-about {
-    background: url("/assets_front/images/j-2.webp") no-repeat center
-        center;
+    background: url("/assets_front/images/briquette3.jpg") no-repeat center center;
     /* padding: 5em inherit; */
     /* margin-bottom: 2rem; */
     /* background-color: #e9ecef; */
@@ -5704,7 +5702,7 @@ a.badge-dark.focus {
 
 /* Faq */
 .jumbotron-faq {
-    background: url("/assets_front/images/j-1.webp") no-repeat center
+    background: url("/assets_front/images/jumbotron2.jpg") no-repeat center
         center;
     /* padding: 5em inherit; */
     /* margin-bottom: 2rem; */

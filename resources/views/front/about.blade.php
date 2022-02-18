@@ -8,21 +8,21 @@
         </div>
     </div>
     <div class="row-template has-bottom-sep" data-aos="fade-up">
-        <div class="col-md-6">
+        <div class="col-md-6" style="text-align: center; justify-content:center">
             <a href="#0">
-                <button id="btn_about" type="button" class="btn-template btn-primary btn-sm btn-block" style="margin-top: 6rem; background-color:black; color: #c4c4c4;width:70%">About</button>
+                <button id="btn_about" type="button" class="btn-template btn-primary btn-sm btn-block" style="margin-top: 6rem; background-color:black; color: blanchedalmond; width:50%; height:5rem; border:none;">About</button>
             </a>
             <a href="#0">
-                <button id="btn_vision" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;width:70%">Vision & Mission</button>
+                <button id="btn_vision" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: blanchedalmond;width:50%; height:5rem; border:none;">Vision & Mission</button>
             </a>
             <a href="#0">
-                <button id="btn_order" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: #c4c4c4;width:70%">How To Order</button>
+                <button id="btn_order" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: blanchedalmond;width:50%; height:5rem; border:none;">How To Order</button>
             </a>
             <div>
                 <img id="about-image" class="img-fluid" src="" alt="">
             </div>
         </div>
-    
+
 
         <!-- About -->
         <div id="about" class="col-md-6">
@@ -120,32 +120,32 @@
 </section> <!-- end s-faq -->
 @endsection
 @push('scripts')
-    <script>
-        $(document).ready(function () {
-            $("#about").show();
-            $("#vision").hide();
-            $("#order").hide();
-            $('#about-image').attr("src", '{{ URL::asset('assets_front/images/cube_2.png') }}');
-        })
-        $("#btn_about").click(function () {
-                $("#about").show();
-                $("#vision").hide();
-                $("#order").hide();
-                $('#about-image').attr("src", '{{ URL::asset('assets_front/images/cube_2.png') }}');
-            });
+<script>
+    $(document).ready(function() {
+        $("#about").show();
+        $("#vision").hide();
+        $("#order").hide();
+        $('#about-image').attr("src", '{{ URL::asset("assets_front/images/cube_2.png") }}');
+    })
+    $("#btn_about").click(function() {
+        $("#about").show();
+        $("#vision").hide();
+        $("#order").hide();
+        $('#about-image').attr("src", '{{ URL::asset("assets_front/images/cube_2.png") }}');
+    });
 
-        $("#btn_vision").click(function () {
-            $("#about").hide();
-            $("#vision").show();
-            $("#order").hide();
-            $('#about-image').attr("src", '{{ URL::asset('assets_front/images/bg.jpg') }}');
-        });
+    $("#btn_vision").click(function() {
+        $("#about").hide();
+        $("#vision").show();
+        $("#order").hide();
+        $('#about-image').attr("src", '{{ URL::asset("assets_front/images/j-9-nobg.png") }}');
+    });
 
-        $("#btn_order").click(function () {
-            $("#about").hide();
-            $("#vision").hide();
-            $("#order").show();
-            $('#about-image').attr("src", '{{ URL::asset('assets_front/images/j-1.webp') }}');
-        });
-    </script>
+    $("#btn_order").click(function() {
+        $("#about").hide();
+        $("#vision").hide();
+        $("#order").show();
+        $('#about-image').attr("src", '{{ URL::asset("assets_front/images/hexa.png") }}');
+    });
+</script>
 @endpush
