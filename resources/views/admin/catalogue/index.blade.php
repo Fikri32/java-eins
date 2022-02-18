@@ -35,7 +35,6 @@
                                 <th>No</th>
                                 <th>Picture</th>
                                 <th>Name</th>
-                                <th>Capacity</th>
                                 <th>MOQ</th>
                                 <th>Action</th>
                             </tr>
@@ -50,7 +49,6 @@
                                     @endif
                                 </td>
                                 <td>{{$catalogue->name}}</td>
-                                <td>{{$catalogue->quality}}</td>
                                 <td>{{$catalogue->moq}}</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="{{$catalogue->id}}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
@@ -85,71 +83,26 @@
                     <input type="hidden" name="id" id="cid">
                     
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">Product Name</label>
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Product name" autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Quality</label>
-                                    <input type="text" name="quality" class="form-control" id="quality" placeholder="Standart" autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Standart</label>
-                                    <input type="text" name="standart" class="form-control" id="standart" placeholder="Standart" autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Calorie Value</label>
-                                    <input type="text" name="calorie" class="form-control" id="calorie" placeholder="Calorie Value" autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Total Mousture</label>
-                                    <input type="text" name="mousture" class="form-control" id="mousture" placeholder="Total Mousture " autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Ash Content</label>
-                                    <input type="text" name="ash" class="form-control" id="ash" placeholder="Ash Content" autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Fixed Carbon</label>
-                                    <input type="text" name="carbon" class="form-control" id="carbon" placeholder="Fixed Carbon" autocomplete="off" required>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">Burning Time</label>
-                                    <input type="text" name="burning" class="form-control" id="burning" placeholder="Burning Time" autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Ash Type</label>
-                                    <input type="text" name="ashtype" class="form-control" id="ashtype" placeholder="Ash Type" autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Size</label>
-                                    <input type="text" name="size" class="form-control" id="size" placeholder="Size" autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Certificate</label>
-                                    <input type="text" name="certificate" class="form-control" id="certificate" placeholder="Certificate" autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Packaging</label>
-                                    <input type="text" name="packaging" class="form-control" id="packaging" placeholder="Packaging" autocomplete="off" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="moq">Minimum Order Quantity Produk</label>
-                                    <input type="number" name="moq" class="form-control" id="moq" min="1" placeholder="Minimum Order Quantity" required>
-                                </div>
-        
-                                
-                            </div>
-                        </div>
                         <div class="form-group">
-                            <label for="description">Deskripsi Produk</label>
-                            <textarea name="description" id="description" class="form-control" cols="30" rows="10" placeholder="Describe your product like product overview, advantages, specification etc" required></textarea>
+                            <label for="name">Product Name</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Product name" autocomplete="off" required>
                         </div>
+
+                        <div class="form-group">
+                            <label for="moq">Minimum Order Quantity</label>
+                            <input type="number" name="moq" class="form-control" id="moq" min="1" placeholder="Minimum Order Quantity" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Description Premium Product</label>
+                            <textarea name="description_premium" id="description_premium" class="form-control" cols="30" rows="10" placeholder="Describe your product like product overview, advantages, specification etc" ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description Original Product</label>
+                            <textarea name="description_original" id="description_original" class="form-control" cols="30" rows="10" placeholder="Describe your product like product overview, advantages, specification etc" ></textarea>
+                        </div>
+
                         <div class="form-group">
                             <div class="row mb-5" id="uploaded-image">
 
