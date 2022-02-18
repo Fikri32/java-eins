@@ -7,52 +7,61 @@
 
         </div>
     </div>
-    <div class="row-template has-bottom-sep" data-aos="fade-up" style="margin-top: 6rem">
-
-        <div class="col-lg-2 order-lg-1 order-2">
-            <ul class="image_list">
-                <li data-image="https://indonesiacocopeat.com/wp-content/uploads/2021/09/briquette-resize.jpg"><img src="https://indonesiacocopeat.com/wp-content/uploads/2021/09/briquette-resize.jpg" alt=""></li>
-                <li data-image="{{asset('assets_front/images/j-9.jpg')}}"><img src="{{asset('assets_front/images/j-8.jpg')}}" alt=""></li>
-                <li data-image="{{asset('assets_front/images/j-5.jpg')}}"><img src="{{asset('assets_front/images/j-5.jpg')}}" alt=""></li>
-            </ul>
-        </div>
-        <div class="col-lg-4 order-lg-2 order-1">
-            <div class="image_selected">
-                <img src="{{asset('assets_front/images/j-5.jpg')}}" alt="">
+    <div class="container-fluid mt-2 mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-5 pr-2">
+                <div class="card-detail shadow-lg">
+                    <div class="demo-detail">
+                        <ul class="ul-detail" id="lightSlider">
+                            <li class="li-detail" data-thumb="https://i.imgur.com/KZpuufK.jpg"> <img class="img-detail" src="https://i.imgur.com/KZpuufK.jpg" /> </li>
+                            <li class="li-detail" data-thumb="https://i.imgur.com/GwiUmQA.jpg"> <img class="img-detail" src="https://i.imgur.com/GwiUmQA.jpg" /> </li>
+                            <li class="li-detail" data-thumb="https://i.imgur.com/DhKkTrG.jpg"> <img class="img-detail" src="https://i.imgur.com/DhKkTrG.jpg" /> </li>
+                            <li class="li-detail" data-thumb="https://i.imgur.com/kYWqL7k.jpg"> <img class="img-detail" src="https://i.imgur.com/kYWqL7k.jpg" /> </li>
+                            <li class="li-detail" data-thumb="https://i.imgur.com/c9uUysL.jpg"> <img class="img-detail" src="https://i.imgur.com/c9uUysL.jpg" /> </li>
+                            <li class="li-detail" data-thumb="https://i.imgur.com/KZpuufK.jpg"> <img class="img-detail" src="https://i.imgur.com/KZpuufK.jpg" /> </li>
+                            <li class="li-detail" data-thumb="https://i.imgur.com/GwiUmQA.jpg"> <img class="img-detail" src="https://i.imgur.com/GwiUmQA.jpg" /> </li>
+                            <li class="li-detail" data-thumb="https://i.imgur.com/DhKkTrG.jpg"> <img class="img-detail" src="https://i.imgur.com/DhKkTrG.jpg" /> </li>
+                            <li class="li-detail" data-thumb="https://i.imgur.com/kYWqL7k.jpg"> <img class="img-detail" src="https://i.imgur.com/kYWqL7k.jpg" /> </li>
+                            <li class="li-detail" data-thumb="https://i.imgur.com/c9uUysL.jpg"> <img class="img-detail" src="https://i.imgur.com/c9uUysL.jpg" /> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="card-detail shadow-lg">
+                    <div class="d-flex flex-row align-items-center">
+                        <div class="p-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="ml-1">5.0</span>
+                    </div>
+                    <div class="about"> <span class="font-weight-bold">IKEA x HAY Ypperlig Collection </span>
+                        <h4 class="font-weight-bold">$3,444</h4>
+                    </div>
+                    <div class="buttons-detail"> 
+                        <button class="btn-detail btn-lg btn-outline-danger btn-long-detail cart-detail">Add to Cart</button> 
+                    </div>
+                    <hr>
+                    <div class="product-description">
+                        <div class="mt-2"> <span class="font-weight-bold">Description</span>
+                            <p>The minimalist collaboration features chairs, lightening, Shelves, Sofas, Desks and various home accessories, all offering form and function at the same point.We use high-strength clamps and joinery techniques specially designed for engineered wood beds. Ergo, no irksome creaks - and you can sleep like a baby, well into adulthood!</p>
+                            <div class="bullets">
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Best in Quality</span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Anti-creak joinery</span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Sturdy laminate surfaces</span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Relocation friendly design</span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">High gloss, high style</span> </div>
+                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Easy-access hydraulic storage</span> </div>
+                            </div>
+                        </div>
+                        <div class="mt-2"> <span class="font-weight-bold">Store</span> </div>
+                        <div class="d-flex flex-row align-items-center"> <img src="https://i.imgur.com/N2fYgvD.png" class="rounded-circle store-image">
+                            <div class="d-flex flex-column ml-1 comment-profile">
+                                <div class="comment-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="username">Rare Boutique</span> <small class="followers">25K Followers</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-        <div class="col-md-6 pl-5">
-            <h3 style="margin-top: 1rem">PRODUCT'S NAME</h3>
-            <h5 style="margin-top: 1rem">SPESIFIKASI:</h5>
-            <ul class="text-justify" style="list-style-type: none; margin-left:0px; font-family: montserrat-light sans-serif;">
-                <li class="text-uppercase">Mixed coconut charcoal Java & Sulawesi briquette for shisha cube shape (shape according to request)</li>
-                <li class="text-uppercase" style="margin-top: 1rem;">Middle east & Asia standart : Saudi Arabia, Dubai, Egypt, South Africa </li>
-                <li style="margin-top: 1rem;">-Calorie Value : 7000 Kcal </li>
-                <li>-Total Mousture : 7% </li>
-                <li>-Ash content : ± 2,3 - 2,5% </li>
-                <li>-Fixed carbon : 80% </li>
-                <li>-Burning Time : 2 Hour</li>
-                <li class="text-uppercase" style="margin-top: 1rem;">White Ash </li>
-                <li style="margin-top: 1rem;">Size 25mm x 25mm x 25mm </li>
-                <li class="text-uppercase" style="margin-top: 1rem;">MSDS Certificate </li>
-                <li class="text-uppercase" style="margin-top: 1rem;">10 kg packaging carton include inner box</li>
-                <!-- <li style="margin-top: 1rem;"><b>see more</b></li> -->
-                <li style="margin-top: 1rem;"><b>see less</b></li>
-            </ul>
-
-            <a href="{{route('contact.index')}}">
-                <button type="button" class="btn-template btn-primary btn-sm btn-block border-0" style="background-color: black; color: #c4c4c4; border:none; border-radius:0px; margin-top:1rem">Contact Us</button>
-            </a>
-        </div>
     </div>
-    <!-- end section-header -->
-
-    <div class="row-template faq-desc" data-aos="fade-up">
-
-    </div>
-    </div> <!-- end faq-desc -->
 
 
 
@@ -91,5 +100,12 @@
     //         </div>
     //     `
     // }
+    $('#lightSlider').lightSlider({
+        gallery: true,
+        item: 1,
+        loop: true,
+        slideMargin: 0,
+        thumbItem: 9
+    });
 </script>
 @endpush

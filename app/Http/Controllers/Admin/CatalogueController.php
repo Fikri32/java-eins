@@ -27,7 +27,18 @@ class CatalogueController extends Controller
         $catalogue->name = $req['name'];
         $catalogue->description = $req['description'];
         $catalogue->moq = $req['moq'];
-        $catalogue->capacity = $req['capacity'];
+        $catalogue->quality = $req['quality'];
+        $catalogue->calorie = $req['calorie'];
+        $catalogue->standart = $req['standart'];
+        $catalogue->calorie = $req['calorie'];
+        $catalogue->mousture = $req['mousture'];
+        $catalogue->ash = $req['ash'];
+        $catalogue->carbon = $req['carbon'];
+        $catalogue->burning = $req['burning'];
+        $catalogue->ashtype = $req['ashtype'];
+        $catalogue->size = $req['size'];
+        $catalogue->certificate = $req['certificate'];
+        $catalogue->packaging = $req['packaging'];
         $catalogue->save();
 
         // simpan gambar 
