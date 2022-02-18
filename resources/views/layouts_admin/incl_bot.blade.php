@@ -27,9 +27,13 @@
 <script src="{{asset('assets_admin/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('assets_admin/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 
-{{-- <!-- Sweetalert 2 -->
-<script src="{{asset('assets_admin/plugins/sweetalert2/sweetalert2.js')}}"></script>  --}}
+<!-- Sweetalert 2 -->
+<script src="{{asset('assets_admin/plugins/sweetalert2/sweetalert2.js')}}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Summernote -->
+<script src="{{asset('assets_admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
+
 <!-- dropzonejs -->
 <script src="{{asset('assets_admin/plugins/dropzone/min/dropzone.min.js')}}"></script>
 
