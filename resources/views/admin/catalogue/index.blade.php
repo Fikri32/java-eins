@@ -88,10 +88,21 @@
                             <label for="name">Product Name</label>
                             <input type="text" name="name" class="form-control" id="name" placeholder="Product name" autocomplete="off" required>
                         </div>
-
+                        <div class="form-group">
+                            <label for="name">Short Description</label>
+                            <input type="text" name="short_description" class="form-control" id="short_description" placeholder="Short Description" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="float-left">Status</label>
+                            <select class="form-control" name="status" id="status">
+                                <option>Select Your Status</option>
+                                <option value="1">Available</option>
+                                <option value="0">Out Of Stock</option>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="moq">Minimum Order Quantity</label>
-                            <input type="number" name="moq" class="form-control" id="moq" min="1" placeholder="Minimum Order Quantity" required>
+                            <input type="text" name="moq" class="form-control" id="moq" placeholder="Minimum Order Quantity" required>
                         </div>
                         
                         <div class="form-group">
@@ -176,7 +187,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="">Video Preview</label>
-                        <video controls width="100%" id="video-previews">
+                        <video controls width="25%" id="video-previews">
                             Sorry, your browser doesn't support embedded videos.
                         </video>
                     </div>

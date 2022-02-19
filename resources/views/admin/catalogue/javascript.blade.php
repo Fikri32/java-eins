@@ -15,9 +15,11 @@
         var images = serializationImages()
         const data = {
           name : $('#name').val(),
+          moq : $('#moq').val(),
+          status : $('#status').val(),
+          short_description : $('#short_description').val(),
           description_premium : $('#description_premium').summernote('code'),
           description_original : $('#description_original').summernote('code'),
-          moq : $('#moq').val(),
           images,
         }
         ajaxCreate(data)
@@ -267,15 +269,15 @@
       type:"GET",
       url,
       success: function(res){
-        const { name,description_premium,description_original, moq, id} = res
+        const { name,description_premium,description_original,short_description,status, moq, id} = res
         $('#name').val(name)
-
+        $('#status').val(status)
+        $('#moq').val(moq)
+        $('#cid').val(id)
+        $('#short_description').val(short_description)
         $('#description_premium').summernote('code',description_premium)
         $('#description_original').summernote('code',description_original)
 
-        $('#moq').val(moq)
-        $('#cid').val(id)
-        $('#description').summernote('editor.pasteHTML', description);
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         Swal.fire({
@@ -315,8 +317,7 @@
   function updateCatalogueElement(data) {
     var row = document.querySelectorAll(`#row-${data.id} > td`)
     row[2].innerHTML = data.name 
-    row[3].innerHTML = data.capacity 
-    row[4].innerHTML = data.moq
+    row[3].innerHTML = data.moq
   }
 </script>
 <!-- End Catalogue Product Handle -->
