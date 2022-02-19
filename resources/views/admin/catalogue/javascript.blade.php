@@ -55,8 +55,23 @@
         ['height', ['height']]
       ]
     })
-  })
 
+    // upload video
+    $("#video-form").submit(function (e) {
+      e.preventDefault()
+      let video = SerializeVideo()
+      let id = $("#selected-product").val()
+      const data = {
+        id,
+        video
+      }
+      ajaxUploadVideos(data)
+    })
+  })
+</script>
+
+<!-- Catalogue Product Handle -->
+<script>
   // untuk menampilkan form modal
   function ShowCRUDmodal(e) {
     const type = $(e).attr('data-type')
@@ -109,29 +124,6 @@
     })
   }
 
-  // serialisasi dari src gambar
-  function serializationImages() {
-    var t = document.querySelectorAll("span.preview > img")
-    var serialized = []
-
-    // proses serialisasi data gambar
-    for (let i = 0; i < t.length; i++) {
-      var img =  t[i].getAttribute("src")
-      var encoded = img.split(';base64,')[1]
-      var format = img.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/)[0].replaceAll("image/", "")
-      serialized.push({encoded, format})
-    }
-
-    // return data gambar terserialisasi
-    return serialized    
-  }
-
-  // hapus gambar (yang sudah di upload)
-  function deleteImage(id) {
-    var c = confirm("Do you want to remove this product picture?")
-    if (c) ajaxDeleteImages(id)
-  }
-
   // ajax untuk type aksi CREATE
   function ajaxCreate(data){
     var t = document.querySelectorAll("input[name='_token']")
@@ -163,12 +155,6 @@
             text  : 'New product successfully created',
             showConfirmButton : true
         })
-        // $("#heading").text("Action Success")
-        // $("#body").text("New product successfully created")
-        
-        // setInterval(() => {
-        //   $('#loading-modal').modal('hide')
-        // }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         Swal.fire({
@@ -202,9 +188,6 @@
                 Swal.showLoading()
             },
         })
-        // $('#loading-modal').modal('show')
-        // $("#heading").text("Please Wait...")
-        // $("#body").text("Your data is being processed!")
       },
       success: function(res){
         $('#modal-xl').modal('hide')
@@ -217,13 +200,6 @@
             text  : 'Product data successfully updated',
             showConfirmButton : true
         })
-        
-        // $("#heading").text("Action Success")
-        // $("#body").text("Product data successfully updated")
-        
-        // setInterval(() => {
-        //   $('#loading-modal').modal('hide')
-        // }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         Swal.fire({
@@ -258,9 +234,6 @@
                 Swal.showLoading()
             },
         })
-        // $('#loading-modal').modal('show')
-        // $("#heading").text("Please Wait...")
-        // $("#body").text("Your data is being processed!")
       },
       success: function(res){
         $('#delete-modal').modal('hide')
@@ -271,12 +244,6 @@
             text  : 'Product data successfully removed',
             showConfirmButton : true
         })
-
-        // $("#heading").text("Action Success")
-        // $("#body").text("Product data successfully removed")        
-        // setInterval(() => {
-        //   $('#loading-modal').modal('hide')
-        // }, 2000)
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         Swal.fire({
@@ -315,6 +282,101 @@
         })
       }
     })
+  }
+
+  // untuk render row catalogue
+  function drawCatalogueElement(data, image) {
+    // numbering
+    var list = document.querySelectorAll("#catalogue-list > tr")
+
+    return `
+      <tr id="row-${data.id}">
+        <td>${list.length + 1}</td>
+        <td>
+          ${ image ? `<img src="/catalogue_images/${image}" alt="" height="60px" width="60px">` : "" } 
+        </td>
+        <td>${data.name}</td>
+        <td>${data.capacity}</td>
+        <td>${data.moq}</td>
+        <td>
+            <button type="button" class="btn btn-sm btn-outline-secondary mr-2" data-name="${data.name}" data-id="${data.id}" onclick="ShowUploadVids(this)"><i class="fa fa-video"></i> Upload Video</button>
+            <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="${data.id}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
+            <button type="button" class="btn btn-sm btn-outline-danger" data-type="delete" data-id="${data.id}" onclick="ShowDeleteModal(this)"><i class="fa fa-trash" ></i> Delete</button>
+        </td>
+      </tr>
+    `
+  }
+
+  // upload catalogue table row element
+  function updateCatalogueElement(data) {
+    var row = document.querySelectorAll(`#row-${data.id} > td`)
+    row[2].innerHTML = data.name 
+    row[3].innerHTML = data.capacity 
+    row[4].innerHTML = data.moq
+  }
+</script>
+<!-- End Catalogue Product Handle -->
+
+<!-- Dropzone -->
+<script>
+  Dropzone.autoDiscover = false
+  var previewNode = document.querySelector("#template")
+  previewNode.id = ""
+  var previewTemplate = previewNode.parentNode.innerHTML
+  previewNode.parentNode.removeChild(previewNode)
+
+  var myDropzone = new Dropzone(document.body, { 
+    url: "/target-url", 
+    thumbnailWidth: 250,
+    thumbnailHeight: 250,
+    parallelUploads: 20,
+    previewTemplate: previewTemplate,
+    autoQueue: false, 
+    previewsContainer: "#previews", 
+    clickable: ".fileinput-button" 
+  })
+
+  myDropzone.on("addedfile", function(file) {
+    file.previewElement.querySelector(".delete").onclick = function() { myDropzone.enqueueFile(file) }
+  })
+ 
+  myDropzone.on("totaluploadprogress", function(progress) {
+    document.querySelector(".progress-bar").style.width = progress + "%"
+  })
+
+  document.querySelector("#actions .start").onclick = function() {
+    myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED))
+  }
+
+  document.querySelector("#actions .cancel").onclick = function() {
+    myDropzone.removeAllFiles(true)
+  }
+</script>
+<!-- End Dropzone -->
+
+<!-- Handle Image -->
+<script>
+  // serialisasi dari src gambar
+  function serializationImages() {
+    var t = document.querySelectorAll("span.preview > img")
+    var serialized = []
+
+    // proses serialisasi data gambar
+    for (let i = 0; i < t.length; i++) {
+      var img =  t[i].getAttribute("src")
+      var encoded = img.split(';base64,')[1]
+      var format = img.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/)[0].replaceAll("image/", "")
+      serialized.push({encoded, format})
+    }
+
+    // return data gambar terserialisasi
+    return serialized    
+  }
+
+  // hapus gambar (yang sudah di upload)
+  function deleteImage(id) {
+    var c = confirm("Do you want to remove this product picture?")
+    if (c) ajaxDeleteImages(id)
   }
 
   // ajax untuk upload gambar
@@ -440,69 +502,112 @@
       </div>
     `
   }
-
-  // untuk render row catalogue
-  function drawCatalogueElement(data, image) {
-    // numbering
-    var list = document.querySelectorAll("#catalogue-list > tr")
-
-    return `
-      <tr id="row-${data.id}">
-        <td>${list.length + 1}</td>
-        <td>
-          ${ image ? `<img src="/catalogue_images/${image}" alt="" height="60px" width="60px">` : "" } 
-        </td>
-        <td>${data.name}</td>
-        <td>${data.capacity}</td>
-        <td>${data.moq}</td>
-        <td>
-            <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="${data.id}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
-            <button type="button" class="btn btn-sm btn-outline-danger" data-type="delete" data-id="${data.id}" onclick="ShowDeleteModal(this)"><i class="fa fa-trash" ></i> Delete</button>
-        </td>
-      </tr>
-    `
-  }
-
-  // upload catalogue table row element
-  function updateCatalogueElement(data) {
-    var row = document.querySelectorAll(`#row-${data.id} > td`)
-    row[2].innerHTML = data.name 
-    row[3].innerHTML = data.capacity 
-    row[4].innerHTML = data.moq
-  }
 </script>
+<!-- End Handle Image -->
 
+<!-- Handle Video -->
 <script>
-  Dropzone.autoDiscover = false
-  var previewNode = document.querySelector("#template")
-  previewNode.id = ""
-  var previewTemplate = previewNode.parentNode.innerHTML
-  previewNode.parentNode.removeChild(previewNode)
+  // untuk menampilkan form upload video
+  function ShowUploadVids(e) {
+    const id = $(e).attr('data-id')
+    const name = $(e).attr('data-name')
+    
+    ajaxGetVideos(id)
+    
+    $("#video-form").trigger("reset")
 
-  var myDropzone = new Dropzone(document.body, { 
-    url: "/target-url", 
-    thumbnailWidth: 250,
-    thumbnailHeight: 250,
-    parallelUploads: 20,
-    previewTemplate: previewTemplate,
-    autoQueue: false, 
-    previewsContainer: "#previews", 
-    clickable: ".fileinput-button" 
-  })
-
-  myDropzone.on("addedfile", function(file) {
-    file.previewElement.querySelector(".delete").onclick = function() { myDropzone.enqueueFile(file) }
-  })
- 
-  myDropzone.on("totaluploadprogress", function(progress) {
-    document.querySelector(".progress-bar").style.width = progress + "%"
-  })
-
-  document.querySelector("#actions .start").onclick = function() {
-    myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED))
+    $("#selected-product").val(id)
+    $("#modal-video").modal("show")
+    $("#modal-video-label").text(`Upload Videos For ${name}`)
   }
 
-  document.querySelector("#actions .cancel").onclick = function() {
-    myDropzone.removeAllFiles(true)
+  // untuk mengambil video
+  function incomingFileHandler() {
+    const input = $("#product-videos")
+    var files = input[0].files
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      $("#video-previews").attr("src", reader.result)
+    }
+
+    reader.readAsDataURL(files[0])
+  }
+
+  // serialisasi data video
+  function SerializeVideo() {
+    var vid = $("#video-previews").attr("src")
+    var encoded = vid.split(';base64,')[1]
+    var format = vid.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/)[0].replaceAll("video/", "")
+    const serialized = {encoded, format}
+    return serialized
+  }
+
+  // uploads videos
+  function ajaxUploadVideos(data) {
+    var t = document.querySelectorAll("input[name='_token']")
+    $.ajax({
+      headers: { 'X-CSRF-TOKEN': t[2].value },
+      url: "{{ route('catalogue.video.upload') }}",
+      type: 'post',
+      data : JSON.stringify(data),
+      dataType: "json",
+      contentType: "application/json",
+      beforeSend: function(){
+        Swal.fire({
+            title: 'Please Wait...',
+            text: 'Updating Product data',
+            imageUrl: '/img/loading.gif',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+        })
+      },
+      success: function(res) {
+        Swal.fire({
+            title: 'Action Success',
+            icon: 'success',
+            text: 'Product images saved',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            timer:3000,
+        })
+        // kosongkan preview video
+        $("#video-form").trigger("reset")
+        $("#modal-video").modal("hide")
+      },
+      error : function(xhr, ajaxOptions, thrownError) { 
+        Swal.fire({
+            title: 'Action Failed',
+            icon: 'error',
+            text: 'Action failed, plase try again',
+            showConfirmButton: false,
+            allowOutsideClick: true,
+        })
+      }
+    })
+  }
+
+  // get video
+  function ajaxGetVideos(id) {
+    var url = "{{ route('catalogue.video.get', ":id") }}"
+    url = url.replace(':id', id)
+
+    $.ajax({
+      type:"GET",
+      url,
+      success: function(res){
+        $("#video-previews").attr("src", `/catalogue_videos/${res.video}`)
+      },
+      error : function(xhr, ajaxOptions, thrownError) { 
+        Swal.fire({
+            title: 'Action Failed',
+            icon: 'error',
+            text: 'Action failed, plase try again',
+            showConfirmButton: false,
+            allowOutsideClick: true,
+        })
+      }
+    })
   }
 </script>
+<!-- End Handle Video -->

@@ -13,4 +13,8 @@ class Catalogue extends Model
     public function catalogue_images() {
         return $this->hasMany(CatalogueImage::class);
     }
+
+    public function catalogue_video() {
+        return $this->hasOne(CatalogueVideo::class);
+    }
 }

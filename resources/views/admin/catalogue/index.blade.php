@@ -53,6 +53,7 @@
                                 <td>{{$catalogue->capacity}}</td>
                                 <td>{{$catalogue->moq}}</td>
                                 <td>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary mr-2" data-name="{{$catalogue->name}}"  data-id="{{$catalogue->id}}" onclick="ShowUploadVids(this)"><i class="fa fa-video"></i> Upload Video</button>
                                     <button type="button" class="btn btn-sm btn-outline-warning mr-2" data-type="edit" data-id="{{$catalogue->id}}" onclick="ShowCRUDmodal(this)"><i class="fa fa-edit"></i> Edit</button>
                                     <button type="button" class="btn btn-sm btn-outline-danger" data-type="delete" data-id="{{$catalogue->id}}" onclick="ShowDeleteModal(this)"><i class="fa fa-trash" ></i> Delete</button>
                                 </td>
@@ -160,6 +161,42 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- End of form modal -->
+
+<!-- Videos form -->
+<div class="modal fade" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="modal-video-label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-video-label"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="video-form">
+                @csrf
+                <input type="hidden" name="selected-product" id="selected-product">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">Video Preview</label>
+                        <video controls width="100%" id="video-previews">
+                            Sorry, your browser doesn't support embedded videos.
+                        </video>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-videos">Select Videos</label> <br>
+                        <input type="file" accept="video/*" name="product-videos" id="product-videos" class="form-group" onchange="incomingFileHandler()">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Upload Videos</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End of videos -->
 
 @endsection
 @push('scripts')

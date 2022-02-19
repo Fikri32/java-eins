@@ -32,6 +32,11 @@ Route::group(['prefix' => 'java-admin'],function(){
             Route::post('/delete/{id}', 'Admin\CatalogueImage@Delete')->name('catalogue.image.delete');
             Route::get('/{id}', 'Admin\CatalogueImage@GetImage')->name('catalogue.image.get');
         });
+
+        Route::group(['prefix' => 'video'], function(){
+            Route::post('/upload', 'Admin\CatalogueVideo@upload')->name('catalogue.video.upload');
+            Route::get('/{id}', 'Admin\CatalogueVideo@getVideo')->name('catalogue.video.get');
+        });
     });
 });
 

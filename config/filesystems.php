@@ -68,7 +68,13 @@ return [
         'catalogue_images' => [
             'driver' => 'local',
             'root' => public_path() . '/catalogue_images',
+        ],
+
+        'catalogue_videos' => [
+            'driver' => 'local',
+            'root' => public_path() . '/catalogue_videos',
         ]
+        
     ],
 
     /*
