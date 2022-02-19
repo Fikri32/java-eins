@@ -32,15 +32,11 @@
                     Our Product
                 </h5>
                 <ul style="list-style-type: none;margin-left:0px">
+                    @foreach ($catalogues as $m)
                     <li style="margin-bottom: 8px">
-                        <a href="" class="a-zoom">Bricket A</a>
+                        <a href="{{route('produk.detail',$m->id)}}" class="a-zoom">{{$m->name}}</a>
                     </li>
-                    <li style="margin-bottom: 8px">
-                        <a href="" class="a-zoom">Bricket B</a>
-                    </li>
-                    <li style="margin-bottom: 8px">
-                        <a href="" class="a-zoom">Bricket C</a>
-                    </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
