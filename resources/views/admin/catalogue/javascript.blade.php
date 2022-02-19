@@ -301,7 +301,6 @@
           ${ image ? `<img src="/catalogue_images/${image}" alt="" height="60px" width="60px">` : "" } 
         </td>
         <td>${data.name}</td>
-        <td>${data.capacity}</td>
         <td>${data.moq}</td>
         <td>
             <button type="button" class="btn btn-sm btn-outline-secondary mr-2" data-name="${data.name}" data-id="${data.id}" onclick="ShowUploadVids(this)"><i class="fa fa-video"></i> Upload Video</button>
