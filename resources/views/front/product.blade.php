@@ -9,7 +9,6 @@
     </div>
     <div class="row-template faq-desc has-bottom-sep" data-aos="fade-up" style="margin-top:7rem; margin-bottom:150px;">
         <div id="related-products-slider-container" class="owl-container col">
-
             <div class=" owl-carousel owl-theme card-group">
                 @foreach ($catalogues as $d)
                 <div class="shadow-lg card bg-white h-100 related_products_card border-0 mt-5 mb-5"
@@ -33,6 +32,7 @@
                         <a href="{{route('produk.detail',$d->id)}}" class="btn btn-lg btn-outline-danger">
                             Detail Product
                         </a>
+
                     </div>
                 </div>
                 @endforeach

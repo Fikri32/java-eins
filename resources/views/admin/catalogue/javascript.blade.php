@@ -1,14 +1,16 @@
 <script>
-  $(function () {
+  $(function() {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
     // create & edit
-    $("#quickForm").submit(function(e){
+    $("#quickForm").submit(function(e) {
       e.preventDefault()
       const type = $('#type').val()
-      
+
       // jika type actionya = create
       if (type == 'create') {
         $('#upload-dropzone').show()
@@ -26,7 +28,7 @@
       }
 
       // jika type actionya = edit
-      if (type == 'edit'){
+      if (type == 'edit') {
         $('#upload-dropzone').hide()
         const data = new FormData($('#quickForm')[0])
         ajaxUpdate(data)
@@ -36,7 +38,7 @@
     })
 
     // upload gambar pada model edit
-    $("#upload-image-btn").click(function(e){
+    $("#upload-image-btn").click(function(e) {
       var images = serializationImages()
       const data = {
         images,
@@ -59,7 +61,7 @@
     })
 
     // upload video
-    $("#video-form").submit(function (e) {
+    $("#video-form").submit(function(e) {
       e.preventDefault()
       let video = SerializeVideo()
       let id = $("#selected-product").val()
@@ -78,9 +80,9 @@
   function ShowCRUDmodal(e) {
     const type = $(e).attr('data-type')
     const id = $(e).attr('data-id')
-    $('#description_premium').summernote('code',''),
-    $('#description_original').summernote('code',''),
-    $('#type').val(type)
+    $('#description_premium').summernote('code', ''),
+      $('#description_original').summernote('code', ''),
+      $('#type').val(type)
     $("#uploaded-image").html('')
     $("#previews").html('')
     $('#description').summernote('reset')
@@ -118,62 +120,64 @@
         allowOutsideClick: false,
         confirmButtonColor: '#af1310',
         cancelButtonColor: '#fffff',
-    })
-    .then((result) => {
+      })
+      .then((result) => {
         if (result.value) {
           ajaxDelete()
-        }else{
+        } else {
           Swal.close()
         }
-    })
+      })
   }
 
   // ajax untuk type aksi CREATE
-  function ajaxCreate(data){
+  function ajaxCreate(data) {
     var t = document.querySelectorAll("input[name='_token']")
     $.ajax({
-      headers: { 'X-CSRF-TOKEN': t[1].value },
+      headers: {
+        'X-CSRF-TOKEN': t[1].value
+      },
       type: 'POST',
       url: "{{ route('catalogue.create') }}",
       data: JSON.stringify(data),
       dataType: "json",
       contentType: "application/json",
-      beforeSend: function(){
+      beforeSend: function() {
         $('#modal-xl').modal('hide')
         Swal.fire({
-            title: 'Please Wait...',
-            text  : 'Your data is being processed!',
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: () => {
-                Swal.showLoading()
-            },
+          title: 'Please Wait...',
+          text: 'Your data is being processed!',
+          timer: 2000,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading()
+          },
         })
       },
-      success: function(res){
+      success: function(res) {
         $('#modal-xl').modal('hide')
         $("#catalogue-list").append(drawCatalogueElement(res.catalogue, res.images[0].image))
         Swal.fire({
-            title : 'Action Success!',
-            icon: 'success',
-            text  : 'New product successfully created',
-            showConfirmButton : true
+          title: 'Action Success!',
+          icon: 'success',
+          text: 'New product successfully created',
+          showConfirmButton: true
         })
       },
-      error : function(xhr, ajaxOptions, thrownError) { 
+      error: function(xhr, ajaxOptions, thrownError) {
         Swal.fire({
-            title: 'Action Failed',
-            icon: 'error',
-            text: 'Action failed, plase try again',
-            showConfirmButton: false,
-            allowOutsideClick: true,
+          title: 'Action Failed',
+          icon: 'error',
+          text: 'Action failed, plase try again',
+          showConfirmButton: false,
+          allowOutsideClick: true,
         })
       }
     })
   }
 
   // ajax untuk type aksi EDIT
-  function ajaxUpdate(data){
+  function ajaxUpdate(data) {
     $.ajax({
       type: 'POST',
       url: "{{ route('catalogue.update') }}",
@@ -181,81 +185,81 @@
       cache: false,
       contentType: false,
       processData: false,
-      beforeSend: function(){
+      beforeSend: function() {
         $('#modal-xl').modal('hide')
         Swal.fire({
-            title: 'Please Wait...',
-            text  : 'Your data is being processed!',
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: () => {
-                Swal.showLoading()
-            },
+          title: 'Please Wait...',
+          text: 'Your data is being processed!',
+          timer: 2000,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading()
+          },
         })
       },
-      success: function(res){
+      success: function(res) {
         $('#modal-xl').modal('hide')
 
         updateCatalogueElement(res)
 
         Swal.fire({
-            title : 'Action Success!',
-            icon: 'success',
-            text  : 'Product data successfully updated',
-            showConfirmButton : true
+          title: 'Action Success!',
+          icon: 'success',
+          text: 'Product data successfully updated',
+          showConfirmButton: true
         })
       },
-      error : function(xhr, ajaxOptions, thrownError) { 
+      error: function(xhr, ajaxOptions, thrownError) {
         Swal.fire({
-            title: 'Action Failed',
-            icon: 'error',
-            text: 'Action failed, plase try again',
-            showConfirmButton: false,
-            allowOutsideClick: true,
+          title: 'Action Failed',
+          icon: 'error',
+          text: 'Action failed, plase try again',
+          showConfirmButton: false,
+          allowOutsideClick: true,
         })
       }
     })
   }
 
   // ajax untuk type aksi EDIT
-  function ajaxDelete(){
+  function ajaxDelete() {
     const data = new FormData($('#quickForm')[0])
     $.ajax({
       type: 'POST',
-      url:"{{ route('catalogue.delete') }}",
+      url: "{{ route('catalogue.delete') }}",
       data: data,
       cache: false,
       contentType: false,
       processData: false,
-      beforeSend: function(){
+      beforeSend: function() {
         $('#delete-modal').modal('hide')
         Swal.fire({
-            title: 'Please Wait...',
-            text  : 'Your data is being processed!',
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: () => {
-                Swal.showLoading()
-            },
+          title: 'Please Wait...',
+          text: 'Your data is being processed!',
+          timer: 2000,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading()
+          },
         })
       },
-      success: function(res){
+      success: function(res) {
         $('#delete-modal').modal('hide')
         $(`#row-${res.id}`).remove()
         Swal.fire({
-            title : 'Action Success!',
-            icon: 'success',
-            text  : 'Product data successfully removed',
-            showConfirmButton : true
+          title: 'Action Success!',
+          icon: 'success',
+          text: 'Product data successfully removed',
+          showConfirmButton: true
         })
       },
-      error : function(xhr, ajaxOptions, thrownError) { 
+      error: function(xhr, ajaxOptions, thrownError) {
         Swal.fire({
-            title: 'Action Failed',
-            icon: 'error',
-            text: 'Action failed, plase try again',
-            showConfirmButton: false,
-            allowOutsideClick: true,
+          title: 'Action Failed',
+          icon: 'error',
+          text: 'Action failed, plase try again',
+          showConfirmButton: false,
+          allowOutsideClick: true,
         })
       }
     })
@@ -263,10 +267,10 @@
 
   // ajax untuk mengambi data katalog sesuai id (untuk edit)
   function ajaxGetDetail(id) {
-    var url = "{{ route('catalogue.detail', ":id") }}"
+    var url = '{{ route("catalogue.detail", ":id") }}'
     url = url.replace(':id', id)
     $.ajax({
-      type:"GET",
+      type: "GET",
       url,
       success: function(res){
         const { name,description_premium,description_original,short_description,status, moq, id} = res
@@ -279,13 +283,13 @@
         $('#description_original').summernote('code',description_original)
 
       },
-      error : function(xhr, ajaxOptions, thrownError) { 
+      error: function(xhr, ajaxOptions, thrownError) {
         Swal.fire({
-            title: 'Action Failed',
-            icon: 'error',
-            text: 'Action failed, plase try again',
-            showConfirmButton: false,
-            allowOutsideClick: true,
+          title: 'Action Failed',
+          icon: 'error',
+          text: 'Action failed, plase try again',
+          showConfirmButton: false,
+          allowOutsideClick: true,
         })
       }
     })
@@ -318,6 +322,7 @@
     var row = document.querySelectorAll(`#row-${data.id} > td`)
     row[2].innerHTML = data.name 
     row[3].innerHTML = data.moq
+
   }
 </script>
 <!-- End Catalogue Product Handle -->
@@ -330,21 +335,23 @@
   var previewTemplate = previewNode.parentNode.innerHTML
   previewNode.parentNode.removeChild(previewNode)
 
-  var myDropzone = new Dropzone(document.body, { 
-    url: "/target-url", 
+  var myDropzone = new Dropzone(document.body, {
+    url: "/target-url",
     thumbnailWidth: 250,
     thumbnailHeight: 250,
     parallelUploads: 20,
     previewTemplate: previewTemplate,
-    autoQueue: false, 
-    previewsContainer: "#previews", 
-    clickable: ".fileinput-button" 
+    autoQueue: false,
+    previewsContainer: "#previews",
+    clickable: ".fileinput-button"
   })
 
   myDropzone.on("addedfile", function(file) {
-    file.previewElement.querySelector(".delete").onclick = function() { myDropzone.enqueueFile(file) }
+    file.previewElement.querySelector(".delete").onclick = function() {
+      myDropzone.enqueueFile(file)
+    }
   })
- 
+
   myDropzone.on("totaluploadprogress", function(progress) {
     document.querySelector(".progress-bar").style.width = progress + "%"
   })
@@ -368,14 +375,17 @@
 
     // proses serialisasi data gambar
     for (let i = 0; i < t.length; i++) {
-      var img =  t[i].getAttribute("src")
+      var img = t[i].getAttribute("src")
       var encoded = img.split(';base64,')[1]
       var format = img.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/)[0].replaceAll("image/", "")
-      serialized.push({encoded, format})
+      serialized.push({
+        encoded,
+        format
+      })
     }
 
     // return data gambar terserialisasi
-    return serialized    
+    return serialized
   }
 
   // hapus gambar (yang sudah di upload)
@@ -388,44 +398,46 @@
   function ajaxUploadImages(data) {
     var t = document.querySelectorAll("input[name='_token']")
     $.ajax({
-      headers: { 'X-CSRF-TOKEN': t[1].value },
+      headers: {
+        'X-CSRF-TOKEN': t[1].value
+      },
       url: "{{ route('catalogue.image.upload') }}",
       type: 'post',
-      data : JSON.stringify(data),
+      data: JSON.stringify(data),
       dataType: "json",
       contentType: "application/json",
-      beforeSend: function(){
+      beforeSend: function() {
         Swal.fire({
-            title: 'Please Wait...',
-            text: 'Updating Product data',
-            imageUrl: '/img/loading.gif',
-            showConfirmButton: false,
-            allowOutsideClick: false,
+          title: 'Please Wait...',
+          text: 'Updating Product data',
+          imageUrl: '/img/loading.gif',
+          showConfirmButton: false,
+          allowOutsideClick: false,
         })
       },
       success: function(res) {
         Swal.fire({
-            title: 'Action Success',
-            icon: 'success',
-            text: 'Product images saved',
-            showConfirmButton: false,
-            allowOutsideClick: false,
-            timer:3000,
+          title: 'Action Success',
+          icon: 'success',
+          text: 'Product images saved',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 3000,
         })
         // kosongkan preview image
         $("#previews").html('')
         // render yang berhasil diupload
         res.forEach(el => {
-          $("#uploaded-image").append(drawImageElement(el))          
+          $("#uploaded-image").append(drawImageElement(el))
         })
       },
-      error : function(xhr, ajaxOptions, thrownError) { 
+      error: function(xhr, ajaxOptions, thrownError) {
         Swal.fire({
-            title: 'Action Failed',
-            icon: 'error',
-            text: 'Action failed, plase try again',
-            showConfirmButton: false,
-            allowOutsideClick: true,
+          title: 'Action Failed',
+          icon: 'error',
+          text: 'Action failed, plase try again',
+          showConfirmButton: false,
+          allowOutsideClick: true,
         })
       }
     })
@@ -434,41 +446,43 @@
   // ajax untuk hapus gambar
   function ajaxDeleteImages(id) {
     var t = document.querySelectorAll("input[name='_token']")
-    var url = "{{ route('catalogue.image.delete', ":id") }}"
+    var url = '{{ route("catalogue.image.delete", ":id") }}'
     url = url.replace(':id', id)
     $.ajax({
-      headers: { 'X-CSRF-TOKEN': t[1].value },
+      headers: {
+        'X-CSRF-TOKEN': t[1].value
+      },
       url,
       type: 'post',
       dataType: "json",
       contentType: "application/json",
-      beforeSend: function(){
+      beforeSend: function() {
         Swal.fire({
-            title: 'Please Wait...',
-            text: 'Removing Product image',
-            imageUrl: '/img/loading.gif',
-            showConfirmButton: false,
-            allowOutsideClick: false,
+          title: 'Please Wait...',
+          text: 'Removing Product image',
+          imageUrl: '/img/loading.gif',
+          showConfirmButton: false,
+          allowOutsideClick: false,
         })
       },
       success: function(res) {
         Swal.fire({
-            title: 'Action Success',
-            icon: 'success',
-            text: 'Product images removed',
-            showConfirmButton: false,
-            allowOutsideClick: false,
-            timer:3000,
+          title: 'Action Success',
+          icon: 'success',
+          text: 'Product images removed',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 3000,
         })
         $(`#image-${res.id}`).remove()
       },
-      error : function(xhr, ajaxOptions, thrownError) { 
+      error: function(xhr, ajaxOptions, thrownError) {
         Swal.fire({
-            title: 'Action Failed',
-            icon: 'error',
-            text: 'Action failed, plase try again',
-            showConfirmButton: false,
-            allowOutsideClick: true,
+          title: 'Action Failed',
+          icon: 'error',
+          text: 'Action failed, plase try again',
+          showConfirmButton: false,
+          allowOutsideClick: true,
         })
       }
     })
@@ -476,17 +490,17 @@
 
   // ambil daftar gambar
   function getImages(id) {
-    var url = "{{ route('catalogue.image.get', ":id") }}"
+    var url = '{{ route("catalogue.image.get", ":id") }}'
     url = url.replace(':id', id)
     $.ajax({
-      type:"GET",
+      type: "GET",
       url,
-      success: function(res){
+      success: function(res) {
         res.forEach(el => {
-          $("#uploaded-image").append(drawImageElement(el))          
+          $("#uploaded-image").append(drawImageElement(el))
         })
       },
-      error : function(xhr, ajaxOptions, thrownError) { 
+      error: function(xhr, ajaxOptions, thrownError) {
         $("#image-modal").modal('hide')
         $('#loading-modal').modal('show')
         $("#heading").text("Whooops...something went wrong")
@@ -516,9 +530,9 @@
   function ShowUploadVids(e) {
     const id = $(e).attr('data-id')
     const name = $(e).attr('data-name')
-    
+
     ajaxGetVideos(id)
-    
+
     $("#video-form").trigger("reset")
 
     $("#selected-product").val(id)
@@ -544,7 +558,10 @@
     var vid = $("#video-previews").attr("src")
     var encoded = vid.split(';base64,')[1]
     var format = vid.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/)[0].replaceAll("video/", "")
-    const serialized = {encoded, format}
+    const serialized = {
+      encoded,
+      format
+    }
     return serialized
   }
 
@@ -552,41 +569,43 @@
   function ajaxUploadVideos(data) {
     var t = document.querySelectorAll("input[name='_token']")
     $.ajax({
-      headers: { 'X-CSRF-TOKEN': t[2].value },
+      headers: {
+        'X-CSRF-TOKEN': t[2].value
+      },
       url: "{{ route('catalogue.video.upload') }}",
       type: 'post',
-      data : JSON.stringify(data),
+      data: JSON.stringify(data),
       dataType: "json",
       contentType: "application/json",
-      beforeSend: function(){
+      beforeSend: function() {
         Swal.fire({
-            title: 'Please Wait...',
-            text: 'Updating Product data',
-            imageUrl: '/img/loading.gif',
-            showConfirmButton: false,
-            allowOutsideClick: false,
+          title: 'Please Wait...',
+          text: 'Updating Product data',
+          imageUrl: '/img/loading.gif',
+          showConfirmButton: false,
+          allowOutsideClick: false,
         })
       },
       success: function(res) {
         Swal.fire({
-            title: 'Action Success',
-            icon: 'success',
-            text: 'Product images saved',
-            showConfirmButton: false,
-            allowOutsideClick: false,
-            timer:3000,
+          title: 'Action Success',
+          icon: 'success',
+          text: 'Product images saved',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 3000,
         })
         // kosongkan preview video
         $("#video-form").trigger("reset")
         $("#modal-video").modal("hide")
       },
-      error : function(xhr, ajaxOptions, thrownError) { 
+      error: function(xhr, ajaxOptions, thrownError) {
         Swal.fire({
-            title: 'Action Failed',
-            icon: 'error',
-            text: 'Action failed, plase try again',
-            showConfirmButton: false,
-            allowOutsideClick: true,
+          title: 'Action Failed',
+          icon: 'error',
+          text: 'Action failed, plase try again',
+          showConfirmButton: false,
+          allowOutsideClick: true,
         })
       }
     })
@@ -594,22 +613,22 @@
 
   // get video
   function ajaxGetVideos(id) {
-    var url = "{{ route('catalogue.video.get', ":id") }}"
+    var url = '{{ route("catalogue.video.get", ":id") }}'
     url = url.replace(':id', id)
 
     $.ajax({
-      type:"GET",
+      type: "GET",
       url,
-      success: function(res){
+      success: function(res) {
         $("#video-previews").attr("src", `/catalogue_videos/${res.video}`)
       },
-      error : function(xhr, ajaxOptions, thrownError) { 
+      error: function(xhr, ajaxOptions, thrownError) {
         Swal.fire({
-            title: 'Action Failed',
-            icon: 'error',
-            text: 'Action failed, plase try again',
-            showConfirmButton: false,
-            allowOutsideClick: true,
+          title: 'Action Failed',
+          icon: 'error',
+          text: 'Action failed, plase try again',
+          showConfirmButton: false,
+          allowOutsideClick: true,
         })
       }
     })
