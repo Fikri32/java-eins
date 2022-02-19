@@ -15,9 +15,9 @@
         var images = serializationImages()
         const data = {
           name : $('#name').val(),
-          description : $('#description').val(),
+          description_premium : $('#description_premium').summernote('code'),
+          description_original : $('#description_original').summernote('code'),
           moq : $('#moq').val(),
-          capacity : $('#capacity').val(),
           images,
         }
         ajaxCreate(data)
@@ -76,6 +76,8 @@
   function ShowCRUDmodal(e) {
     const type = $(e).attr('data-type')
     const id = $(e).attr('data-id')
+    $('#description_premium').summernote('code',''),
+    $('#description_original').summernote('code',''),
     $('#type').val(type)
     $("#uploaded-image").html('')
     $("#previews").html('')
@@ -265,10 +267,13 @@
       type:"GET",
       url,
       success: function(res){
-        const { name, description, moq, capacity, id} = res
+        const { name,description_premium,description_original, moq, id} = res
         $('#name').val(name)
+
+        $('#description_premium').summernote('code',description_premium)
+        $('#description_original').summernote('code',description_original)
+
         $('#moq').val(moq)
-        $('#capacity').val(capacity)
         $('#cid').val(id)
         $('#description').summernote('editor.pasteHTML', description);
       },

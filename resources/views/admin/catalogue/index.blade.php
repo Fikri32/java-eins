@@ -35,7 +35,6 @@
                                 <th>No</th>
                                 <th>Picture</th>
                                 <th>Name</th>
-                                <th>Capacity</th>
                                 <th>MOQ</th>
                                 <th>Action</th>
                             </tr>
@@ -50,7 +49,6 @@
                                     @endif
                                 </td>
                                 <td>{{$catalogue->name}}</td>
-                                <td>{{$catalogue->capacity}}</td>
                                 <td>{{$catalogue->moq}}</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-outline-secondary mr-2" data-name="{{$catalogue->name}}"  data-id="{{$catalogue->id}}" onclick="ShowUploadVids(this)"><i class="fa fa-video"></i> Upload Video</button>
@@ -87,23 +85,23 @@
                     
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">Nama Produk</label>
+                            <label for="name">Product Name</label>
                             <input type="text" name="name" class="form-control" id="name" placeholder="Product name" autocomplete="off" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="description">Deskripsi Produk</label>
-                            <textarea name="description" id="description" class="form-control" cols="30" rows="10" placeholder="Describe your product like product overview, advantages, specification etc" required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="moq">Minimum Order Quantity Produk</label>
+                            <label for="moq">Minimum Order Quantity</label>
                             <input type="number" name="moq" class="form-control" id="moq" min="1" placeholder="Minimum Order Quantity" required>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Description Premium Product</label>
+                            <textarea name="description_premium" id="description_premium" class="form-control" cols="30" rows="10" placeholder="Describe your product like product overview, advantages, specification etc" ></textarea>
+                        </div>
 
                         <div class="form-group">
-                            <label for="capacity">Kapasitas Produk</label>
-                            <input type="number" name="capacity" class="form-control" id="capacity" min="1" placeholder="Product stock capacity" required>
+                            <label for="description">Description Original Product</label>
+                            <textarea name="description_original" id="description_original" class="form-control" cols="30" rows="10" placeholder="Describe your product like product overview, advantages, specification etc" ></textarea>
                         </div>
 
                         <div class="form-group">

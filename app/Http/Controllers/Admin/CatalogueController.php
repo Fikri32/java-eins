@@ -25,9 +25,9 @@ class CatalogueController extends Controller
         // simpan catalogue dulu
         $catalogue = new Catalogue();
         $catalogue->name = $req['name'];
-        $catalogue->description = $req['description'];
+        $catalogue->description_premium = $req['description_premium'];
+        $catalogue->description_original = $req['description_original'];
         $catalogue->moq = $req['moq'];
-        $catalogue->capacity = $req['capacity'];
         $catalogue->save();
 
         // simpan gambar 
@@ -59,7 +59,8 @@ class CatalogueController extends Controller
         $catalogue = Catalogue::findOrFail($req->id);
         $catalogue->update([
             "name" => $req->name, 
-            "description" => $req->description, 
+            "description_premium" => $req->description_premium, 
+            "description_original" => $req->description_original,
             "moq" => $req->moq, 
             "capacity" => $req->capacity, 
         ]);

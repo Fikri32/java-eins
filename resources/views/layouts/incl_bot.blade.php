@@ -4,6 +4,7 @@
 <script src="{{asset('assets_front/js/main.js')}}"></script>
 <script src="{{asset('assets_front/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {

@@ -19,7 +19,7 @@
                         <p style="font-family: montserrat-light sans-serif; font-size:60%; margin-top:2.5rem; margin-bottom:0rem; text-transform:none;">This Product is so fuckin awesome. You really need to buy it at least once before you die!</p>
                         <h6 class="card-title text-uppercase mb-5 font-weight-light" style="font-family: montserrat-regular, sans-serif; margin-top:1rem;">Min. Order: 150 Kg
                         </h6>
-                        <a href="{{route('detail.index')}}" class="btn btn-lg btn-outline-primary">
+                        <a href="{{route('detail.index')}}" class="btn btn-lg btn-outline-danger">
                             Detail Product
                         </a>
                     </div>

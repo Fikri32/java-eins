@@ -13,4 +13,14 @@ class ProductController extends Controller
         $catalogues = Catalogue::all();
         return view('front.product',compact('catalogues'));
     }
+    public function detail()
+    {
+        $detail = Catalogue::find($id);
+        return view('front.detail',compact('detail'));
+    }
+    // public function detail($id)
+    // {
+    //     $detail = Catalogue::find($id);
+    //     return view('front.detail',compact('detail'));
+    // }
 }
