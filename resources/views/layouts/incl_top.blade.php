@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="{{asset('assets_front/css/owl.carousel.css')}}">
 <link rel="stylesheet" href="{{asset('assets_front/css/owl.theme.default.css')}}">
 <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
 
 
 <!-- script

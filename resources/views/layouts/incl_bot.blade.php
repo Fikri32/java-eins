@@ -5,6 +5,8 @@
 <script src="{{asset('assets_front/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
