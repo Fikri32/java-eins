@@ -17,7 +17,7 @@
                             @if(count($d->catalogue_images) > 0)
                                 <img src="{{ asset('catalogue_images/'.$d->catalogue_images[0]['image']) }}" alt="" height="60px" width="60px">
                             @endif
-                            <span class="suzohapp-dark-grey font-weight-ligther">{{$d->name}}</span>
+                            <span class="suzohapp-dark-grey font-weight-ligther text-uppercase">{{$d->name}}</span>
                         </div>
                         <div class="card-body card-body align-items-center justify-content-center px-3">
                             <p style="font-family: montserrat-light sans-serif; font-size:60%; margin-top:2.5rem; margin-bottom:0rem; text-transform:none;">This Product is so fuckin awesome. You really need to buy it at least once before you die!</p>
