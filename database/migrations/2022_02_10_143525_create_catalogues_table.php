@@ -16,7 +16,9 @@ class CreateCataloguesTable extends Migration
         Schema::create('catalogues', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->integer("moq");
+            $table->string("moq");
+            $table->enum('status',[0,1]);
+            $table->longText("short_description");
             $table->longText("description_premium");
             $table->longText("description_original");
             $table->timestamps();

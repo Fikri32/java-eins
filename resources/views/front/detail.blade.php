@@ -20,6 +20,13 @@
                                 </a>
                             </li>
                             @endforeach
+                            <li class="li-detail" data-thumb="{{ asset('assets_front/images/thumb.png') }}"> 
+                                <a class="video-link" href="{{ asset('catalogue_videos/'.$vid->video) }}">
+                                    <video class="img-detail" autoplay muted loop playsinline>
+                                        <source src="{{ asset('catalogue_videos/'.$vid->video) }}" type="video/mp4">
+                                    </video> 
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -44,12 +51,6 @@
                         <div class="product-description tab-pane fade active show" id="premium">
                             <div class="mt-4 mb-5">
                                 <span class="font-weight-bold">Description</span>
-                                <p class="mt-3 mb-1" style="font-family: montserrat-light, sans-serif; color:#242424">
-                                    Mixed coconut charcoal Java & Sulawesi briquette for shisha cube shape (shape
-                                    according
-                                    to request) <br>
-                                    Middle east & Asia standart : Saudi Arabia, Dubai, Egypt, South Africa
-                                </p>
                                 <div class="bullets" style="color:#242424">
 
                                     <div class="d-flex align-items-center">
@@ -70,12 +71,6 @@
                         <div class="product-description tab-pane fade" id="original">
                             <div class="mt-4 mb-5">
                                 <span class="font-weight-bold">Description</span>
-                                <p class="mt-3 mb-1" style="font-family: montserrat-light, sans-serif; color:#242424">
-                                    Mixed coconut charcoal Java & Sulawesi briquette for shisha cube shape (shape
-                                    according
-                                    to request) <br>
-                                    Middle east & Asia standart : Saudi Arabia, Dubai, Egypt, South Africa
-                                </p>
                                 <div class="bullets" style="color:#242424">
                                     <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">{!!$detail->description_original!!}</span>
                                     </div>
@@ -136,14 +131,14 @@
     $('#lightSlider').lightSlider({
         gallery: true,
         item: 1,
-        loop: true,
+        loop: false,
         slideMargin: 0,
         thumbItem: 9,
-        enableDrag: false,
-        onSliderLoad: function() {
-            $('#lightSlider').magnificPopup({
-                delegate: 'a',
-                mainClass: 'mfp-fade',
+        enableDrag:false,
+        onSliderLoad: function() {  
+            $('#lightSlider').magnificPopup({ 
+                delegate: 'a', 
+                // mainClass: 'mfp-fade',
                 type: 'image',
                 gallery: {
                     enabled: true,
@@ -155,8 +150,18 @@
                     enabled: true, // By default it's false, so don't forget to enable it
                     duration: 300, // duration of the effect, in milliseconds
                     easing: 'ease-in-out', // CSS transition easing function
-
-                }
+                },
+                callbacks: {
+                    elementParse: function(item) {
+                        // the class name
+                        console.log(item.el[0].className)
+                        if(item.el[0].className == 'video-link') {
+                        item.type = 'iframe';
+                        } else {
+                        item.type = 'image';
+                        }
+                    }
+                },
             });
         }
     });
