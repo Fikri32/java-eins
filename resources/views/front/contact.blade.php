@@ -113,7 +113,7 @@
                 //     'X-CSRF-TOKEN' : "{{csrf_token()}}"
                 // },
                 method: 'POST',
-                url: 'https://formsubmit.co/ajax/fikrihaidar24@gmail.com',
+                url: 'https://formsubmit.co/ajax/javaeins@gmail.com',
                 data : $('#frm_add').serialize(),
                 beforeSend: function(){
                     $('#modal-xl').modal('hide')

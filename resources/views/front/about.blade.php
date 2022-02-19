@@ -10,13 +10,13 @@
     <div class="row-template has-bottom-sep" data-aos="fade-up">
         <div class="col-md-6" style="text-align: center; justify-content:center">
             <a href="#0">
-                <button id="btn_about" type="button" class="btn-template btn-primary btn-sm btn-block" style="margin-top: 6rem; background-color:black; color: blanchedalmond; width:50%; height:5rem; border:none;">About</button>
+                <button id="btn_about" type="button" class="btn btn-lg btn-outline-danger" style="margin-top: 6rem;width:70%; height:5rem;">About</button>
             </a>
             <a href="#0">
-                <button id="btn_vision" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: blanchedalmond;width:50%; height:5rem; border:none;">Vision & Mission</button>
+                <button id="btn_vision" type="button" class="btn btn-lg btn-outline-danger" style="width:70%; height:5rem;">Vision & Mission</button>
             </a>
             <a href="#0">
-                <button id="btn_order" type="button" class="btn-template btn-primary btn-sm btn-block" style="background-color:black; color: blanchedalmond;width:50%; height:5rem; border:none;">How To Order</button>
+                <button id="btn_order" type="button" class="btn btn-lg btn-outline-danger" style="width:70%; height:5rem;">How To Order</button>
             </a>
             <div>
                 <img id="about-image" class="img-fluid" src="" alt="">

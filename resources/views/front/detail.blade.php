@@ -13,16 +13,13 @@
                 <div class="card-detail shadow-lg mb-4" style="border-radius: 1.5rem;">
                     <div class="demo-detail">
                         <ul class="ul-detail" id="lightSlider">
-                            <li class="li-detail" data-thumb="{{asset('assets_front/images/dummy2.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/dummy2.jpg')}}" /> </li>
-                            <li class="li-detail" data-thumb="{{asset('assets_front/images/dummy1.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/dummy1.jpg')}}" /> </li>
-                            <li class="li-detail" data-thumb="{{asset('assets_front/images/j-5.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/j-5.jpg')}}" /> </li>
-                            <li class="li-detail" data-thumb="{{asset('assets_front/images/j-2.webp')}}"> <img class="img-detail" src="{{asset('assets_front/images/j-2.webp')}}" /> </li>
-                            <!-- <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li>
-                            <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li>
-                            <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li>
-                            <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li>
-                            <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li>
-                            <li class="li-detail" data-thumb="{{asset('assets_front/images/briquette3.jpg')}}"> <img class="img-detail" src="{{asset('assets_front/images/briquette3.jpg')}}" /> </li> -->
+                            @foreach ($images as $d)
+                            <li class="li-detail" data-thumb="{{ asset('catalogue_images/'.$d->image) }}"> 
+                                <a href="{{ asset('catalogue_images/'.$d->image) }}">
+                                    <img class="img-detail" src="{{ asset('catalogue_images/'.$d->image) }}" /> 
+                                </a>
+                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -30,45 +27,70 @@
             <div class="col-md-7">
                 <div class="card-detail " style="border-radius: 1.5rem;">
                     <div class="about">
-                        <h2 class="font-weight-bold" style="margin-top: 0; margin-bottom:1rem;">PRODUCT'S NAME</h2>
+                        <h2 class="font-weight-bold" style="margin-top: 0; margin-bottom:1rem;">{{$detail->name}}</h2>
                         <h4 style="margin-top: 0rem;">Specification:</h4>
                     </div>
                     <div class="mt-5">
                         <ul class="nav nav-tabs ml-0">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Premium</a>
+                                <a data-toggle="tab" class="nav-link active" href="#premium">Premium</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Original</a>
+                                <a data-toggle="tab" class="nav-link" href="#original">Original</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="product-description">
-                        <div class="mt-4 mb-5"> <span class="font-weight-bold">Description</span>
-                            <p class="mt-3 mb-1" style="font-family: montserrat-light, sans-serif; color:#242424">
-                                Mixed coconut charcoal Java & Sulawesi briquette for shisha cube shape (shape according to request) <br>
-                                Middle east & Asia standart : Saudi Arabia, Dubai, Egypt, South Africa
-                            </p>
-                            <br>
-                            <div class="bullets" style="color:#242424">
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Calorie Value : 7000 Kcal</span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Total Mousture : 7%</span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Ash content : ± 2,3 - 2,5%</span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Fixed carbon : 80%</span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Burning Time : 2 Hour</span> </div>
-
-                                <div class="mt-3 mb-3   "></div>
-
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">White Ash</span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Size 25mm &#10799; 25mm &#10799; 25mm </span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">MSDS Certificate </span> </div>
-                                <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text text-uppercase">10 kg packaging carton include inner box </span> </div>
+                    <div class="tab-content">
+                        <div class="product-description tab-pane fade active show" id="premium" >
+                            <div class="mt-4 mb-5"> 
+                                <span class="font-weight-bold">Description</span>
+                                <p class="mt-3 mb-1" style="font-family: montserrat-light, sans-serif; color:#242424">
+                                    Mixed coconut charcoal Java & Sulawesi briquette for shisha cube shape (shape
+                                    according
+                                    to request) <br>
+                                    Middle east & Asia standart : Saudi Arabia, Dubai, Egypt, South Africa
+                                </p>
+                                <div class="bullets" style="color:#242424">
+                                    
+                                    <div class="d-flex align-items-center"> 
+                                        <span class="dot"></span> 
+                                        <span class="bullet-text description">{!!$detail->description_premium!!}</span> 
+                                    </div>
+                                    
+                                </div>
+                                <br>
+                                <div class="flex center" style="text-align: center;">
+                                    <a href="{{route('contact.index')}}">
+                                        <button id="btn_vision" type="button"
+                                            class="btn btn-outline-danger btn-lg btn-block">Contact
+                                            Us</button>
+                                    </a>
+                                </div>
                             </div>
-                            <br>
-                            <div class="flex center" style="text-align: center;">
-                                <a href="{{route('contact.index')}}">
-                                    <button id="btn_vision" type="button" class="btn-template btn-primary btn-lg btn-block" style="background-color:black; color:blanchedalmond; border:none;">Contact Us</button>
-                                </a>
+                        </div>
+                        <div class="product-description tab-pane fade" id="original">
+                            <div class="mt-4 mb-5"> 
+                                <span class="font-weight-bold">Description</span>
+                                <p class="mt-3 mb-1" style="font-family: montserrat-light, sans-serif; color:#242424">
+                                    Mixed coconut charcoal Java & Sulawesi briquette for shisha cube shape (shape
+                                    according
+                                    to request) <br>
+                                    Middle east & Asia standart : Saudi Arabia, Dubai, Egypt, South Africa
+                                </p>
+                                <div class="bullets" style="color:#242424">
+                                    <div class="d-flex align-items-center"> <span class="dot"></span> <span
+                                            class="bullet-text">{!!$detail->description_original!!}</span> 
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="flex center" style="text-align: center;">
+                                    <a href="{{route('contact.index')}}">
+                                        <button id="btn_vision" type="button"
+                                            class="btn btn-outline-danger btn-lg btn-block">Contact
+                                            Us
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -119,7 +141,28 @@
         item: 1,
         loop: true,
         slideMargin: 0,
-        thumbItem: 9
+        thumbItem: 9,
+        enableDrag:false,
+        onSliderLoad: function() {  
+            $('#lightSlider').magnificPopup({ 
+                delegate: 'a', 
+                mainClass: 'mfp-fade',
+                type: 'image',
+                    gallery:{
+                    enabled:true,
+                    navigateByImgClick: true,
+                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+
+                    },
+                    zoom: {
+                    enabled: true, // By default it's false, so don't forget to enable it
+                    duration: 300, // duration of the effect, in milliseconds
+                    easing: 'ease-in-out', // CSS transition easing function
+                    
+                }
+            });
+            } 
     });
+    $('p').css('margin-bottom', '0rem');
 </script>
 @endpush
