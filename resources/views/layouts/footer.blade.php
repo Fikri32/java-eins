@@ -49,13 +49,13 @@
                 </h5>
                 <ul style="list-style-type: none;margin-left:0px">
                     <li style="margin-bottom: 8px">
-                        <a href="" class="a-zoom">FAQ</a>
+                        <a href="{{route('faq.index')}}" class="a-zoom">FAQ</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="" class="a-zoom">About Us</a>
+                        <a href="{{route('about.index')}}" class="a-zoom">About Us</a>
                     </li>
                     <li style="margin-bottom: 8px">
-                        <a href="" class="a-zoom">Contact Us</a>
+                        <a href="{{route('contact.index')}}" class="a-zoom">Contact Us</a>
                     </li>
                 </ul>
             </div>

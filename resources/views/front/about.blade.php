@@ -28,8 +28,8 @@
         <div id="about" class="col-md-6">
             <h1>Get To Know About Us</h1>
             <p class="text-justify">
-                PT.Java Eins is a supplier, manufacturer and distributor of coco shisha briquettes from Indonesia. We are committed to providing the best quality product and competitive prices to help you with your briquette needs. Java Eins is a legal company registered in Indonesia. The entire payment process uses the L/C Method through the bank.
-                We have 4 shisha briquette products : Cube, flat, hexagonal, Cylinder/Stick. Our production capacity is up to 10Mt per month
+                Java Eins is a supplier, manufacturer and distributor of coco shisha briquettes from Indonesia. We are committed to providing the best quality product and competitive prices to help you with your briquette needs. Java Eins is a legal company registered in Indonesia. The entire payment process uses the L/C Method through the bank.
+                We have 4 shisha briquette products : Cube, flat, hexagonal, Cylinder/Stick.
             </p>
         </div>
 
@@ -97,12 +97,17 @@
                 </li>
                 <li>
                     <p>
-                        <b>Step 3:</b><br> Payment of 40% DP can be made using the L/C method.
+                        <b>Step 3:</b><br> Payment of 50% DP can be made using the L/C method.
                     </p>
                 </li>
                 <li>
                     <p>
                         <b>Step 4:</b><br> Our continuous collection of charcoal products will be given special prices.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <b>Step 5:</b><br> Any Further Information please Contact us at <a href="mailto:marketing@javaeins.com">marketing@javaeins.com.</a>.
                     </p>
                 </li>
             </ul>
