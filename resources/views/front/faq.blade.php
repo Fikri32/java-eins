@@ -34,7 +34,7 @@
                             Payment terms are 50% down payment. After receiving this payment we start production of
                             coconut charcoal.
                             <br>
-                            After container with coconut, charcoal is shipped we prepare shipping documents: Bill of
+                            After Loading the Container, charcoal is shipped we prepare shipping documents: Bill of
                             Lading, Certificate of origin, invoice, packing list. It takes 3-5 days to prepare all the
                             documents. Right after that, we send you a photocopy of B/L and COO. Now is your turn to
                             transfer us the rest 50% of payment. After we receive payment we send you original documents
