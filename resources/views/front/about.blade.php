@@ -87,27 +87,22 @@
             <ul class="text-justify" style="list-style-type: none; margin-left:0px;">
                 <li>
                     <p>
-                        <b>Step 1:</b><br> The customer will be sent a sample of coconut charcoal briquettes that are of interest to the customer and then the customer will be studied such as drop test, burning test, ash content, etc.
+                        <b>Step 1:</b><br> We will be sending a sample of the desired coconut charcoal briquettes to the customer and the customer can assess the quality of the product directly (e.g drop test, burning test, ash content, etc.).
                     </p>
                 </li>
                 <li>
                     <p>
-                        <b>Step 2:</b><br> If the sample matches the customer's standard, the customer can directly contact us to discuss the price, payment terms, and shipping terms.
+                        <b>Step 2:</b><br> If the sample matches the customer's standard, the customer can directly contact us for further discussion of the price, payment terms, and shipping terms.
                     </p>
                 </li>
                 <li>
                     <p>
-                        <b>Step 3:</b><br> Payment of 50% DP can be made using the L/C method.
+                        <b>Step 3:</b><br> 50% down payment in advance before shipment can be made using the L/C method.
                     </p>
                 </li>
                 <li>
                     <p>
-                        <b>Step 4:</b><br> Our continuous collection of charcoal products will be given special prices.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <b>Step 5:</b><br> Any Further Information please Contact us at <a href="mailto:marketing@javaeins.com">marketing@javaeins.com.</a>.
+                        <b>Step 4:</b><br> Any Further Information please Contact us at <a href="mailto:marketing@javaeins.com">marketing@javaeins.com, it will be our pleasure to help you.</a>
                     </p>
                 </li>
             </ul>
