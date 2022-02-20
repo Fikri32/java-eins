@@ -102,7 +102,7 @@
                 </li>
                 <li>
                     <p>
-                        <b>Step 4:</b><br> Any Further Information please Contact us at <a href="mailto:marketing@javaeins.com">marketing@javaeins.com, it will be our pleasure to help you.</a>
+                        <b>Step 4:</b><br> Any Further Information please Contact us at <a href="mailto:marketing@javaeins.com">marketing@javaeins.com</a>, it will be our pleasure to help you.
                     </p>
                 </li>
             </ul>
