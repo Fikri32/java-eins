@@ -22,11 +22,19 @@ class CatalogueController extends Controller
     }
 
     public function create(Request $req) {
+        // manipulasi data is suffient
+        $is_sufficient = false;
+        if ($req['is_sufficient'] == "sufficient") {
+            $is_sufficient = true;
+        }
+
         // simpan catalogue dulu
         $catalogue = new Catalogue();
         $catalogue->name = $req['name'];
         $catalogue->description_premium = $req['description_premium'];
         $catalogue->description_original = $req['description_original'];
+        $catalogue->short_description= $req['short_description'];
+        $catalogue->is_sufficient = $is_sufficient;
         $catalogue->moq = $req['moq'];
         $catalogue->save();
 
@@ -56,11 +64,19 @@ class CatalogueController extends Controller
     }
 
     public function update(Request $req) {
+        // manipulasi data is suffient
+        $is_sufficient = false;
+        if ($req['is_sufficient'] == "sufficient") {
+            $is_sufficient = true;
+        }
+
         $catalogue = Catalogue::findOrFail($req->id);
         $catalogue->update([
             "name" => $req->name, 
             "description_premium" => $req->description_premium, 
             "description_original" => $req->description_original,
+            "short_description" =>  $req->short_description,
+            "is_sufficient" => $is_sufficient, 
             "moq" => $req->moq, 
             "capacity" => $req->capacity, 
         ]);

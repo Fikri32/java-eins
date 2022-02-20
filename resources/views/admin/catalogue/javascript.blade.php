@@ -17,6 +17,8 @@
           name : $('#name').val(),
           description_premium : $('#description_premium').summernote('code'),
           description_original : $('#description_original').summernote('code'),
+          short_description : $('#short_description').val(),
+          is_sufficient : $('#is_sufficient').val(),
           moq : $('#moq').val(),
           images,
         }
@@ -267,15 +269,16 @@
       type:"GET",
       url,
       success: function(res){
-        const { name,description_premium,description_original, moq, id} = res
+        const { name,description_premium,description_original, moq, id, short_description, is_sufficient} = res
         $('#name').val(name)
 
         $('#description_premium').summernote('code',description_premium)
         $('#description_original').summernote('code',description_original)
-
+        $('#short_description').html(short_description)
         $('#moq').val(moq)
         $('#cid').val(id)
-        $('#description').summernote('editor.pasteHTML', description);
+
+        is_sufficient == 1 ? $("#is_sufficient").val("sufficient").change() : $("#is_sufficient").val("insufficient").change()
       },
       error : function(xhr, ajaxOptions, thrownError) { 
         Swal.fire({
@@ -315,8 +318,7 @@
   function updateCatalogueElement(data) {
     var row = document.querySelectorAll(`#row-${data.id} > td`)
     row[2].innerHTML = data.name 
-    row[3].innerHTML = data.capacity 
-    row[4].innerHTML = data.moq
+    row[3].innerHTML = data.moq
   }
 </script>
 <!-- End Catalogue Product Handle -->

@@ -19,6 +19,8 @@ class CreateCataloguesTable extends Migration
             $table->integer("moq");
             $table->longText("description_premium");
             $table->longText("description_original");
+            $table->longText("short_description");
+            $table->boolean('is_sufficient');
             $table->timestamps();
         });
     }

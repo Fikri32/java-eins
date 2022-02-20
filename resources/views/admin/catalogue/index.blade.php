@@ -105,6 +105,19 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="short_description">Short Description</label>
+                            <textarea name="short_description" id="short_description" cols="30" rows="5" class="form-control" placeholder="Give your summary about this product"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="is_sufficient">Stock Status</label>
+                            <select name="is_sufficient" id="is_sufficient" class="form-control">
+                                <option value="sufficient">Ready</option>
+                                <option value="insufficient">Out Of Stock</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <div class="row mb-5" id="uploaded-image">
 
                             </div>
