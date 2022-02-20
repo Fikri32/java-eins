@@ -32,7 +32,7 @@ class CatalogueImage extends Controller
 
     Public function Delete($id) {
         $image = ImageModel::find($id);
-        $targetPath = public_path() . '\catalogue_images/' . $image->image;
+        $targetPath = public_path() . 'catalogue_images/' . $image->image;
         unlink($targetPath);
         $image->delete();
         return response()->json($image, 200);
