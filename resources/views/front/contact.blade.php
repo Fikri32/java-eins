@@ -15,7 +15,7 @@
             <br>
             <span><b style="color:#282828;">Whatsapp</b></span>
             <br>
-            <a href=""><span><b>+6212424222</b></span></a>
+            <a href="https://wa.me/+6282114875743" target="_blank"><span><b>+62 821-1487-5743</b></span></a>
         </div>
         <div class="col-four">
             <a href="#0"><i class="fa fa-envelope fa-4x" aria-hidden="true" style="color: #282828;margin-top:6rem;"></i>
@@ -23,7 +23,7 @@
             <br>
             <span><b style="color:#282828;">Mail</b></span>
             <br>
-            <a href=""><span><b>javaeins@javaeins.com</b></span></a>
+            <a href="mailto:marketing@javaeins.com"><span><b>marketing@javaeins.com</b></span></a>
         </div>
         <div class="col-four">
             <a href="#0">
@@ -32,7 +32,7 @@
             <br>
             <span><b style="color:#282828;"> Address</b></span>
             <br>
-            <a href=""><span><b>Jl.Cimahi</b></span></a>
+            <a href="https://goo.gl/maps/HWrvgRZe4G816UtBA" target="_blank"><span><b>Jl.Dae Achmad Kartiputra Kavling Hj.Ukimer 3 C Kota Cimahi Kecamatan Cimahi Tengah, 40522</b></span></a>
         </div>
     </div> <!-- end section-header -->
 
