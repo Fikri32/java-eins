@@ -32,7 +32,7 @@
             <br>
             <span><b style="color:#282828;"> Address</b></span>
             <br>
-            <a href="https://goo.gl/maps/HWrvgRZe4G816UtBA" target="_blank"><span><b>Jl.Dae Achmad Kartiputra Kavling Hj.Ukimer 3 C Kota Cimahi Kecamatan Cimahi Tengah, 40522</b></span></a>
+            <a href="https://goo.gl/maps/njtPtu8eVWxj3aCq8" target="_blank"><span><b>Jl.Dae Achmad Kartiputra Kavling Hj.Ukimer 39 C Kota Cimahi Kecamatan Cimahi Tengah, 40522</b></span></a>
         </div>
     </div> <!-- end section-header -->
 

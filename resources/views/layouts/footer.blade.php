@@ -15,7 +15,7 @@
                 <ul style="list-style-type: none;margin-left:0px">
                     <li style="margin-bottom: 8px">
                         <i class="fa fa-map-marker" style="margin-right: 8px"> </i>
-                        Jl.Dae Achmad Kartiputra Kavling Hj.Ukimer 3 C Kota Cimahi Kecamatan Cimahi Tengah, 40522
+                        Jl.Dae Achmad Kartiputra Kavling Hj.Ukimer 39 C Kota Cimahi Kecamatan Cimahi Tengah, 40522
                     </li>
                     <li style="margin-bottom: 8px">
                         <i class="fa fa-envelope" style="margin-right: 8px"> </i>marketing@javaeins.com
