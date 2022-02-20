@@ -70,10 +70,19 @@
                             <label for="" class="float-left">Product</label>
                             <select class="form-control" name="product" id="" style="font-size: 1.4rem; border-color:#282828;">
                                 <option>Select Your Product</option>
-                                <option value="Briquette Cube">Briquette Cube</option>
-                                <option value="Briquette Flat">Briquette Flat</option>
-                                <option value="Briquette Finger">Briquette Finger</option>
-                                <option value="Briquette Hexagonal">Briquette Hexagonal</option>
+                                @foreach ($catalogues as $item)
+                                    @if ($item->status == 0 )
+                                    {
+                                        <option value="{{$item->name}}" disabled style="color=#7777">
+                                            {{$item->name}}
+                                        </option>
+                                    }@else{
+                                        <option value="{{$item->name}}">
+                                            {{$item->name}}
+                                        </option>
+                                    }
+                                    @endif
+                                @endforeach
                             </select>
                         </div>
                     </div>

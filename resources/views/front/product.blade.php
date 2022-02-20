@@ -23,7 +23,7 @@
                     <div class="card-body card-body align-items-center justify-content-center px-3">
                         <p
                             style="font-family: montserrat-light sans-serif; font-size:60%; margin-top:2.5rem; margin-bottom:0rem; text-transform:none;">
-                            This Product is so fuckin awesome. You really need to buy it at least once before you die!
+                            {{$d->short_description}}
                         </p>
                         <h6 class="card-title text-uppercase mb-5 font-weight-light"
                             style="font-family: montserrat-regular, sans-serif; margin-top:1rem;">Min. Order:
