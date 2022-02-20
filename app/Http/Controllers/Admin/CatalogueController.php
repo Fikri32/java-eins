@@ -75,7 +75,7 @@ class CatalogueController extends Controller
         // get data gambar
         $images = ImageModel::where('catalogue_id', $req->id)->get();
         foreach ($images as $img) {
-            $path = public_path() . '\catalogue_images/' . $img->image;
+            $path = public_path('catalogue_images/'.$img->image);
             unlink($path);
             ImageModel::find($img->id)->delete();
         }
