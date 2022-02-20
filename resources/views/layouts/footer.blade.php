@@ -15,13 +15,10 @@
                 <ul style="list-style-type: none;margin-left:0px">
                     <li style="margin-bottom: 8px">
                         <i class="fa fa-map-marker" style="margin-right: 8px"> </i>
-                        Jalan Komud Abdurrahman Saleh, Kel. <br> &nbsp;&nbsp;&nbsp;&nbsp;Asrikaton,Kec. Pakis, Kab. Malang, Prop. &nbsp;&nbsp;&nbsp;&nbsp;Jawa Timur
+                        Jl.Dae Achmad Kartiputra Kavling Hj.Ukimer 3 C Kota Cimahi Kecamatan Cimahi Tengah, 40522
                     </li>
                     <li style="margin-bottom: 8px">
-                        <i class="fa fa-envelope" style="margin-right: 8px"> </i>info@javaeins.com
-                    </li>
-                    <li style="margin-bottom: 8px">
-                        <i class="fa fa-clock-o" style="margin-right: 8px"> </i>Working Time : 08.00 - 10.00
+                        <i class="fa fa-envelope" style="margin-right: 8px"> </i>marketing@javaeins.com
                     </li>
                 </ul>
             </div>
