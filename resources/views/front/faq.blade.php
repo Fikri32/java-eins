@@ -54,7 +54,7 @@
                     <div id="collapse2" class="panel-collapse collapse in">
                         <div class="panel-body text-justify mb-5">
                             To order coconut charcoal for hookah & shisha – choose charcoal specification. We produce coconut charcoal in Premium, Standard, and Economy types.
-                            contact us via Whatsapp +62 82114875743 or email . We will confirm production dates, availability and issue your invoice
+                            contact us via Whatsapp +62 82114875743 or <a href="mailto:marketing@javaeins.com">marketing@javaeins.com</a> . We will confirm production dates, availability and issue your invoice
                         </div>
                     </div>
                 </div>
