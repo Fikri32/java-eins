@@ -20,6 +20,9 @@
                                 </a>
                             </li>
                             @endforeach
+                            @if ($vid == null)
+                                
+                            @else
                             <li class="li-detail" data-thumb="{{ asset('assets_front/images/thumb.png') }}"> 
                                 <a class="video-link" href="{{ asset('catalogue_videos/'.$vid->video) }}">
                                     <video class="img-detail" autoplay muted loop playsinline>
@@ -27,6 +30,8 @@
                                     </video> 
                                 </a>
                             </li>
+                            @endif
+                            
                         </ul>
                     </div>
                 </div>
